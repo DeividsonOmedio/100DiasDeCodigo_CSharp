@@ -17,6 +17,6 @@ namespace leilao.api.Entities
         public decimal BasePrice { get; set; }
         public int AuctionId { get; set; }
         [JsonIgnore]
-        public LeilaoModel Auction { get; set; }
+        public LeilaoModel? Auction { get; set; }
     }
 }

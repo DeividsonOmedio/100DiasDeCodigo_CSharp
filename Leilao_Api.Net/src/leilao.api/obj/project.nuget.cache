@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d/mJsWOdxt9XWx/Fsp0s9emw2uuMCJtaEbrVk1cVCZDO1iApUFWTVFhm3LgsjTs+scW1/hWBqm7Ldbi8XENtRA==",
+  "dgSpecHash": "xBUR4DstYhwz2kHZNoqwg23BFwx1w/GX8FPSg2jwY5AQ9W0MlaxE9CDV9joad9DyMXSUiWKcFxSfGGA66a14Mg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deividson\\Downloads\\100DiasDeCodigo_CSharp\\Dia_1\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj",
+  "projectFilePath": "C:\\Users\\deividson\\Documents\\110DayCode\\100DiasDeCodigo_CSharp\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deividson\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.1\\microsoft.data.sqlite.core.8.0.1.nupkg.sha512",
     "C:\\Users\\deividson\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.1\\microsoft.entityframeworkcore.8.0.1.nupkg.sha512",

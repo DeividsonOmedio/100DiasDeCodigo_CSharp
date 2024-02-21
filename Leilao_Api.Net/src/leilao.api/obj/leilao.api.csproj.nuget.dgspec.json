@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deividson\\Downloads\\100DiasDeCodigo_CSharp\\Dia_1\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj": {}
+    "C:\\Users\\deividson\\Documents\\110DayCode\\100DiasDeCodigo_CSharp\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deividson\\Downloads\\100DiasDeCodigo_CSharp\\Dia_1\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj": {
+    "C:\\Users\\deividson\\Documents\\110DayCode\\100DiasDeCodigo_CSharp\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deividson\\Downloads\\100DiasDeCodigo_CSharp\\Dia_1\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj",
+        "projectUniqueName": "C:\\Users\\deividson\\Documents\\110DayCode\\100DiasDeCodigo_CSharp\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj",
         "projectName": "leilao.api",
-        "projectPath": "C:\\Users\\deividson\\Downloads\\100DiasDeCodigo_CSharp\\Dia_1\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj",
+        "projectPath": "C:\\Users\\deividson\\Documents\\110DayCode\\100DiasDeCodigo_CSharp\\Leilao_Api.Net\\src\\leilao.api\\leilao.api.csproj",
         "packagesPath": "C:\\Users\\deividson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deividson\\Downloads\\100DiasDeCodigo_CSharp\\Dia_1\\Leilao_Api.Net\\src\\leilao.api\\obj\\",
+        "outputPath": "C:\\Users\\deividson\\Documents\\110DayCode\\100DiasDeCodigo_CSharp\\Leilao_Api.Net\\src\\leilao.api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
