@@ -14,12 +14,12 @@ namespace Domain.Interfaces.RepositoryInterfaces
         Task<List<AuctionModel>?> GetByName(string name);
         Task<List<AuctionModel>?> GetCurrent();
         Task<List<AuctionModel>?> GetByDate(DateTime data);
-        Task<List<AuctionModel>?> GetByPeriodo(DateTime dataInicial, DateTime dataFinal);
-        Task<List<AuctionModel>?> GetByAtivos();
-        Task<List<AuctionModel>?> GetByProgramados();
-        Task<List<AuctionModel>?> GetByEncerrados();
-        Task<AuctionModel> InserirNovoLeilao(AuctionModel novoLeilao);
-        Task<AuctionModel?> AlterarLeilao(int id, AuctionModel leilao);
-        Task<string> DeletarLeilao(int id);
+        Task<List<AuctionModel>?> GetByPeriod(DateTime dataInicial, DateTime dataFinal);
+        Task<List<AuctionModel>?> GetByActives();
+        Task<List<AuctionModel>?> GetByProgrammed();
+        Task<List<AuctionModel>?> GetByClosed();
+        Task<AuctionModel> CreateNewAuction(AuctionModel novoLeilao);
+        Task<AuctionModel?> ChangeAuction(int id, AuctionModel leilao);
+        Task<string> DeleteAuction(int id);
     }
 }

@@ -1,4 +1,7 @@
 ﻿using Domain.Interfaces.RepositoryInterfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +12,12 @@ namespace Helpers.Filters
 {
     public class AuthenticationAdminAttributes : AuthorizeAttribute, IAuthorizationFilter
     {
-        private readonly IUsersRepository _repositorio;
-        public AutenticacaoAdminAtributos(IUsersRepository repositorio) => _repositorio = repositorio;
-        public void OnAuthorization(AuthorizationFilterContext context)
+        private readonly TokenFilter _tokenFilter = new();
+        public async void OnAuthorization(AuthorizationFilterContext context)
         {
             try
             {
-                var token = _repositorio.TokenOnRequest(context.HttpContext);
+                var token = _tokenFilter.TokenOnRequest(context.HttpContext);
 
                 if (string.IsNullOrEmpty(token))
                 {
@@ -23,13 +25,13 @@ namespace Helpers.Filters
                     return;
                 }
 
-                var idUser = _repositorio.DecodeJwtToken(token);
+                var idUser = _tokenFilter.DecodeJwtToken(token);
 
-                var result = _repositorio.BuscarUser(idUser);
-
+                var result = await _tokenFilter.GetUser(idUser);
+                
                 if (result == null)
                     context.Result = new UnauthorizedObjectResult("not valid");
-                if (result?.Tipo != Enums.TipoUsuarioEnum.administrador)
+                if (result?.Type != Entities.Enums.TypeUserEnum.administrator)
                     context.Result = new UnauthorizedObjectResult("not authorized");
             }
             catch (Exception ex)

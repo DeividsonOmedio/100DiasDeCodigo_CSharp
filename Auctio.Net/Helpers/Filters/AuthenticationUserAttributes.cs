@@ -11,12 +11,12 @@ namespace Helpers.Filters
 {
     public class AuthenticationUserAttributes : AuthorizeAttribute, IAuthorizationFilter
     {
-        FiltrarToken filtrarToken = new();
-        public void OnAuthorization(AuthorizationFilterContext context)
+        private readonly TokenFilter _tokenFilter = new();
+        public async void OnAuthorization(AuthorizationFilterContext context)
         {
             try
             {
-                var token = filtrarToken.TokenOnRequest(context.HttpContext);
+                var token = _tokenFilter.TokenOnRequest(context.HttpContext);
 
                 if (string.IsNullOrEmpty(token))
                 {
@@ -24,14 +24,14 @@ namespace Helpers.Filters
                     return;
                 }
 
-                var idUser = filtrarToken.DecodeJwtToken(token);
+                var idUser = _tokenFilter.DecodeJwtToken(token);
 
-                var result = filtrarToken.BuscarUser(idUser);
+                var result = await _tokenFilter.GetUser(idUser);
 
                 if (result == null)
                     context.Result = new UnauthorizedObjectResult("not valid");
 
-                if (result?.Tipo == Enums.TipoUsuarioEnum.administrador)
+                if (result?.Type == Entities.Enums.TypeUserEnum.administrator)
                     context.Result = new UnauthorizedObjectResult("not authorized");
             }
             catch (Exception ex)

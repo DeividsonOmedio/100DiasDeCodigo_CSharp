@@ -1,5 +1,7 @@
 ﻿using Domain.Interfaces.RepositoryInterfaces;
 using Entities.Entities;
+using Infra.Configurations;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,44 +12,143 @@ namespace Infra.Repository
 {
     public class ManageOffersRepository : IManageOffersRepository
     {
-        public Task<List<OfferModel>?> getAllOfferById(int id)
+        private readonly AuctionDbContext _auctionDbContext;
+
+        public ManageOffersRepository(AuctionDbContext auctionDbContext) => _auctionDbContext = auctionDbContext;
+      
+        public async Task<List<OfferModel>?> GetAllOffers()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext
+                    .Offers
+                    .ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public async Task<List<OfferModel>?> GetAllOfferByIdAuction(int id)
+        {
+            try
+            {
+                return await _auctionDbContext
+                    .Offers
+                    .Where(offer => offer.Id == id)
+                    .ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<List<OfferModel>?> GetAllOffers()
+
+        public async Task<List<OfferModel>?> GetAllOffersByItem(int idItem)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext
+                    .Offers
+                    .Where(offer => offer.ItemId == idItem)
+                    .ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<List<OfferModel>?> getAllOffersByItem(int idItem)
+        public async Task<List<OfferModel>?> GetAllOffersByUser(int idUser)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext
+                    .Offers
+                    .Where(offer => offer.UserId == idUser)
+                    .ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<List<OfferModel>?> getAllOffersByUser(int idUser)
+        public async Task<List<OfferModel>?> GetOffersByUserByItem(int idUser, int idItem)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext
+                    .Offers
+                    .Where(offer => offer.UserId == idUser && offer.ItemId == idItem)
+                    .ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<OfferModel?> GetMaiorOfferByItem(int idItem)
+        public async Task<OfferModel?> GetMoreOfferByItem(int idItem)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var banco = _auctionDbContext)
+                {
+                    return await
+                        (
+                        from o in banco.Offers
+                        where o.ItemId == idItem
+                        orderby -((double)o.Price)
+                        select o).AsNoTracking().FirstOrDefaultAsync();
+                }
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<List<OfferModel>?> GetOffersByUserByItem(int idUser, int idItem)
+        public async Task<List<OfferModel>?> GetOffersInLeiloesActive()
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var banco = _auctionDbContext)
+                {
+                    return await
+                        (from o in banco.Offers
+                         join i in banco.Items on o.ItemId equals i.Id
+                         join l in banco.Auctions on i.AuctionId equals l.Id
+                         where l.Starts <= DateTime.Now && l.Ends >= DateTime.Now
+                         select o).AsNoTracking().ToListAsync();
+                }
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<List<OfferModel>?> GetOffersInLeiloesAtivos()
+        public async Task<List<OfferModel>?> GetOffersInLeiloesClosed()
         {
-            throw new NotImplementedException();
-        }
 
-        public Task<List<OfferModel>?> GetOffersInLeiloesEncerrados()
-        {
-            throw new NotImplementedException();
+            try
+            {
+                using (var banco = _auctionDbContext)
+                {
+                    return await
+                        (from o in banco.Offers
+                         join i in banco.Items on o.ItemId equals i.Id
+                         join l in banco.Auctions on i.AuctionId equals l.Id
+                         where l.Ends < DateTime.Now
+                         select o).AsNoTracking().ToListAsync();
+                }
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

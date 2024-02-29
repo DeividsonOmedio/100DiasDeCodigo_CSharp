@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Entities.Entities;
+using Infra.Configurations;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -10,7 +13,8 @@ namespace Helpers.Filters
 {
     public class TokenFilter
     {
-        internal string? TokenOnRequest(HttpContext context)
+        private readonly AuctionDbContext _auctionDbContext = new();
+        public string? TokenOnRequest(HttpContext context)
         {
             var authenticationHeader = context.Request.Headers.Authorization;
 
@@ -29,7 +33,7 @@ namespace Helpers.Filters
             return authenticationHeaderValue["Bearer ".Length..];
         }
 
-        internal int DecodeJwtToken(string token)
+        public int DecodeJwtToken(string token)
         {
             var handler = new JwtSecurityTokenHandler();
             var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
@@ -51,12 +55,12 @@ namespace Helpers.Filters
             return Convert.ToInt32(id);
         }
 
-        internal UsuarioModel? BuscarUser(int tokenId)
+        public async Task<UserModel?> GetUser(int tokenId)
         {
             try
             {
-                var result = _leilaoDbContext
-                    .Users.FirstOrDefault(user => user.Id == Convert.ToInt32(tokenId));
+                var result = await _auctionDbContext
+                    .Users.FirstOrDefaultAsync(user => user.Id == Convert.ToInt32(tokenId));
                 return result;
             }
             catch

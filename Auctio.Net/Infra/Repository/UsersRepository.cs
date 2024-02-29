@@ -1,5 +1,7 @@
 ﻿using Domain.Interfaces.RepositoryInterfaces;
 using Entities.Entities;
+using Infra.Configurations;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,49 +12,168 @@ namespace Infra.Repository
 {
     public class UsersRepository : IUsersRepository
     {
-        public Task<string?> AlterarEmailUsuario(int id, string email)
+        private readonly AuctionDbContext _auctionDbContext;
+
+        public UsersRepository(AuctionDbContext auctionDbContext) => _auctionDbContext = auctionDbContext;
+
+        public async Task<List<UserModel>?> GetAllUsers()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext.Users.ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<string?> AlterarNameUsuario(int id, string name)
+        public async Task<UserModel?> GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext.Users
+                    .FirstOrDefaultAsync(user => user.Email.ToLower() == (email.ToLower()));
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<string?> AlterarSenhaUsuario(int id, string senha)
+        public async Task<List<UserModel>?> GetByName(string name)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext.Users
+                    .Where(user => user.Name.ToLower().Contains(name.ToLower()))
+                    .ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<string?> CreateUser(UserModel usuario)
+        public async Task<UserModel?> GetUserById(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext.Users.FirstOrDefaultAsync(user => user.Id == id);
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public Task<string> DeleteUser(int id)
+        public async Task<string?> ChangeEmailUer(int id, string email)
         {
-            throw new NotImplementedException();
+            var result = await _auctionDbContext.Users.FirstOrDefaultAsync(user => user.Id == id);
+
+            if (result == null)
+            {
+                return "Não encontrado";
+            }
+
+            try
+            {
+                result.Email = email;
+                _auctionDbContext.Users.Update(result);
+                await _auctionDbContext.SaveChangesAsync();
+                return $"{email} - Alterado Com Sucesso";
+            }
+            catch
+            {
+                return "Erro ao tentar fazer a solicitação";
+            }
         }
 
-        public Task<List<UserModel>?> GetAllUsers()
+        public async Task<string?> ChangeNameUser(int id, string name)
         {
-            throw new NotImplementedException();
+            var result = await _auctionDbContext.Users.FirstOrDefaultAsync(user => user.Id == id);
+
+            if (result == null)
+            {
+                return "Não encontrado";
+            }
+
+            try
+            {
+                result.Name = name;
+                _auctionDbContext.Users.Update(result);
+                await _auctionDbContext.SaveChangesAsync();
+                return $"{name} - Alterado Com Sucesso";
+            }
+            catch
+            {
+                return "Erro ao tentar fazer a solicitação";
+            }
         }
 
-        public Task<UserModel?> GetByEmail(string email)
+        public async Task<string?> ChangePasswordUser(int id, string senha)
         {
-            throw new NotImplementedException();
+            var result = await _auctionDbContext.Users.FirstOrDefaultAsync(user => user.Id == id);
+
+            if (result == null)
+            {
+                return "Não encontrado";
+            }
+
+            try
+            {
+                result.Password = senha;
+                _auctionDbContext.Users.Update(result);
+                await _auctionDbContext.SaveChangesAsync();
+                return "Senha Alterada Com Sucesso";
+            }
+            catch
+            {
+                return "Erro ao tentar fazer a solicitação";
+            }
         }
 
-        public Task<List<UserModel>?> GetByName(string name)
+        public async Task<string?> CreateUser(UserModel usuario)
         {
-            throw new NotImplementedException();
+            var result = await _auctionDbContext.Users.FirstOrDefaultAsync(user =>
+                          user.Name.ToLower() == usuario.Name.ToLower() || user.Email.ToLower() == usuario.Email.ToLower());
+
+            if (result != null)
+            {
+                return "Nome ou Email já Cadastrado";
+            }
+
+            try
+            {
+                _auctionDbContext.Users.Add(usuario);
+                await _auctionDbContext.SaveChangesAsync();
+                return "Created";
+            }
+            catch
+            {
+                return "Erro ao tentar fazer a solicitação";
+            }
         }
 
-        public Task<UserModel?> GetUserById(int id)
+        public async Task<string> DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            var result = await _auctionDbContext.Users.FirstOrDefaultAsync(user => user.Id == id);
+
+            if (result == null)
+            {
+                return "Não encontrado";
+            }
+
+            try
+            {
+                _auctionDbContext.Users.Remove(result);
+                await _auctionDbContext.SaveChangesAsync();
+                return "Usuario Excluído Com Sucesso";
+            }
+            catch
+            {
+                return "Erro ao tentar fazer a solicitação";
+            }
         }
     }
 }

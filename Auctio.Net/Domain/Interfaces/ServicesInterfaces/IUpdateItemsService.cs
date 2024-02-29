@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces.ServicesInterfaces
 {
-    internal interface IUpdateItemsService : IItemsRepository
+    public interface IUpdateItemsService : IItemsRepository
     {
     }
 }

@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 
 namespace Helpers.Filters
 {
-    internal class AuthenticationGenericsAttributes : AuthorizeAttribute, IAuthorizationFilter
+    public class AuthenticationGenericsAttributes : AuthorizeAttribute, IAuthorizationFilter
     {
-        FiltrarToken filtrarToken = new();
+        private readonly TokenFilter _tokenFilter = new();
+
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             try
             {
-                var token = filtrarToken.TokenOnRequest(context.HttpContext);
+                var token = _tokenFilter.TokenOnRequest(context.HttpContext);
 
                 if (string.IsNullOrEmpty(token))
                 {
@@ -24,9 +25,9 @@ namespace Helpers.Filters
                     return;
                 }
 
-                var idUser = filtrarToken.DecodeJwtToken(token);
+                var idUser = _tokenFilter.DecodeJwtToken(token);
 
-                var result = filtrarToken.BuscarUser(idUser);
+                var result = _tokenFilter.GetUser(idUser);
 
                 if (result == null)
                     context.Result = new UnauthorizedObjectResult("not valid");

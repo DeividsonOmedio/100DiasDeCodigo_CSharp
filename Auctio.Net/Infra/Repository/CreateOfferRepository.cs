@@ -1,5 +1,6 @@
 ﻿using Domain.Interfaces.RepositoryInterfaces;
 using Entities.Entities;
+using Infra.Configurations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,22 @@ namespace Infra.Repository
 {
     public class CreateOfferRepository : ICreateOfferRepository
     {
-        public Task<OfferModel> Execute(int itemId, RequisicaoCriarOferta request)
+        private readonly AuctionDbContext _auctionDbContext;
+
+        public CreateOfferRepository(AuctionDbContext auctionDbContext) => _auctionDbContext = auctionDbContext;
+
+        public async Task<OfferModel?> Add(OfferModel offer)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = _auctionDbContext.Offers.AddAsync(offer);
+                var response = await _auctionDbContext.SaveChangesAsync();
+                return offer;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

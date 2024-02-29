@@ -1,43 +1,110 @@
 ﻿using Domain.Interfaces.RepositoryInterfaces;
 using Entities.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Infra.Configurations;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Repository
 {
     public class ItemsRepository : IItemsRepository
     {
-        public ItemModel? changeItem(ItemModel item)
+        private readonly AuctionDbContext _auctionDbContext;
+
+        public ItemsRepository(AuctionDbContext auctionDbContext) => _auctionDbContext = auctionDbContext;
+
+        public async Task<List<ItemModel>?> GetAllItems()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext
+                    .Items
+                    .ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public async Task<ItemModel?> GetItemsById(int idItem)
+        {
+            try
+            {
+                return await _auctionDbContext
+                    .Items
+                    .Where(item => item.Id == idItem)
+                    .FirstOrDefaultAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public ItemModel? CreateNewItem(ItemModel newItem)
+        public async Task<List<ItemModel>?> GetItemsByAuction(int idAuction)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _auctionDbContext
+                    .Items
+                    .Where(item => item.AuctionId == idAuction)
+                    .ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public string DeleteItem(int idItem)
+        public async Task<ItemModel?> CreateNewItem(ItemModel newItem)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _auctionDbContext.Items.AddAsync(newItem);
+                await _auctionDbContext.SaveChangesAsync();
+                return newItem;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public List<ItemModel>? GetAllItems()
+        public async Task<ItemModel?> changeItem(ItemModel item)
         {
-            throw new NotImplementedException();
+            var result = await _auctionDbContext.Items.FirstOrDefaultAsync(i => i.AuctionId == item.AuctionId && i.Id == item.Id);
+            if (result == null) return null;
+            try
+            {
+                result.Name = item.Name;
+                result.Condition = item.Condition;
+                result.Brand = item.Brand;
+                result.BasePrice = item.BasePrice;
+
+                _auctionDbContext.Items.Update(result);
+                await _auctionDbContext.SaveChangesAsync();
+
+                return result;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public ItemModel? GetItemsById(int idItem)
+        public async Task<string> DeleteItem(int idItem)
         {
-            throw new NotImplementedException();
+            var result = await _auctionDbContext.Items.FirstOrDefaultAsync(i => i.Id == idItem);
+            if (result == null) return "Nao encontrado";
+            try
+            {
+                _auctionDbContext.Items.Remove(result);
+                await _auctionDbContext.SaveChangesAsync();
+                return "Sucesso";
+            }
+            catch
+            {
+                return "Falha";
+            }
         }
 
-        public List<ItemModel>? GetItemsByLeilao(int idAuction)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

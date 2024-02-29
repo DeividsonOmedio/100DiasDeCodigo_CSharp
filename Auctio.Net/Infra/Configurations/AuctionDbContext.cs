@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Configurations
 {
-    public class AuctionDbContext
+    public class AuctionDbContext : DbContext
     {
         public DbSet<AuctionModel> Auctions { get; set; }
         public DbSet<UserModel> Users { get; set; }
