@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Auction.Api.Controllers
 {
 
-        [ServiceFilter(typeof(AuthenticationUserAttributes))]
+    [ServiceFilter(typeof(AuthenticationUserAttributes))]
     public class UsersController : GenericsController
     {
         private readonly IUsersService _usersService;
