@@ -1,4 +1,5 @@
 ﻿using Domain.Interfaces.RepositoryInterfaces;
+using Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -16,7 +16,7 @@ namespace Helpers.Filters
         private readonly AuctionDbContext _auctionDbContext = new();
         public string? TokenOnRequest(HttpContext context)
         {
-            var authenticationHeader = context.Request.Headers.Authorization;
+            var authenticationHeader = context.Request.Headers["Authorization"];
 
             if (string.IsNullOrEmpty(authenticationHeader))
             {

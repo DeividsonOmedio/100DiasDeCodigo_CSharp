@@ -9,6 +9,6 @@ namespace Domain.Interfaces.RepositoryInterfaces
 {
     public interface ICreateOfferRepository
     {
-        Task<OfferModel?> Add(OfferModel offer);
+        Task<OfferModel> Execute(int itemId, RequestCreateOfferJson request);
     }
 }

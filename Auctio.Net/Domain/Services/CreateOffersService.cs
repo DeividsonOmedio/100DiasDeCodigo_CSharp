@@ -12,7 +12,10 @@ namespace Domain.Services
             _createOfferRepository = createOfferRepository;
 
 
-        public Task<OfferModel?> Add(OfferModel offer) =>
-            _createOfferRepository.Add(offer);
+
+
+        public Task<OfferModel> Execute(int itemId, RequestCreateOfferJson request) =>
+            _createOfferRepository.Execute(itemId, request);
+
     }
 }

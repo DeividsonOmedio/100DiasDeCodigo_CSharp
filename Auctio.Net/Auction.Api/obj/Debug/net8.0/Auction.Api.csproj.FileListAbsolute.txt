@@ -81,3 +81,4 @@ C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auctio.Net\Auctio
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auctio.Net\Auction.Api\obj\Debug\net8.0\Auction.Api.pdb
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auctio.Net\Auction.Api\obj\Debug\net8.0\Auction.Api.genruntimeconfig.cache
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auctio.Net\Auction.Api\obj\Debug\net8.0\ref\Auction.Api.dll
+C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auctio.Net\Auction.Api\obj\Debug\net8.0\Auction.Api.MvcApplicationPartsAssemblyInfo.cs

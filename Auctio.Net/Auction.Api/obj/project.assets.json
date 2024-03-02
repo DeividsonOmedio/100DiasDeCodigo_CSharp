@@ -3404,6 +3404,7 @@
         "dependencies": {
           "Domain": "1.0.0",
           "Entities": "1.0.0",
+          "Infra": "1.0.0",
           "Microsoft.AspNetCore.Authorization": "8.0.2",
           "Microsoft.AspNetCore.Mvc": "2.2.0",
           "Microsoft.EntityFrameworkCore": "8.0.2",

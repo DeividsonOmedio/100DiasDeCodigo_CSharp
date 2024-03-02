@@ -1,3 +1,4 @@
+using Domain.Interfaces;
 using Domain.Interfaces.RepositoryInterfaces;
 using Domain.Interfaces.ServicesInterfaces;
 using Domain.Services;
@@ -69,6 +70,7 @@ builder.Services.AddAuthentication(x =>
 builder.Services.AddScoped<AuthenticationGenericsAttributes>();
 builder.Services.AddScoped<AuthenticationAdminAttributes>();
 builder.Services.AddScoped<AuthenticationUserAttributes>();
+builder.Services.AddScoped<ILoggedUser, UserLogged>();
 builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
 builder.Services.AddScoped<IUpdateAuctionService, UpdateAuctionService>();
 builder.Services.AddScoped<IManageOffersService, ManageOffersService>();
