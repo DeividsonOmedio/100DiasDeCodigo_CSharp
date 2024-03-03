@@ -9,10 +9,9 @@ namespace Auction.Api.Controllers
 {
 
     [ServiceFilter(typeof(AuthenticationUserAttributes))]
-    public class UsersController : GenericsController
+    public class UsersController(IUsersService usersService) : GenericsController
     {
-        private readonly IUsersService _usersService;
-        public UsersController(IUsersService usersService) => _usersService = usersService;
+        private readonly IUsersService _usersService = usersService;
 
         [ServiceFilter(typeof(AuthenticationAdminAttributes))]
         [HttpGet("GetAllUsers")]

@@ -11,7 +11,7 @@ namespace Infra.Configurations
         public DbSet<ItemModel> Items { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=C:\\Users\\deividson\\Documents\\100DaysCode\\100DiasDeCodigo_CSharp\\DataBase\\leilaoDBNLW.db");
+            optionsBuilder.UseSqlite("Data Source=C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\DataBase\\leilaoDBNLW.db");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -4,18 +4,11 @@ using Entities.Entities;
 
 namespace Domain.Services
 {
-    public class CreateOffersService : ICreateOffersService
+    public class CreateOffersService(ICreateOfferRepository createOfferRepository) : ICreateOffersService
     {
-        private readonly ICreateOfferRepository _createOfferRepository;
-
-        public CreateOffersService(ICreateOfferRepository createOfferRepository) =>
-            _createOfferRepository = createOfferRepository;
-
-
-
+        private readonly ICreateOfferRepository _createOfferRepository = createOfferRepository;
 
         public Task<OfferModel> Execute(int itemId, RequestCreateOfferJson request) =>
             _createOfferRepository.Execute(itemId, request);
-
     }
 }

@@ -19,7 +19,7 @@ namespace Auction.Api.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult GetAllAuction()
         {
-            var result = _updateAuctionService.GetAll();
+            var result = _updateAuctionService.GetCurrent();
             if (result == null)
                 return NoContent();
 

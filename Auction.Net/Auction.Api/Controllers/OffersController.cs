@@ -8,12 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace Auction.Api.Controllers
 {
 
-    public class OffersController : GenericsController
+    public class OffersController(ICreateOfferService createOfferService) : GenericsController
     {
 
-        private readonly ICreateOfferService _createOfferService;
-
-        public OffersController(ICreateOfferService createOfferService) => _createOfferService = createOfferService;
+        private readonly ICreateOfferService _createOfferService = createOfferService;
 
         [ServiceFilter(typeof(AuthenticationUserAttributes))]
         [HttpPost]

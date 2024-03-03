@@ -8,16 +8,10 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace Helpers.Filters
 {
-    public class UserLogged : ILoggedUser
+    public class UserLogged(IHttpContextAccessor httpContextAccessor, IUsersService repositorio) : ILoggedUser
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly IUsersService _repositorio;
-
-        public UserLogged(IHttpContextAccessor httpContextAccessor, IUsersService repositorio)
-        {
-            _httpContextAccessor = httpContextAccessor;
-            _repositorio = repositorio;
-        }
+        private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+        private readonly IUsersService _repositorio = repositorio;
 
         public UserModel User()
         {

@@ -26,8 +26,8 @@ namespace Domain.Services
         public Task<string> DeleteAuction(int id) =>
             _auctionRepository.DeleteAuction(id);
 
-        public Task<List<AuctionModel>?> GetAll() =>
-            _auctionRepository.GetAll();
+        public Task<List<AuctionModel>?> GetCurrent() =>
+            _auctionRepository.GetCurrent();
 
         public Task<List<AuctionModel>?> GetByActives() =>
             _auctionRepository.GetByActives();
@@ -49,8 +49,5 @@ namespace Domain.Services
 
         public Task<List<AuctionModel>?> GetByProgrammed() =>
             _auctionRepository.GetByProgrammed();
-
-        public Task<List<AuctionModel>?> GetCurrent() =>
-            _auctionRepository.GetCurrent();
     }
 }

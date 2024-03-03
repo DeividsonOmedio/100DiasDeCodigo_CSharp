@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jyQhPHEyIfl7Ehs5MJX5NBg4s98yl2dT70MWWqYG2f7bfohvBXGfVsgg3B3tONFxkb1RmIgdWzyZ6BUbxJsNrQ==",
+  "dgSpecHash": "mQ56Dy/xElBpXIK3Vh109TQJIGHBmibtv49NtCcKjvj+s8rQuPGSne0MoA6qNABtBM1o1XUwyswt19cVgmnN9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auctio.Net\\Helpers\\Helpers.csproj",
+  "projectFilePath": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Helpers\\Helpers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deividson\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\deividson\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

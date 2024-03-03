@@ -2,19 +2,14 @@
 using Infra.Configurations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Helpers.Filters
 {
     public class TokenFilter
     {
         private readonly AuctionDbContext _auctionDbContext = new();
-        public string? TokenOnRequest(HttpContext context)
+        public static string? TokenOnRequest(HttpContext context)
         {
             var authenticationHeader = context.Request.Headers["Authorization"];
 
@@ -33,7 +28,7 @@ namespace Helpers.Filters
             return authenticationHeaderValue["Bearer ".Length..];
         }
 
-        public int DecodeJwtToken(string token)
+        public static int DecodeJwtToken(string token)
         {
             var handler = new JwtSecurityTokenHandler();
             var jsonToken = handler.ReadToken(token) as JwtSecurityToken;

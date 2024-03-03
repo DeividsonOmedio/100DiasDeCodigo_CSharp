@@ -22,8 +22,8 @@ namespace Infra.Repository
                 Price = request.Price,
                 UserId = usuario.Id
             };
-            _ = _auctionDbContext.Offers.AddAsync(offer);
-            var response = await _auctionDbContext.SaveChangesAsync();
+            await _auctionDbContext.Offers.AddAsync(offer);
+            await _auctionDbContext.SaveChangesAsync();
 
             return offer;
         }

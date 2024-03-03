@@ -4,12 +4,9 @@ using Entities.Entities;
 
 namespace Domain.Services
 {
-    public class ManageOffersService : IManageOffersService
+    public class ManageOffersService(IManageOffersRepository manageOffersRepository) : IManageOffersService
     {
-        private readonly IManageOffersRepository _manageOffersRepository;
-
-        public ManageOffersService(IManageOffersRepository manageOffersRepository) =>
-            _manageOffersRepository = manageOffersRepository;
+        private readonly IManageOffersRepository _manageOffersRepository = manageOffersRepository;
 
         public Task<List<OfferModel>?> GetAllOfferByIdAuction(int id) =>
             _manageOffersRepository.GetAllOfferByIdAuction(id);

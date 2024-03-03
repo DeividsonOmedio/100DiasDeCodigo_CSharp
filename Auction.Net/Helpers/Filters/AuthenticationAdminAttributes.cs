@@ -17,7 +17,7 @@ namespace Helpers.Filters
         {
             try
             {
-                var token = _tokenFilter.TokenOnRequest(context.HttpContext);
+                var token = TokenFilter.TokenOnRequest(context.HttpContext);
 
                 if (string.IsNullOrEmpty(token))
                 {
@@ -25,7 +25,7 @@ namespace Helpers.Filters
                     return;
                 }
 
-                var idUser = _tokenFilter.DecodeJwtToken(token);
+                var idUser = TokenFilter.DecodeJwtToken(token);
 
                 var result = await _tokenFilter.GetUser(idUser);
                 
