@@ -11,7 +11,7 @@ Dia 2/100
 Construção de API Rest com C# - Continuação.
 Hoje fiz um CRUD completo para a parte dos leilões,
 onde você pode além de visualizar os leilões, criar novos, editar ou excluir algum leilão.
-Foi uma jornada bem interessante visto que na hora do desenvolvimento eu fiquei sem acesso a internet 
+Foi uma jornada bem interessante visto que na hora do desenvolvimento eu fiquei sem acesso a internet
 e como formatei meu notebook semana passada, não tenho outro projeto nele, então estava impossibilitado de fazer qualquer tipo de consultas,
 mas com calma finalizei essa primeira parte e tenho certeza de que estou evoluindo ainda mais.
 
@@ -28,3 +28,77 @@ Hoje realizei foquei na parte dos usuários,
 definindo os endpoints para cadastrar novo usuário, busca-los por Id ou por nome, alterar nome, e-mail ou senha separadamente e também poder deletar um usuário.
 Hoje não estou muito bem fisicamente, então foi só uma horinha mesmo codando, mas amanha espero voltar a rotina normal.
 
+Dia 5/100
+Construção de API Rest com C# - Continuação
+Hoje Foi dia de criar toda a lógica para gerenciar as ofertas feitas pelos usuários, fiz os "Joins" para recuperar dados ligado entre várias tabelas e fiz todos os endponts e métodos necessários
+Também fiz algumas alteraçôes em classes que já estavam prontas, visando uma melhor otimização e usabilidade do sistema.
+
+Dia 6/100
+Construção de API Rest com C# - Continuação
+Hoje Foi dia de estudar e praticar a implementação de interfaces, que auxilia na arquitetura do sistema e facilita a compreensão do código, uma vez que as interfaces estabelecem contratos a serem abstraídos nas classes.
+Aproveitei também e me aprofundei no conhecimento sobre Task, Async e Await, quando usa-los e porque usa-los.
+
+Dia 7/100
+Construção de API Rest com C# - Continuação
+Injeção de dependência, esse foi o tema de hoje.
+Já tinha usado em outros projetos, porem mais como copia de algo que eu não sabia exatamente o porque, mas hoje tive a oportunidade de estudar a fundo o porque de se usar injeção de dependência no projeto, quais os tipos e quando usar cada uma. E logicamente, já coloquei em prática!
+
+Dia 8/100
+Construção de API Rest com C# - Continuação
+authentication and authorization
+Hoje implementei Token no projeto, estudei bastante essa questão de autorização, autenticação e como implementar um token JWT.
+Ate aqui nesse ponto do projeto, foi a parte mais desafiadora para mim, visto que só havia utilizado outras poucas vezes o JWT e sempre acompanhando alguma aula.
+Mas esta ai, funcionando como deveria e melhor que isso, agora tenho um maior conhecimento sobre assunto para aplica-lo posteriormente.
+
+Dia 9/100
+Construção de API Rest com C# - Continuação
+Dia de corrigir bugs...
+Hoje foi dia de analisar todo o projeto, já que ele esta quase completo na parte do back-end. Aproveitei pra corrigir alguns erros, entender tudo oque esta acontecendo no projeto, como a questões de rotas, injeção de dependência e também as autenticações.
+
+Dia 10/100
+Construção de API Rest com C# - Continuação
+O Projeto esta funcionando...
+Porém, a intenção não é só funcionar, é entender tudo oque está acontecendo e aproximar o máximo que eu puder e conseguir de um projeto mais "comercial". Seguindo essa linha, hoje me dediquei a refatorações, e a pequenos ajustes que possam melhorar o nível do projeto.
+
+Dia 11/100
+Construção de API Rest com C# - Continuação
+Hoje foi dia de trabalhar melhorando a estrutura do projeto, seguindo o conselho do Huam Benvenutti dividi a aplicação em vários projetos menores, separando em camadas. Também estou padronizando o idioma usado no projeto.
+É uma parte trabalhosa pois muda as referencias, tem que refazer oque já estava pronto, porém o propósito não é só fazer, mas sim entender oque estou fazendo e buscar fazer o mais próximo possível de uma aplicação "real".
+
+Dia 12/100
+Construção de API Rest com C# - Continuação
+Dizem que grandes alterações dão trabalho...
+E comigo não seria diferente. Diante das grandes mudanças estruturais que fiz no projeto, agora utilizando uma abordagem de design de software mais próxima do Domain-Driven Design (DDD), tive vários problemas por não ter começado o projeto já pensando nisso,
+mas aos poucos estou ajeitando e principalmente entendendo o papel de cada camada, como fica a disposição dos arquivos e o porque desse disposição.
+Logo logo partimos pras próximas etapas.
+
+Dia 13/100
+Construção de API Rest com C# - Continuação
+Hoje continue trabalhando na reestruturação do projeto, organizei oque ficará na pasta "services", também oque fará parte dos "repositorys",
+suas respectivas interfaces e implementações.
+
+Dia 14/100
+Construção de API Rest com C# - Continuação
+Depois de muitos bugs, mas também muito aprendizado, a API está novamente funcionando.
+Tive um erro com injeção de dependência que me custou muito tempo, porém aprendi.
+Vamos adiante...
+
+Dia 15/100
+Construção de API Rest com C# - Continuação
+Terminei as alterações estruturais, organizei os repositório no github, inclusive adicionando um .gitignore para evitar subir arquivos desnecessário.
+Como é gostoso ver o código assim mais limpo, bem estrutura e acima de tudo entendendo oque está acontecendo.
+
+Dia 16/100
+Construção de API Rest com C# - Continuação
+Hoje comecei a trabalhar os testes unitários com XUnit, os testes unitários são uma forma de testar a lógica do projeto, isolando pequenas partes de código, onde podemos verificar se os retornos são realmente oque foi previsto e ate mesmo se não tem algo de errado passando no sistema.
+É sem sombra de dúvida uma parte importantíssima, pois além de identificar problemas no código, também auxiliamos numa possível refatoração, onde podemos verificar com facilidade se a lógica ainda está correta.
+O testes ainda facilitam a vida do desenvolvedor, possibilitando que ele não precise testar manualmente todo o código sempre que realizar alguma mudança.
+
+Dia 17/100
+Construção de API Rest com C# - Continuação
+Hoje continuei com os testes unitários, implementando testes para cada método do projeto. É um processo lento, mas importantíssimo e que vai evitar problemas futuros.
+
+Dia 18/100
+Construção de API Rest com C# - Continuação
+Hoje implementei os testes para a classe de gerenciamento das ofertas.
+Foquei em aprender mais sobre o framework MOQ, que cria objetos simulados para realização dos testes, Ele gera dados fictícios para preencher os objetos, possibilitando verificar o comportamento da aplicação

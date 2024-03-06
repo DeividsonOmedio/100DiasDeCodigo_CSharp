@@ -11,7 +11,7 @@ namespace Infra.Repository
 
         public AuctionRepository(AuctionDbContext auctionDbContext) => _auctionDbContext = auctionDbContext;
 
-        public async Task<List<AuctionModel>?> GetCurrent()
+        public async Task<List<AuctionModel>?> GetAll()
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Infra.Repository
                 return null;
             }
         }
-        public async Task<List<AuctionModel>?> GetByActives()
+        public async Task<List<AuctionModel>?> GetCurrent()
         {
             try
             {
@@ -130,21 +130,6 @@ namespace Infra.Repository
             }
         }
 
-        public async Task<List<AuctionModel>?> GetCurrent()
-        {
-            var today = DateTime.Now;
-            try
-            {
-                return await _auctionDbContext
-                    .Auctions
-                    .Include(auction => auction.Items)
-                    .Where(auction => today >= auction.Starts && today <= auction.Ends).ToListAsync();
-            }
-            catch
-            {
-                return null;
-            }
-        }
 
         public async Task<AuctionModel?> ChangeAuction(int id, AuctionModel leilao)
         {

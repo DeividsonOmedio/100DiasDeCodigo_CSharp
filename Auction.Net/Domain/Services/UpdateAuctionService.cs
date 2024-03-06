@@ -9,28 +9,22 @@ using System.Threading.Tasks;
 
 namespace Domain.Services
 {
-    public class UpdateAuctionService : IUpdateAuctionService
+    public class UpdateAuctionService(IAuctionRepository auctionRepository) : IUpdateAuctionService
     {
-        private readonly IAuctionRepository _auctionRepository;
-
-        public UpdateAuctionService(IAuctionRepository auctionRepository) =>
-            _auctionRepository = auctionRepository;
+        private readonly IAuctionRepository _auctionRepository = auctionRepository;
 
         public Task<AuctionModel?> ChangeAuction(int id, AuctionModel leilao) =>
             _auctionRepository.ChangeAuction(id, leilao);
 
 
-        public Task<AuctionModel> CreateNewAuction(AuctionModel novoLeilao) =>
+        public Task<AuctionModel?> CreateNewAuction(AuctionModel novoLeilao) =>
             _auctionRepository.CreateNewAuction(novoLeilao);
 
         public Task<string> DeleteAuction(int id) =>
             _auctionRepository.DeleteAuction(id);
 
         public Task<List<AuctionModel>?> GetCurrent() =>
-            _auctionRepository.GetCurrent();
-
-        public Task<List<AuctionModel>?> GetByActives() =>
-            _auctionRepository.GetByActives();
+            _auctionRepository.GetAll();
 
         public Task<List<AuctionModel>?> GetByClosed() =>
             _auctionRepository.GetByClosed();
@@ -49,5 +43,9 @@ namespace Domain.Services
 
         public Task<List<AuctionModel>?> GetByProgrammed() =>
             _auctionRepository.GetByProgrammed();
+
+        public Task<List<AuctionModel>?> GetAll() =>
+            _auctionRepository.GetAll();
+
     }
 }
