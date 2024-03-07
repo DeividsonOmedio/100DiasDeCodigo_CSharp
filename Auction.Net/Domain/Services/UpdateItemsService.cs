@@ -33,9 +33,9 @@ namespace Domain.Services
             return _itemsRepository.GetAllItems();
         }
 
-        public Task<ItemModel?> GetItemsById(int idItem)
+        public async Task<ItemModel?> GetItemsById(int idItem)
         {
-            return _itemsRepository.GetItemsById(idItem);
+            return await _itemsRepository.GetItemsById(idItem);
         }
 
         public Task<List<ItemModel>?> GetItemsByAuction(int idAuction)

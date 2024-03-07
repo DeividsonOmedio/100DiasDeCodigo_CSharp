@@ -102,3 +102,7 @@ Dia 18/100
 Construção de API Rest com C# - Continuação
 Hoje implementei os testes para a classe de gerenciamento das ofertas.
 Foquei em aprender mais sobre o framework MOQ, que cria objetos simulados para realização dos testes, Ele gera dados fictícios para preencher os objetos, possibilitando verificar o comportamento da aplicação
+
+Dia 19/100
+Construção de API Rest com C# - Continuação
+Hoje finalizei as classes de testes, ainda vou dispensar mais um tempo pra digerir todo esse conteúdo, ver onde precisa melhora, mas por hora estou contente, estou avançando.
