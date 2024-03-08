@@ -106,3 +106,8 @@ Foquei em aprender mais sobre o framework MOQ, que cria objetos simulados para r
 Dia 19/100
 Construção de API Rest com C# - Continuação
 Hoje finalizei as classes de testes, ainda vou dispensar mais um tempo pra digerir todo esse conteúdo, ver onde precisa melhora, mas por hora estou contente, estou avançando.
+
+Dia 20/100
+Construção de API Rest com C# - Continuação
+Finalizado hoje a parte dos testes unitários, onde além de criar os métodos de testes, aprender sobre vários frameworks e pacotes de teste, eu realmente testei esses métodos, mudando parâmetros, depurando e analisando o fluxo dos testes.
+Não que esteja 100%, porém tive um crescimento enorme nessa área e com certeza voltarei a estuda-la mais a frente para utilizar em novos projetos.

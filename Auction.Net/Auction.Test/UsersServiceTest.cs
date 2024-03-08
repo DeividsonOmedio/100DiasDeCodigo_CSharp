@@ -139,11 +139,11 @@ namespace Auction.Test
             resultUser.Should().Be(user);
         }
 
-        [Fact]
-        public async Task GetByName_ShouldReturnListOfUserModels()
+        [Theory]
+        [MemberData(nameof(GetUserTest))]
+        public async Task GetByName_ShouldReturnListOfUserModels(string userName)
         {
             // ARRANGE
-            var userName = "Test User";
             var users = new Faker<UserModel>().Generate(3);
             var mock = new Mock<IUsersService>();
             mock.Setup(i => i.GetByName(userName)).ReturnsAsync(users);
@@ -157,7 +157,12 @@ namespace Auction.Test
             resultUsers.Should().BeOfType<List<UserModel>>();
             resultUsers.Should().HaveCount(3);  // Certifique-se de ajustar este valor de acordo com o número de elementos gerados
         }
-
+        public static IEnumerable<object[]> GetUserTest()
+        {
+            yield return new object[] { "user1" };
+            yield return new object[] { "user5" };
+            yield return new object[] { "" };
+        }
         [Fact]
         public async Task GetUserById_ShouldReturnUserModel()
         {
