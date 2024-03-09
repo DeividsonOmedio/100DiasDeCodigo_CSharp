@@ -1,11 +1,10 @@
 ﻿using Domain.Interfaces.ServicesInterfaces;
 using Entities.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Auction.Api.Controllers
 {
-    
+
     public class AuctionController : GenericsController
     {
 
@@ -68,16 +67,6 @@ namespace Auction.Api.Controllers
             var result = _updateAuctionService.GetByPeriod(dataInicial, dataFinal);
             if (result == null)
                 return Ok("Não há Leilões neste período");
-
-            return Ok(result);
-        }
-
-        [HttpGet("GetByActives")]
-        public IActionResult GetByActives()
-        {
-            var result = _updateAuctionService.GetByActives();
-            if (result == null)
-                return Ok("Não há Leilões Ativos No Momento");
 
             return Ok(result);
         }

@@ -9,7 +9,7 @@ namespace Domain.Interfaces.RepositoryInterfaces
 {
     public interface IAuctionRepository
     {
-        Task<List<AuctionModel>?> GetAll();
+        Task<IEnumerable<AuctionModel>?> GetAll();
         Task<AuctionModel?> GetById(int id);
         Task<List<AuctionModel>?> GetByName(string name);
         Task<List<AuctionModel>?> GetByDate(DateTime data);

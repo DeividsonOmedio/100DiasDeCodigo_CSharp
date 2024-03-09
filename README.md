@@ -111,3 +111,9 @@ Dia 20/100
 Construção de API Rest com C# - Continuação
 Finalizado hoje a parte dos testes unitários, onde além de criar os métodos de testes, aprender sobre vários frameworks e pacotes de teste, eu realmente testei esses métodos, mudando parâmetros, depurando e analisando o fluxo dos testes.
 Não que esteja 100%, porém tive um crescimento enorme nessa área e com certeza voltarei a estuda-la mais a frente para utilizar em novos projetos.
+
+Dia 21/100
+Construção de API Rest com C# - Continuação
+Hoje iniciei o Front-end, Decidi utilizar o Blazor para seguir dentro do .Net.
+O Blazor é uma ferramenta que acho super interessante e que tem um potencial enorme de crescimento, podendo ser usado tanto no lado do servidor, quando no lado do cliente e ainda em aplicações mobile em conjunto com o Maui.
+Criei as interfaces, os serviços, a injeção de dependência e comecei de fato a desenvolver a interface do usuário.

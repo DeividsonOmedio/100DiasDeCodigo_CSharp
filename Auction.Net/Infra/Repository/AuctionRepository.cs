@@ -11,7 +11,7 @@ namespace Infra.Repository
 
         public AuctionRepository(AuctionDbContext auctionDbContext) => _auctionDbContext = auctionDbContext;
 
-        public async Task<List<AuctionModel>?> GetAll()
+        public async Task<IEnumerable<AuctionModel>?> GetAll()
         {
             try
             {

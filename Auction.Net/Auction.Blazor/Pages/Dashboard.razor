@@ -1,0 +1,48 @@
+﻿@page "/dashboard"
+@inject IManageAuctionService manageAuctionService;
+<PageTitle>Dashboard</PageTitle>
+<h1>Dashboard</h1>
+<p>Lista de Leilôes</p>
+@if (Auction == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Inicio</th>
+                <th>Fim</th>
+                <th></th>
+            </tr>
+        </thead>
+            @if (Auction.Count() > 0)
+            {
+                <tbody>   
+                    @foreach (var auction in Auction)
+                    {
+                        <tr>
+                            <td>@auction.Id</td>
+                            <td>@auction.Name</td>
+                            <td>@auction.Starts</td>
+                            <td>@auction.Ends</td>
+                            <td><button>Itens</button></td>
+                        </tr>
+                    }
+                </tbody>
+            }
+    </table>
+}
+@code {
+    public IEnumerable<AuctionModel>? Auction{ get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Auction = await manageAuctionService.GetAll();
+    }
+
+  
+}

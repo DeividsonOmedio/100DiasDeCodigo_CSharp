@@ -6,7 +6,7 @@ namespace Auction.Api.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    [ServiceFilter(typeof(AuthenticationGenericsAttributes))]
+    //[ServiceFilter(typeof(AuthenticationGenericsAttributes))]
     public class GenericsController : ControllerBase
     {
     }

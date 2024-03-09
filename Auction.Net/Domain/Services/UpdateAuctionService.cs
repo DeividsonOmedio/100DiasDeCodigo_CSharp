@@ -1,11 +1,6 @@
 ﻿using Domain.Interfaces.RepositoryInterfaces;
 using Domain.Interfaces.ServicesInterfaces;
 using Entities.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Services
 {
@@ -24,7 +19,7 @@ namespace Domain.Services
             _auctionRepository.DeleteAuction(id);
 
         public Task<List<AuctionModel>?> GetCurrent() =>
-            _auctionRepository.GetAll();
+            _auctionRepository.GetCurrent();
 
         public Task<List<AuctionModel>?> GetByClosed() =>
             _auctionRepository.GetByClosed();
@@ -44,7 +39,7 @@ namespace Domain.Services
         public Task<List<AuctionModel>?> GetByProgrammed() =>
             _auctionRepository.GetByProgrammed();
 
-        public Task<List<AuctionModel>?> GetAll() =>
+        public Task<IEnumerable<AuctionModel>?> GetAll() =>
             _auctionRepository.GetAll();
 
     }

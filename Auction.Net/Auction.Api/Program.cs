@@ -7,6 +7,7 @@ using Infra.Configurations;
 using Infra.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
 using System.Text;
 
@@ -74,7 +75,6 @@ builder.Services.AddScoped<IUpdateAuctionService, UpdateAuctionService>();
 builder.Services.AddScoped<IManageOffersService, ManageOffersService>();
 builder.Services.AddScoped<IManageOffersRepository, ManageOffersRepository>();
 builder.Services.AddScoped<ICreateOfferRepository, CreateOfferRepository>();
-builder.Services.AddScoped<ICreateOffersService, CreateOffersService>();
 builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IItemsRepository, ItemsRepository>();
@@ -90,7 +90,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(policy =>
+    policy.WithOrigins("http://localhost:7186", "https://localhost:7186")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .WithHeaders(HeaderNames.ContentType)
+);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
