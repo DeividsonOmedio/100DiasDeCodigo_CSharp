@@ -16,18 +16,27 @@ namespace Auction.Api.Controllers
         [HttpGet("GetAllAuction")]
         [ProducesResponseType(typeof(AuctionModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public IActionResult GetAllAuction()
+        public async Task<ActionResult<List<AuctionModel>>> GetAllAuction()
         {
-            var result = _updateAuctionService.GetCurrent();
+            var result = await _updateAuctionService.GetAll();
             if (result == null)
                 return NoContent();
 
             return Ok(result);
         }
-        [HttpGet("GetAuctionById")]
-        public IActionResult GetAuctionById(int id)
+        [HttpGet("GetAuctionById/{id:int}")]
+        public async Task<ActionResult<AuctionModel>> GetAuctionById(int id)
         {
-            var result = _updateAuctionService.GetById(id);
+            var result = await _updateAuctionService.GetById(id);
+            if (result == null)
+                return NoContent();
+
+            return Ok(result);
+        }
+        [HttpGet("GetAuctionCurrent")]
+        public async Task<ActionResult<List<AuctionModel>>> GetAuctionCurrent(int id)
+        {
+            var result = await _updateAuctionService.GetCurrent();
             if (result == null)
                 return NoContent();
 

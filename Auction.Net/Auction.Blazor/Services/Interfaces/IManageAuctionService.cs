@@ -4,7 +4,7 @@ namespace Auction.Blazor.Services.Interfaces
 {
     public interface IManageAuctionService
     {
-        Task<IEnumerable<AuctionModel>?> GetAll();
+        Task<List<AuctionModel>?> GetAll();
         Task<AuctionModel?> GetById(int id);
         Task<IEnumerable<AuctionModel>?> GetByName(string name);
         Task<IEnumerable<AuctionModel>?> GetByDate(DateTime data);

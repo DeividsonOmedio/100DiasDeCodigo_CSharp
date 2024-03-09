@@ -11,14 +11,15 @@ namespace Infra.Repository
 
         public AuctionRepository(AuctionDbContext auctionDbContext) => _auctionDbContext = auctionDbContext;
 
-        public async Task<IEnumerable<AuctionModel>?> GetAll()
+        public async Task<List<AuctionModel>?> GetAll()
         {
             try
             {
-                return await _auctionDbContext
+                var result = await _auctionDbContext
                     .Auctions
                     .Include(auction => auction.Items)
                     .ToListAsync();
+                return result;
             }
             catch
             {

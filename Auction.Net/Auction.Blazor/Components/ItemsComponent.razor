@@ -1,0 +1,70 @@
+﻿@page "/item/{ItemId:int}"
+@inject IManageAuctionService manageAuctionService
+
+<h3>ItemsComponent</h3>
+
+
+@if (Auction == null)
+{
+    <p><em>Não foi encontrado nehum item para esste Leilão</em></p>
+}
+else
+{
+    @if(Items == null)
+    {
+        <p>Não Foram Encontrados Itens Para Esse Leilão</p>
+    }
+    else
+    {
+        <h3>@Auction.Name</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Nome</th>
+                    <th>Marca</th>
+                    <th>Condição</th>
+                    <th>Preço Base</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @foreach(var item in Items)
+                {
+                    CountPlus();
+                    <tr>
+                        <td>@count</td>
+                        <td>@item.Name</td>
+                        <td>@item.Brand</td>
+                        <td>@item.Condition</td>
+                        <td>@item.BasePrice</td>
+                        <td><button oncancel="@(()=> Bid())">Dar Lance</button></td>
+                    </tr>
+                    
+                }
+            </tbody>
+        </table>
+    }
+}
+
+@code {
+    [Parameter] public AuctionModel? Auction { get; set; }
+    [Parameter] public int ItemId { get; set; }
+    public List<ItemModel>? Items { get; set; }
+    public int count = 0;
+    protected override async Task OnInitializedAsync()
+    {
+        Auction = await manageAuctionService.GetById(ItemId);
+        Items = Auction?.Items;
+    }
+
+    public void Bid()
+    {
+
+    }
+    public void CountPlus()
+    {
+        count++;
+    }
+}

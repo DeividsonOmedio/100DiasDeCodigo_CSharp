@@ -1,5 +1,6 @@
 ﻿@page "/dashboard"
-@inject IManageAuctionService manageAuctionService;
+@inject IManageAuctionService manageAuctionService
+
 <PageTitle>Dashboard</PageTitle>
 <h1>Dashboard</h1>
 <p>Lista de Leilôes</p>
@@ -9,40 +10,48 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Inicio</th>
-                <th>Fim</th>
-                <th></th>
-            </tr>
-        </thead>
-            @if (Auction.Count() > 0)
+    @if (Auction.Count() > 0)
+    {
+        @foreach (var auction in Auction)
+        {
+            @if (ExibirAuctions)
             {
-                <tbody>   
-                    @foreach (var auction in Auction)
-                    {
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td>@auction.Id</td>
+                            <th>Nome</th>
+                            <th>Inicio</th>
+                            <th>Fim</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>   
+                        <tr>
                             <td>@auction.Name</td>
                             <td>@auction.Starts</td>
                             <td>@auction.Ends</td>
-                            <td><button>Itens</button></td>
+                            <td><a href="/item/@auction.Id">Itens</a></td>
                         </tr>
-                    }
-                </tbody>
-            }
-    </table>
+                    </tbody>
+                </table>
+            }            
+        }
+    }
 }
 @code {
     public IEnumerable<AuctionModel>? Auction{ get; set; }
+    public bool ExibirAuctions = true;
+   
 
     protected override async Task OnInitializedAsync()
     {
         Auction = await manageAuctionService.GetAll();
     }
 
-  
+    public void CarregarItens(List<ItemModel> item)
+    {
+        
+        ExibirAuctions = false;
+
+    }
 }

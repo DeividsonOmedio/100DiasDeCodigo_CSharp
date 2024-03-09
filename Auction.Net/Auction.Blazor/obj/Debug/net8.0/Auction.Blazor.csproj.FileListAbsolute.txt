@@ -1388,3 +1388,4 @@ C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Aucti
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\obj\Debug\net8.0\refint\Auction.Blazor.dll
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\obj\Debug\net8.0\Auction.Blazor.pdb
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\obj\Debug\net8.0\ref\Auction.Blazor.dll
+C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\obj\Debug\net8.0\scopedcss\Pages\Dashboard.razor.rz.scp.css

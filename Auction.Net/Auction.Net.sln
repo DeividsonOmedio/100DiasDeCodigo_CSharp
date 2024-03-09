@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auction.Test", "Auction.Tes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{29CF0487-C361-4A54-AA91-8B52A5D39599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auction.Blazor", "Auction.Blazor\Auction.Blazor.csproj", "{DC5C3A8A-38F5-4EAA-B271-48304A0D7299}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auction.Blazor", "Auction.Blazor\Auction.Blazor.csproj", "{DC5C3A8A-38F5-4EAA-B271-48304A0D7299}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

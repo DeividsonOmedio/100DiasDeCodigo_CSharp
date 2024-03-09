@@ -7,15 +7,28 @@ namespace Auction.Blazor.Services
     public class ManageAuctionService(HttpClient httpClient) : IManageAuctionService
     {
         public HttpClient _httpClient = httpClient;
-        public async Task<IEnumerable<AuctionModel>?> GetAll()
+        public async Task<List<AuctionModel>?> GetAll()
         {
             try
             {
             var result = await _httpClient
-                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+                .GetFromJsonAsync<List<AuctionModel>>("Auction/GetAllAuction");
                 return result;
             }
             catch(Exception ex)
+            {
+                throw new NotImplementedException();
+            }
+        }
+        public async Task<AuctionModel?> GetById(int id)
+        {
+            try
+            {
+                var result = await _httpClient
+                    .GetFromJsonAsync<AuctionModel>($"Auction/GetAuctionById/{id}");
+                return result;
+            }
+            catch (Exception ex)
             {
                 throw new NotImplementedException();
             }
@@ -29,10 +42,6 @@ namespace Auction.Blazor.Services
             throw new NotImplementedException();
         }
 
-        public Task<AuctionModel?> GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public Task<IEnumerable<AuctionModel>?> GetByName(string name)
         {

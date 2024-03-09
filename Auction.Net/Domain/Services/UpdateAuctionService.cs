@@ -39,7 +39,7 @@ namespace Domain.Services
         public Task<List<AuctionModel>?> GetByProgrammed() =>
             _auctionRepository.GetByProgrammed();
 
-        public Task<IEnumerable<AuctionModel>?> GetAll() =>
+        public Task<List<AuctionModel>?> GetAll() =>
             _auctionRepository.GetAll();
 
     }
