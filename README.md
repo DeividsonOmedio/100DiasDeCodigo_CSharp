@@ -117,3 +117,9 @@ Construção de API Rest com C# - Continuação
 Hoje iniciei o Front-end, Decidi utilizar o Blazor para seguir dentro do .Net.
 O Blazor é uma ferramenta que acho super interessante e que tem um potencial enorme de crescimento, podendo ser usado tanto no lado do servidor, quando no lado do cliente e ainda em aplicações mobile em conjunto com o Maui.
 Criei as interfaces, os serviços, a injeção de dependência e comecei de fato a desenvolver a interface do usuário.
+
+Dia 22/100
+
+Construção de API Rest com C# - Continuação
+Hoje criei a interface para visualizar os leiloes criados, e um componente para visualizar os itens de algum leilão especifico.
+Gostaria de frisar a importância de fazer o front-end(ou pelo menos entender um pouco de quem vai utilizar o serviço criado). Durante a construção da api eu fiz testes com o swagger, com postman e xunit com sucesso, porém ao fazer a solicitação a api utilizando o blazor tive problemas, depurei, demorei algum tempo pra entender o problema e no final precisei fazer um ajuste na api para que tudo funcionasse da melhor forma.
