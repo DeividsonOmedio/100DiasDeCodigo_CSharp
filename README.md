@@ -123,3 +123,8 @@ Dia 22/100
 Construção de API Rest com C# - Continuação
 Hoje criei a interface para visualizar os leiloes criados, e um componente para visualizar os itens de algum leilão especifico.
 Gostaria de frisar a importância de fazer o front-end(ou pelo menos entender um pouco de quem vai utilizar o serviço criado). Durante a construção da api eu fiz testes com o swagger, com postman e xunit com sucesso, porém ao fazer a solicitação a api utilizando o blazor tive problemas, depurei, demorei algum tempo pra entender o problema e no final precisei fazer um ajuste na api para que tudo funcionasse da melhor forma.
+
+Dia 23/100
+Construção de API Rest com C# - Continuação
+Está tomando forma...
+Hoje foquei na listagem dos leilões e seus itens, Trabalhei com a divisão dos componentes, também com os Data Bindig e cascading parameter buscando diminuir as chamadas a api.
