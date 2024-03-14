@@ -1,18 +1,38 @@
 ﻿@page "/login"
+@inject IAuthService AuthService
+@inject NavigationManager navigation
 
 <PageTitle>Login</PageTitle>
 
 <h1>Login</h1>
 
-<p role="status">Current count: @currentCount</p>
+<div id="divLogin">
+    <div>
+        <label>Email</label>
+        <InputText @bind-Value="@Email"/>
+    </div>
+    <div>
+        <label>Senha</label>
+        <InputText @bind-Value="@Password"></InputText>
+    </div>
+    <button class="btn btn-primary" @onclick="(()=> Logar())">Login</button>
+</div>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<p>
+    @token
+</p>
+
 
 @code {
     private int currentCount = 0;
-
-    private void IncrementCount()
+    public string Email = "deividson@gmail.com";
+    public string Password = "deividson@123";
+    public string token = "";
+    public async void Logar()
     {
-        currentCount++;
+
+        token = await AuthService.GetToken(Email, Password);
+        if (token != null) navigation.NavigateTo("/user");
     }
 }

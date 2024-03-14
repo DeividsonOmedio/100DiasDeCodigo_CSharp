@@ -23,7 +23,7 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("ItemsByLeilao")]
+        [HttpGet("ItemsByLeilao/({idAuction:int})")]
         public IActionResult GetItemsByLeilao(int id)
         {
             if (id == 0) return Ok("Id do Leilao Invalido");
@@ -32,7 +32,7 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("ItemById")]
+        [HttpGet("ItemById{itemId:int}")]
         public IActionResult GetItemById(int idItem)
         {
             if (idItem == 0) return NoContent();
@@ -40,24 +40,25 @@ namespace Auction.Api.Controllers
             if (result == null) return Ok("Id Invalido");
             return Ok(result);
         }
-        [HttpPost("CreateNewItem")]
-        public IActionResult AdicionarNovoItem(int idLeilao, ItemModel novoItem)
+        [HttpPost("CreateNewItem/({idAuction:int})")]
+        public async Task<ActionResult<ItemModel>> AdicionarNovoItem(int idLeilao, ItemModel novoItem)
         {
             if (idLeilao == 0) return NoContent();
             novoItem.AuctionId = idLeilao;
-            var result = _updateItemsService.CreateNewItem(novoItem);
+            var result = await _updateItemsService.CreateNewItem(novoItem);
             if (result == null) return Ok("Id inválido");
             return Ok(result);
         }
-        [HttpPatch("AlterarItem")]
-        public IActionResult AlterarItem(ItemModel item)
+        [HttpPatch("ChangeItem/{idItem:int}")]
+        public IActionResult AlterarItem(int idItem,ItemModel item)
         {
+            //DoTo
             if (item == null) return NoContent();
             var result = _updateItemsService.changeItem(item);
             if (result == null) return Ok("Id Invalido");
             return Ok(result);
         }
-        [HttpDelete("DeletarItem")]
+        [HttpDelete("DeleteItem/{idItem:int}")]
         public IActionResult DeletarItem(int idItem)
         {
             if (idItem == 0) return Ok("Id Invalido");

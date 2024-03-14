@@ -18,5 +18,6 @@ builder.Services.AddScoped<IManageOffersService, ManageOffersService>();
 builder.Services.AddScoped<IManageAuctionService, ManageAuctionService>();
 builder.Services.AddScoped<IManageItemsService, ManageItemsService>();
 builder.Services.AddScoped<IManageUsersService, ManageUsersService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 await builder.Build().RunAsync();

@@ -1,16 +1,12 @@
 ﻿using Domain.Interfaces.ServicesInterfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Auction.Api.Controllers
 {
-    
     public class ManageOffersController : GenericsController 
     {
         private readonly IManageOffersService _manageOffersService;
-
         public ManageOffersController(IManageOffersService manageOffersService) => _manageOffersService = manageOffersService;
-
 
         [HttpGet("GetAllOffers")]
         public IActionResult GetAllOffers()
@@ -20,15 +16,15 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("getAllOfferById")]
-        public IActionResult getAllOfferById(int id)
+        [HttpGet("getAllOfferById/({idOffer:int})")]
+        public IActionResult getAllOfferByIdAuction(int idOffer)
         {
-            var result = _manageOffersService.GetAllOfferByIdAuction(id);
+            var result = _manageOffersService.GetAllOfferByIdAuction(idOffer);
             if (result == null) return Ok("Não encontarmos ofertas");
             return Ok(result);
         }
 
-        [HttpGet("getAllOffersByItem")]
+        [HttpGet("getAllOffersByItem/({idItem:int})")]
         public IActionResult getAllOffersByItem(int idItem)
         {
             var result = _manageOffersService.GetAllOffersByItem(idItem);
@@ -36,7 +32,7 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("getAllOffersByUser")]
+        [HttpGet("getAllOffersByUser/({idUser:int})")]
         public IActionResult getAllOffersByUser(int idUser)
         {
             var result = _manageOffersService.GetAllOffersByUser(idUser);
@@ -44,7 +40,7 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("GetOffersByUserByItem")]
+        [HttpGet("GetOffersByUserByItem/({idUser:int})/({idItem:int})")]
         public IActionResult GetOffersByUserByItem(int idUser, int idItem)
         {
             var result = _manageOffersService.GetOffersByUserByItem(idUser, idItem);
@@ -52,22 +48,22 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("GetMaiorOfferByItem")]
-        public IActionResult GetMaiorOfferByItem(int idItem)
+        [HttpGet("GetMoreOfferByItem/({idItem:int})")]
+        public IActionResult GetMoreOfferByItem(int idItem)
         {
             var result = _manageOffersService.GetMoreOfferByItem(idItem);
             if (result == null) return Ok("Não encontarmos os lances");
             return Ok(result);
         }
 
-        [HttpGet("GetOffersInLeiloesAtivos")]
+        [HttpGet("GetOffersInAuctionActive")]
         public IActionResult GetOffersInLeiloesAtivos()
         {
             var result = _manageOffersService.GetOffersInLeiloesActive();
             return Ok(result);
         }
 
-        [HttpGet("GetOffersInLeiloesEncerrados")]
+        [HttpGet("GetOffersInAuctionClosed")]
         public IActionResult GetOffersInLeiloesEncerrados()
         {
             var result = _manageOffersService.GetOffersInLeiloesClosed();

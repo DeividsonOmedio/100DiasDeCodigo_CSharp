@@ -4,13 +4,13 @@ namespace Auction.Blazor.Services.Interfaces
 {
     public interface IManageOffersService
     {
-        Task<List<OfferModel>?> GetAllOffers();
-        Task<List<OfferModel>?> GetAllOfferByIdAuction(int id);
-        Task<List<OfferModel>?> GetAllOffersByItem(int idItem);
-        Task<List<OfferModel>?> GetAllOffersByUser(int idUser);
-        Task<List<OfferModel>?> GetOffersByUserByItem(int idUser, int idItem);
+        Task<IEnumerable<OfferModel>?> GetAllOffers();
+        Task<IEnumerable<OfferModel>?> GetAllOfferByIdAuction(int idAuction);
+        Task<IEnumerable<OfferModel>?> GetAllOffersByItem(int idItem);
+        Task<IEnumerable<OfferModel>?> GetAllOffersByUser(int idUser);
+        Task<IEnumerable<OfferModel>?> GetOffersByUserByItem(int idUser, int idItem);
+        Task<IEnumerable<OfferModel>?> GetOffersInAuctionActive();
+        Task<IEnumerable<OfferModel>?> GetOffersInAuctionClosed();
         Task<OfferModel?> GetMoreOfferByItem(int idItem);
-        Task<List<OfferModel>?> GetOffersInLeiloesActive();
-        Task<List<OfferModel>?> GetOffersInLeiloesClosed();
     }
 }

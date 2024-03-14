@@ -10,8 +10,8 @@ namespace Auction.Api.Controllers
     public class TokenController : ControllerBase
     {
         private readonly AuctionDbContext _auctionDbContext = new();
-        [HttpPost]
-        public IActionResult? Auth(string email, string password)
+        [HttpPost("Auth/{email}/{password}")]
+        public ActionResult Auth(string email, string password)
         {
             var result = _auctionDbContext.Users.FirstOrDefault(user => user.Email == email && user.Password == password);
             if (result == null) return NotFound("Email ou senha incorretos");

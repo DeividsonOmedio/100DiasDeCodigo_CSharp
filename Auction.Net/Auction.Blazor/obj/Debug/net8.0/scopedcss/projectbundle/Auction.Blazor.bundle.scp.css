@@ -1,3 +1,14 @@
+/* /Components/AuctionComponents/AuctionList.razor.rz.scp.css */
+body[b-629myw2m1d]{
+    background-color: aquamarine;
+}
+th[b-629myw2m1d], td[b-629myw2m1d] {
+    width: 15%
+}
+/* /Components/ItemsComponents/ItemListComponent.razor.rz.scp.css */
+#btnVoltar[b-0ut2g3qacc] {
+    font-size: 2rem;
+}
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-4ql40ifed5] {
     position: relative;
@@ -163,6 +174,18 @@ main[b-4ql40ifed5] {
 /* /Pages/Dashboard.razor.rz.scp.css */
 body[b-0vc8lxhv3g] {
 }
-th[b-0vc8lxhv3g], td[b-0vc8lxhv3g]{
-    width: 15%
+/* /Pages/Login.razor.rz.scp.css */
+body[b-mp5ot86o2c] {
+}
+#divLogin[b-mp5ot86o2c]{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+/* /Pages/UserPage.razor.rz.scp.css */
+body[b-upyp42ijrb] {
 }

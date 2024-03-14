@@ -1,48 +1,36 @@
 ﻿using Auction.Blazor.Services.Interfaces;
 using Entities.Entities;
+using System.Net.Http.Json;
 
 namespace Auction.Blazor.Services
 {
-    public class ManageOffersService : IManageOffersService
+    public class ManageOffersService(HttpClient httpClient) : IManageOffersService
     {
-        public Task<List<OfferModel>?> GetAllOfferByIdAuction(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public HttpClient _httpClient = httpClient;
 
-        public Task<List<OfferModel>?> GetAllOffers()
-        {
-            throw new NotImplementedException();
-        }
+        public Task<IEnumerable<OfferModel>?> GetAllOffers() =>
+            _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/GetAllOffers");
 
-        public Task<List<OfferModel>?> GetAllOffersByItem(int idItem)
-        {
-            throw new NotImplementedException();
-        }
+        public Task<IEnumerable<OfferModel>?> GetAllOfferByIdAuction(int idAuction) =>
+            _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/getAllOfferById/{idAuction}");
 
-        public Task<List<OfferModel>?> GetAllOffersByUser(int idUser)
-        {
-            throw new NotImplementedException();
-        }
+        public Task<IEnumerable<OfferModel>?> GetAllOffersByItem(int idItem) =>
+            _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/getAllOffersByItem/{idItem}");
 
-        public Task<OfferModel?> GetMoreOfferByItem(int idItem)
-        {
-            throw new NotImplementedException();
-        }
+        public Task<IEnumerable<OfferModel>?> GetAllOffersByUser(int idUser) =>
+            _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/getAllOffersByUser");
 
-        public Task<List<OfferModel>?> GetOffersByUserByItem(int idUser, int idItem)
-        {
-            throw new NotImplementedException();
-        }
+        public Task<OfferModel?> GetMoreOfferByItem(int idItem) =>
+            _httpClient.GetFromJsonAsync<OfferModel>($"ManageOffers/GetMoreOfferByItem/{idItem}");
 
-        public Task<List<OfferModel>?> GetOffersInLeiloesActive()
-        {
-            throw new NotImplementedException();
-        }
+        public Task<IEnumerable<OfferModel>?> GetOffersByUserByItem(int idUser, int idItem) =>
+            _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/GetOffersByUserByItem/{idUser}/{idItem}");
 
-        public Task<List<OfferModel>?> GetOffersInLeiloesClosed()
-        {
-            throw new NotImplementedException();
-        }
+        public Task<IEnumerable<OfferModel>?> GetOffersInAuctionActive() =>
+            _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/GetOffersInAuctionActive");
+
+        public Task<IEnumerable<OfferModel>?> GetOffersInAuctionClosed() =>
+            _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/");
+
     }
 }

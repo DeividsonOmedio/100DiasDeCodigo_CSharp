@@ -1,38 +1,35 @@
 ﻿using Auction.Blazor.Services.Interfaces;
 using Entities.Entities;
+using System.Net.Http.Json;
 
 namespace Auction.Blazor.Services
 {
-    public class ManageItemsService : IManageItemsService
+    public class ManageItemsService(HttpClient httpClient) : IManageItemsService
     {
-        public Task<ItemModel?> changeItem(ItemModel item)
+        public HttpClient _httpClient = httpClient;
+
+        public async Task<IEnumerable<ItemModel>?> GetAllItems() => await _httpClient.GetFromJsonAsync<IEnumerable<ItemModel>>("Items/GetAllItems");
+  
+        public async Task<IEnumerable<ItemModel>?> GetItemsByAuction(int idAuction) => await _httpClient.GetFromJsonAsync<IEnumerable<ItemModel>>($"Items/ItemsByLeilao/{idAuction}");
+
+        public async Task<ItemModel?> GetItemById(int idItem) => await _httpClient.GetFromJsonAsync<ItemModel>("Items/GetAllItems");
+
+        public async Task<ItemModel?> CreateNewItem(int idAuction, ItemModel newItem)
         {
-            throw new NotImplementedException();
+            var response = await _httpClient.PatchAsJsonAsync<ItemModel>($"Items/CreateNewItem/{idAuction}", newItem);
+            return await response.Content.ReadFromJsonAsync<ItemModel>();
+        }
+        
+        public async Task<ItemModel?> ChangeItem(int idItem,ItemModel item)
+        {
+            var response = await _httpClient.PatchAsJsonAsync<ItemModel>($"Items/{idItem}", item);
+            return await response.Content.ReadFromJsonAsync<ItemModel>();
         }
 
-        public Task<ItemModel?> CreateNewItem(ItemModel newItem)
+        public async Task<string?> DeleteItem(int idItem)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<string> DeleteItem(int idItem)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<ItemModel>?> GetAllItems()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<ItemModel>?> GetItemsByAuction(int idAuction)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ItemModel?> GetItemsById(int idItem)
-        {
-            throw new NotImplementedException();
+            var response = await _httpClient.DeleteAsync($"DeleteItem/{idItem}");
+            return response.Content.ToString();
         }
     }
 }

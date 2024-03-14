@@ -7,13 +7,12 @@ namespace Auction.Blazor.Services
     public class ManageAuctionService(HttpClient httpClient) : IManageAuctionService
     {
         public HttpClient _httpClient = httpClient;
-        public async Task<List<AuctionModel>?> GetAll()
+        public async Task<IEnumerable<AuctionModel>?> GetAll()
         {
             try
             {
-            var result = await _httpClient
-                .GetFromJsonAsync<List<AuctionModel>>("Auction/GetAllAuction");
-                return result;
+            return await _httpClient
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
             }
             catch(Exception ex)
             {
@@ -24,58 +23,126 @@ namespace Auction.Blazor.Services
         {
             try
             {
-                var result = await _httpClient
+                return await _httpClient
                     .GetFromJsonAsync<AuctionModel>($"Auction/GetAuctionById/{id}");
-                return result;
             }
             catch (Exception ex)
             {
                 throw new NotImplementedException();
             }
         }
-        public Task<IEnumerable<AuctionModel>?> GetByClosed()
+        public async Task<AuctionModel?> GetByName(string name)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _httpClient
+                    .GetFromJsonAsync<AuctionModel>($"GetAuctionByName/{name}");
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException();
+            }
         }
-        public Task<IEnumerable<AuctionModel>?> GetByDate(DateTime data)
+        public async Task<IEnumerable<AuctionModel>?> GetCurrent()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _httpClient
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException();
+            }
+        }
+        public async Task<IEnumerable<AuctionModel>?> GetByClosed()
+        {
+            try
+            {
+                return await _httpClient
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException();
+            }
+        }
+        public async Task<IEnumerable<AuctionModel>?> GetByDate(DateTime data)
+        {
+            try
+            {
+                return await _httpClient
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException();
+            }
         }
 
-
-        public Task<IEnumerable<AuctionModel>?> GetByName(string name)
+        public async Task<IEnumerable<AuctionModel>?> GetByPeriod(DateTime dataInicial, DateTime dataFinal)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _httpClient
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public Task<IEnumerable<AuctionModel>?> GetByPeriod(DateTime dataInicial, DateTime dataFinal)
+        public async Task<IEnumerable<AuctionModel>?> GetByProgrammed()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _httpClient
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException();
+            }
         }
-
-        public Task<IEnumerable<AuctionModel>?> GetByProgrammed()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<AuctionModel>?> GetCurrent()
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<AuctionModel?> ChangeAuction(int id, AuctionModel leilao)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _httpClient
+                    .GetFromJsonAsync<AuctionModel>($"Auction/GetAuctionById/{id}");
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public Task<AuctionModel?> CreateNewAuction(AuctionModel novoLeilao)
+        public async Task<AuctionModel?> CreateNewAuction(AuctionModel novoLeilao)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _httpClient
+                    .GetFromJsonAsync<AuctionModel>($"Auction/GetAuctionById/");
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public Task<string> DeleteAuction(int id)
+        public async Task<string?> DeleteAuction(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                //return await _httpClient
+                //    .GetFromJsonAsync<string($"Auction/GetAuctionById/{id}");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

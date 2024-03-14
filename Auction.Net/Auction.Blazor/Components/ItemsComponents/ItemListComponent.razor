@@ -1,0 +1,52 @@
+﻿@inject IManageAuctionService manageAuctionService
+@inject NavigationManager navigation
+
+@if (Auction == null)
+{
+    <p>Não Foram Encontrados Itens Para Esse Leilão</p>
+}
+else
+{
+    <h2>Items do @Auction.Name</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Marca</th>
+                <th>Condição</th>
+                <th>Preço Base</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Auction.Items)
+            {
+                CountPlus();
+                <tr>
+                    <td>@count</td>
+                    <td>@item.Name</td>
+                    <td>@item.Brand</td>
+                    <td>@item.Condition</td>
+                    <td>@item.BasePrice</td>
+                    <td><button oncancel="@(()=> Bid())">Dar Lance</button></td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [CascadingParameter] public AuctionModel Auction { get; set; }
+    [Parameter] public int ItemId { get; set; }
+    public int count = 0;
+
+    public void Bid()
+    {
+
+    }
+    public void CountPlus() => count++;
+
+}

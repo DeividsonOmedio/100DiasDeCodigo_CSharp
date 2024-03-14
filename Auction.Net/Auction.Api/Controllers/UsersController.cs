@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Auction.Api.Controllers
 {
 
-    [ServiceFilter(typeof(AuthenticationUserAttributes))]
+    [ServiceFilter(typeof(AuthenticationAdminAttributes))]
     public class UsersController(IUsersService usersService) : GenericsController
     {
         private readonly IUsersService _usersService = usersService;
@@ -17,33 +17,33 @@ namespace Auction.Api.Controllers
         [HttpGet("GetAllUsers")]
         [ProducesResponseType(typeof(UserModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public IActionResult GetAllUsers()
+        public async Task<ActionResult<List<UserModel>>> GetAllUsers()
         {
-            var result = _usersService.GetAllUsers();
+            var result = await _usersService.GetAllUsers();
             if (result == null) return NoContent();
             return Ok(result);
         }
 
-        [HttpGet("GetUserById")]
-        public IActionResult GetUserById(int id)
+        [HttpGet("GetUserById/{idUser:int}")]
+        public IActionResult GetUserById(int idUser)
         {
-            var result = _usersService.GetUserById(id);
+            var result = _usersService.GetUserById(idUser);
             if (result == null) return NoContent();
             return Ok(result);
         }
 
-        [HttpGet("GetUserByName")]
-        public IActionResult GetUserByName(string name)
+        [HttpGet("GetUserByName/{nameUser:alpha}")]
+        public IActionResult GetUserByName(string nameUser)
         {
-            var result = _usersService.GetByName(name);
+            var result = _usersService.GetByName(nameUser);
             if (result == null) return Ok("Usuário não encontrado");
             return Ok(result);
         }
 
-        [HttpGet("GetUserByEmail")]
-        public IActionResult GetByEmail(string email)
+        [HttpGet("GetUserByEmail/{emailUser:alpha}")]
+        public IActionResult GetByEmail(string emailUser)
         {
-            var result = _usersService.GetByEmail(email);
+            var result = _usersService.GetByEmail(emailUser);
             if (result == null) return Ok("Usuário não encontrado");
             return Ok(result);
         }
@@ -63,24 +63,24 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPatch("ChangeEmailUer")]
-        public IActionResult ChangeEmailUer(int id, string email)
+        [HttpPatch("ChangeEmailUer/{idUser:int}/{emailUser:alpha}")]
+        public IActionResult ChangeEmailUer(int idUser, string emailUser)
         {
-            var result = _usersService.ChangeEmailUer(id, email);
+            var result = _usersService.ChangeEmailUer(idUser, emailUser);
             return Ok(result);
         }
 
-        [HttpPatch("ChangePasswordUser")]
-        public IActionResult ChangePasswordUser(int id, string senha)
+        [HttpPatch("ChangePasswordUser/{idUser:int}/{passwordUser:alpha}")]
+        public IActionResult ChangePasswordUser(int idUser, string passwordUser)
         {
-            var result = _usersService.ChangePasswordUser(id, senha);
+            var result = _usersService.ChangePasswordUser(idUser, passwordUser);
             return Ok(result);
         }
 
-        [HttpDelete("DeleteUser")]
-        public IActionResult DeleteUser(int id)
+        [HttpDelete("DeleteUser/{idUser:int}")]
+        public IActionResult DeleteUser(int idUser)
         {
-            var result = _usersService.DeleteUser(id);
+            var result = _usersService.DeleteUser(idUser);
             return Ok(result);
         }
     }

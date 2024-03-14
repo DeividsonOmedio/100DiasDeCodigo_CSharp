@@ -2,56 +2,12 @@
 @inject IManageAuctionService manageAuctionService
 
 <PageTitle>Dashboard</PageTitle>
-<h1>Dashboard</h1>
-<p>Lista de Leilôes</p>
-@if (Auction == null)
+
+<Auction.Blazor.Components.AuctionComponents.AuctionList Auction="@Auction"></Auction.Blazor.Components.AuctionComponents.AuctionList>
+
+@code 
 {
-    <p><em>Loading...</em></p>
-}
-else
-{
-    @if (Auction.Count() > 0)
-    {
-        @foreach (var auction in Auction)
-        {
-            @if (ExibirAuctions)
-            {
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Inicio</th>
-                            <th>Fim</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>   
-                        <tr>
-                            <td>@auction.Name</td>
-                            <td>@auction.Starts</td>
-                            <td>@auction.Ends</td>
-                            <td><a href="/item/@auction.Id">Itens</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            }            
-        }
-    }
-}
-@code {
-    public IEnumerable<AuctionModel>? Auction{ get; set; }
-    public bool ExibirAuctions = true;
-   
+    public IEnumerable<AuctionModel>? Auction{ get; set; }   
 
-    protected override async Task OnInitializedAsync()
-    {
-        Auction = await manageAuctionService.GetAll();
-    }
-
-    public void CarregarItens(List<ItemModel> item)
-    {
-        
-        ExibirAuctions = false;
-
-    }
+    protected override async Task OnInitializedAsync() => Auction = await manageAuctionService.GetAll();
 }

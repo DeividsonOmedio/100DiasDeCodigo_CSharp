@@ -34,7 +34,7 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
         [HttpGet("GetAuctionCurrent")]
-        public async Task<ActionResult<List<AuctionModel>>> GetAuctionCurrent(int id)
+        public async Task<ActionResult<List<AuctionModel>>> GetAuctionCurrent()
         {
             var result = await _updateAuctionService.GetCurrent();
             if (result == null)
@@ -42,19 +42,10 @@ namespace Auction.Api.Controllers
 
             return Ok(result);
         }
-        [HttpGet("GetAuctionByName")]
-        public IActionResult GetAuctionByName(string name)
+        [HttpGet("GetAuctionByName/{name}")]
+        public async Task<ActionResult<AuctionModel>?> GetAuctionByName(string name)
         {
-            var result = _updateAuctionService.GetByName(name);
-            if (result == null)
-                return NoContent();
-
-            return Ok(result);
-        }
-        [HttpGet("GetCurrentAuction")]
-        public IActionResult GetCurrentAuction()
-        {
-            var result = _updateAuctionService.GetCurrent();
+            var result = await _updateAuctionService.GetByName(name);
             if (result == null)
                 return NoContent();
 

@@ -4,6 +4,6 @@ namespace Auction.Blazor.Services.Interfaces
 {
     public interface ICreateOfferService
     {
-        Task<OfferModel> Execute();
+        Task<OfferModel> Execute(int itemId, RequestCreateOfferJson request);
     }
 }

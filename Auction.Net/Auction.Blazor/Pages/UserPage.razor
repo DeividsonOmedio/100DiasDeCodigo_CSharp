@@ -1,0 +1,55 @@
+﻿@page "/user"
+@inject IManageUsersService manageUserService
+<h3>Usuarios</h3>
+
+
+@if (User == null)
+{
+    <p>Não Foram Encontrados Itens Para Esse Leilão</p>
+}
+else
+{
+    <h2>Usuaros</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Tipo</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var user in User)
+            {
+                CountPlus();
+                <tr>
+                    <td>@count</td>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                    <td>@user.Type</td>
+                    <td><button oncancel="@(()=> Edit())">Editar</button></td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
+@code {
+    public IEnumerable<UserModel>? User { get; set; }
+    public int count = 0;
+
+    protected override async Task OnInitializedAsync() 
+    {
+        User = await manageUserService.GetAllUsers();
+    }
+
+    public void CountPlus() => count++;
+    public void Edit()
+    {
+        
+    }
+}

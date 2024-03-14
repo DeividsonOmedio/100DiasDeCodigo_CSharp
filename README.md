@@ -119,7 +119,6 @@ O Blazor é uma ferramenta que acho super interessante e que tem um potencial en
 Criei as interfaces, os serviços, a injeção de dependência e comecei de fato a desenvolver a interface do usuário.
 
 Dia 22/100
-
 Construção de API Rest com C# - Continuação
 Hoje criei a interface para visualizar os leiloes criados, e um componente para visualizar os itens de algum leilão especifico.
 Gostaria de frisar a importância de fazer o front-end(ou pelo menos entender um pouco de quem vai utilizar o serviço criado). Durante a construção da api eu fiz testes com o swagger, com postman e xunit com sucesso, porém ao fazer a solicitação a api utilizando o blazor tive problemas, depurei, demorei algum tempo pra entender o problema e no final precisei fazer um ajuste na api para que tudo funcionasse da melhor forma.
@@ -128,3 +127,13 @@ Dia 23/100
 Construção de API Rest com C# - Continuação
 Está tomando forma...
 Hoje foquei na listagem dos leilões e seus itens, Trabalhei com a divisão dos componentes, também com os Data Bindig e cascading parameter buscando diminuir as chamadas a api.
+
+Dia 24/100
+Construção de API Rest com C# - Continuação
+Hoje foquei em construir as demais classes de serviços para o front-end da aplicação, sempre buscando formas de deixar o código mais clean, facilitando uma futura manutenção e compreensão de quem for analisa-lo.
+Ajustei também alguns retornos da api, algo que vi que poderia ser melhorado quando testei no front-end a busca pelos leilões, buscando facilitar a vida de quem vai consumir a api.
+
+Dia 25/100
+Construção de API Rest com C# - Continuação
+Hoje trabalhei na parte de autenticação do usuário, criei uma classe que a partir do login, chama o endpoint da api que gera o token jwt e com esse token faz a autenticação do usuário para que ele possa fazer o uso da api de acordo com sua função.
+A terceira imagem mostra algo comum no desenvolvimento, na primeira vez que tentei chamar a api numa parte que precisava de autenticação, recebi um erro de não autorizado e por isso não consegui acessar a página. Logicamente, esse erro vai ser tratado para que o usuário seja direcionado a página de login/cadastro ao invés de receber um erro.
