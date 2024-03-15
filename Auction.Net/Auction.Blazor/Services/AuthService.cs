@@ -9,10 +9,8 @@ namespace Auction.Blazor.Services
     {
         public HttpClient _httpClient = httpClient;
 
-
         public AuthenticationHeaderValue TokenAuthentication(string token)
         {
-
             var response = _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("X-Auth-Token", "Bearer " + token);
             return response;
         }

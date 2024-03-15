@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entities.Entities
+﻿namespace Entities.Entities
 {
     public class AuctionModel
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        public DateTime Starts { get; set; }
-        public DateTime Ends { get; set; }
+        public DateTime Starts { get; set; } = DateTime.Now;
+        public DateTime Ends { get; set; } = DateTime.Now.AddDays(7);
         public List<ItemModel> Items { get; set; } = [];
     }
 }

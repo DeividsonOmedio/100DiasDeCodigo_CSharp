@@ -122,8 +122,8 @@ namespace Auction.Blazor.Services
         {
             try
             {
-                return await _httpClient
-                    .GetFromJsonAsync<AuctionModel>($"Auction/GetAuctionById/");
+                var response = await _httpClient.PostAsJsonAsync<AuctionModel>("Auction/CreateAuction", novoLeilao);
+                return await response.Content.ReadFromJsonAsync<AuctionModel>();
             }
             catch (Exception ex)
             {

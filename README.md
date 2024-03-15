@@ -137,3 +137,8 @@ Dia 25/100
 Construção de API Rest com C# - Continuação
 Hoje trabalhei na parte de autenticação do usuário, criei uma classe que a partir do login, chama o endpoint da api que gera o token jwt e com esse token faz a autenticação do usuário para que ele possa fazer o uso da api de acordo com sua função.
 A terceira imagem mostra algo comum no desenvolvimento, na primeira vez que tentei chamar a api numa parte que precisava de autenticação, recebi um erro de não autorizado e por isso não consegui acessar a página. Logicamente, esse erro vai ser tratado para que o usuário seja direcionado a página de login/cadastro ao invés de receber um erro.
+
+Dia 26/100
+Construção de API Rest com C# - Continuação
+Criação dos componentes para listar os usuários e para criar novos leilões,
+utilizei o @bind-Value para alterar os valores e defini as validações do formulário utilizando recursos da própria linguagem como o ValidationMessage.

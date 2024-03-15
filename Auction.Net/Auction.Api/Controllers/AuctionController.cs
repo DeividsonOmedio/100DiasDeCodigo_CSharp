@@ -92,13 +92,9 @@ namespace Auction.Api.Controllers
         }
 
         [HttpPost("CreateAuction")]
-        public IActionResult CreateAuction(string Nome, DateTime start, DateTime end)
+        public async Task<ActionResult<AuctionModel>> CreateAuction(AuctionModel newAuction)
         {
-            AuctionModel novoLeilao = new();
-            novoLeilao.Name = Nome;
-            novoLeilao.Starts = start;
-            novoLeilao.Ends = end;
-            var result = _updateAuctionService.CreateNewAuction(novoLeilao);
+            var result = await _updateAuctionService.CreateNewAuction(newAuction);
             if (result == null)
                 return NoContent();
 

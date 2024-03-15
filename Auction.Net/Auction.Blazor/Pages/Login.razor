@@ -13,26 +13,24 @@
     </div>
     <div>
         <label>Senha</label>
-        <InputText @bind-Value="@Password"></InputText>
+        <InputText  @bind-Value="@Password"></InputText>
     </div>
     <button class="btn btn-primary" @onclick="(()=> Logar())">Login</button>
 </div>
 
 
-<p>
-    @token
-</p>
+
 
 
 @code {
     private int currentCount = 0;
     public string Email = "deividson@gmail.com";
-    public string Password = "deividson@123";
+    public string Password = "********************";
     public string token = "";
     public async void Logar()
     {
-
-        token = await AuthService.GetToken(Email, Password);
+        string pass = "deividson@123";
+        token = await AuthService.GetToken(Email, pass);
         if (token != null) navigation.NavigateTo("/user");
     }
 }
