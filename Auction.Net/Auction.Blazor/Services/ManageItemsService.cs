@@ -16,7 +16,7 @@ namespace Auction.Blazor.Services
 
         public async Task<ItemModel?> CreateNewItem(int idAuction, ItemModel newItem)
         {
-            var response = await _httpClient.PatchAsJsonAsync<ItemModel>($"Items/CreateNewItem/{idAuction}", newItem);
+            var response = await _httpClient.PostAsJsonAsync<ItemModel>($"Items/CreateNewItem/{idAuction}", newItem);
             return await response.Content.ReadFromJsonAsync<ItemModel>();
         }
         

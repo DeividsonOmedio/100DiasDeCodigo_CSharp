@@ -1,6 +1,6 @@
 ﻿@page "/createauction"
 
-<h2>AuctionCreate</h2>
+<h2>Criar Leilão</h2>
 
 <EditForm Model="@Auction" OnValidSubmit="CreateAuction" class="bg-opacity-50" style="font-size: 1rem;">
     <DataAnnotationsValidator />
@@ -45,7 +45,6 @@
     public AuctionModel Auction { get; set; } = new AuctionModel();
     [Parameter] public string ButtonTextSubmit { get; set; } = "Salvar";
     [Parameter] public string ButtonTextCancelar { get; set; } = "Cancelar";
-    public DateTime date = DateTime.Now;
     public async Task CreateAuction()
     {
         await manageAuction.CreateNewAuction(Auction);

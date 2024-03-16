@@ -15,5 +15,6 @@ namespace Entities.Entities
         public int AuctionId { get; set; }
         [JsonIgnore]
         public AuctionModel? Auction { get; set; }
+        public string? Image { get; set; }
     }
 }

@@ -1,14 +1,5 @@
 ﻿@page "/dashboard"
-@inject IManageAuctionService manageAuctionService
-
 <PageTitle>Dashboard</PageTitle>
-<a id="btnCreate" href="/createauction">Criar Leilão</a>
 
-<Auction.Blazor.Components.AuctionComponents.AuctionList Auction="@Auction"></Auction.Blazor.Components.AuctionComponents.AuctionList>
+<Auction.Blazor.Components.AuctionComponents.AuctionList ></Auction.Blazor.Components.AuctionComponents.AuctionList>
 
-@code 
-{
-    public IEnumerable<AuctionModel>? Auction{ get; set; }   
-
-    protected override async Task OnInitializedAsync() => Auction = await manageAuctionService.GetAll();
-}

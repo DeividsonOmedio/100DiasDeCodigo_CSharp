@@ -1,0 +1,98 @@
+﻿@using Entities.Enums
+@inject IManageItemsService manageItems
+@inject NavigationManager navigation
+<h2>Cadastrar Item</h2>
+
+<EditForm Model="@Item" OnValidSubmit="CreateItem" class="bg-opacity-50" style="font-size: 1rem;">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label for="Item.Name">Nome</label>
+            <InputText @bind-Value="Item.Name" class="form-control" />
+            <ValidationMessage For="@(() => Item.Name)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label for="Item.Brand">Descrição</label>
+            <InputTextArea @bind-Value="Item.Brand" class="form-control" />
+            <ValidationMessage For="@(() => Item.Brand)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label for="Item.Condition">Fim</label>
+            <InputSelect @bind-Value="Item.Condition" class="form-control" >
+                @foreach (var condition in Enum.GetValues(typeof(ConditionItemEnum)))
+                {
+                    <option value="@condition">@condition</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => Item.Condition)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label for="Item.BasePrice">Preço Base</label>
+            <InputNumber @bind-Value="Item.BasePrice" class="form-control" />
+            <ValidationMessage For="@(() => Item.BasePrice)" />
+        </div>
+    </div>
+    <div class="form-group row"> 
+            <label form="item">Foto do item</label>
+        <BlazorInputFile.InputFile OnChange="HandleSelection"/>    
+       </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label form="item">Url Imagem</label>
+            <InputText hidden @bind-Value="Item.Image" class="form-control" />
+            <ValidationMessage For="@(() => Item.Image)" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">
+         Salvar
+    </button>
+    <button type="button" class="btn btn-success" @onclick="NavigateToDashboard">
+        Cancelar
+    </button>
+</EditForm>
+@code {
+    private ItemModel Item { get; set; } = new();
+    [Parameter] public int IdAuction { get; set; }
+
+    public async Task CreateItem()
+    {
+        await manageItems.CreateNewItem(IdAuction, Item);
+        await Task.CompletedTask;
+        navigation.NavigateTo("/dashboard");
+    }
+    private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
+    
+    public byte[] ImageUploaded { get; set; }
+    public string imag { get; set; }
+
+
+
+    async Task HandleSelection(IFileListEntry[] files)
+    {
+        var file = files.FirstOrDefault();
+        if (file != null)
+        {
+            var ms = new MemoryStream();
+            await file.Data.CopyToAsync(ms);
+            ImageUploaded = ms.ToArray();
+            var base64 = Convert.ToBase64String(ImageUploaded);
+            var finalStr = string.Format("data:image/jpg;base64,{0}", base64);
+            imag = finalStr;
+            Item.Image = finalStr;
+            ImageUploaded = null;
+        }
+        else
+        {
+            imag = "images/Led_Zeppelin.jpg";
+        }
+
+    }
+
+}

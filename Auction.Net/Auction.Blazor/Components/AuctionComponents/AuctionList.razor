@@ -1,5 +1,7 @@
 ﻿@if(!ExibirItens)
 {
+    <a class="btnCreate" href="/createauction">Criar Leilão</a>
+
     <h3>Lista de Leilões</h3>
     @if (Auction == null)
     {
@@ -42,17 +44,19 @@ else
     </CascadingValue> 
 }
 @code {
-    [Parameter] public IEnumerable<AuctionModel>? Auction { get; set; }
-    public AuctionModel auctionItem { get; set; }
+    [Inject] IManageAuctionService manageAuctionService { get; set; } 
+    public IEnumerable<AuctionModel>? Auction { get; set; }
+    public AuctionModel auctionItem { get; set; } = new();
     public bool ExibirItens = false;
+
+    protected override async Task OnInitializedAsync() => Auction = await manageAuctionService.GetAll();
+
+    public void RecarregarPage() => ExibirItens = false; 
 
     public void PassarItem(AuctionModel auctionIt)
     {
         auctionItem = auctionIt;
         ExibirItens = true;
     }
-    public void RecarregarPage()
-    {
-        ExibirItens = false; 
-    }
+
 }

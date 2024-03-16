@@ -1,0 +1,37 @@
+﻿@inject ICreateOfferService createOfferService
+@inject NavigationManager navigation
+
+
+<h2>Dar Lance</h2>
+
+<div>
+            
+    <EditForm Model="@Offer" OnValidSubmit="CreateOffer" class="bg-opacity-50" style="font-size: 1rem;">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="modal-body">
+        <label for="Offer.Price">Oferta</label>
+        <InputNumber  @bind-Value="Offer.Price" class="form-control" />
+        <ValidationMessage For="@(() =>Offer.Price)" />
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button @onclick="(()=>CreateOffer())" class="btn btn-primary">Save changes</button>
+    </div>
+    </EditForm>
+
+</div>
+    
+@code {
+    public RequestCreateOfferJson Offer { get; set; } = new();
+    [CascadingParameter] public int IdItem { get; set; }
+    int count = 0;
+    public async Task CreateOffer()
+    {
+        await createOfferService.Execute(IdItem, Offer);
+        await Task.CompletedTask;
+        navigation.NavigateTo("/dashboard");
+    }
+    protected override async Task OnInitializedAsync() => count = 0;
+
+}

@@ -101,3 +101,21 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+.btnCreate {
+    color: white;
+    background-color: darkgreen;
+    border: solid 2px green;
+    right: 30px;
+    text-decoration: none;
+    position: absolute;
+    padding: 5px;
+}
+
+.btnCreate:hover {
+    filter: brightness(1.3);
+    padding: 7px;
+    transition: padding .1s;
+}
+.btnCreate:visited{
+    color: #fff;
+}

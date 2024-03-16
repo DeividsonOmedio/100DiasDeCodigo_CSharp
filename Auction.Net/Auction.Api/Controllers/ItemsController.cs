@@ -40,17 +40,17 @@ namespace Auction.Api.Controllers
             if (result == null) return Ok("Id Invalido");
             return Ok(result);
         }
-        [HttpPost("CreateNewItem/({idAuction:int})")]
-        public async Task<ActionResult<ItemModel>> AdicionarNovoItem(int idLeilao, ItemModel novoItem)
+        [HttpPost("CreateNewItem/{idAuction:int}")]
+        public async Task<ActionResult<ItemModel>> CreateNewItem(int idAuction, ItemModel newItem)
         {
-            if (idLeilao == 0) return NoContent();
-            novoItem.AuctionId = idLeilao;
-            var result = await _updateItemsService.CreateNewItem(novoItem);
+            if (idAuction == 0) return NoContent();
+            newItem.AuctionId = idAuction;
+            var result = await _updateItemsService.CreateNewItem(newItem);
             if (result == null) return Ok("Id inválido");
             return Ok(result);
         }
         [HttpPatch("ChangeItem/{idItem:int}")]
-        public IActionResult AlterarItem(int idItem,ItemModel item)
+        public IActionResult ChangeItem(int idItem,ItemModel item)
         {
             //DoTo
             if (item == null) return NoContent();
@@ -59,7 +59,7 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
         [HttpDelete("DeleteItem/{idItem:int}")]
-        public IActionResult DeletarItem(int idItem)
+        public IActionResult DeleteItem(int idItem)
         {
             if (idItem == 0) return Ok("Id Invalido");
             var result = _updateItemsService.DeleteItem(idItem);

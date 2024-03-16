@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "X+lm/39fv4P/lackhmMQeMuwAMRdrSUf034ty8P5esBB8SL7DdBPJy/NMfN6AycSbkTc1qL+Ez1E2IzO6Uz8Kw==",
+  "dgSpecHash": "NKLys2ubwMjRV/G8XVxIuqkNvsNIJPIWvWI4tZKbmD9Nj1vBzQXMHg4hnsVJvXU4470RxA37BouMfEF6mQDyAA==",
   "success": true,
   "projectFilePath": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\Auction.Blazor.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\deividson\\.nuget\\packages\\blazorinputfile\\0.2.0\\blazorinputfile.0.2.0.nupkg.sha512",
     "C:\\Users\\deividson\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\deividson\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\deividson\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

@@ -142,3 +142,7 @@ Dia 26/100
 Construção de API Rest com C# - Continuação
 Criação dos componentes para listar os usuários e para criar novos leilões,
 utilizei o @bind-Value para alterar os valores e defini as validações do formulário utilizando recursos da própria linguagem como o ValidationMessage.
+
+Dia 27/100
+Construção de API Rest com C# - Continuação
+hoje foi dia da criação de mais componentes, utilização do EditForm, do CascadingParameter, alguns bugs, um bom tempo entendendo o porque e pra que.
