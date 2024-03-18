@@ -146,3 +146,8 @@ utilizei o @bind-Value para alterar os valores e defini as validações do formu
 Dia 27/100
 Construção de API Rest com C# - Continuação
 hoje foi dia da criação de mais componentes, utilização do EditForm, do CascadingParameter, alguns bugs, um bom tempo entendendo o porque e pra que.
+
+Dia 28/100
+Construção de API Rest com C# - Continuação
+Hoje continue nos componentes para dar os lances, alguns bugs levaram tempo, mas no final entendi onde podia ser melhorado e agora esta funcionando. O usuário somente quando esta logado pode dar o lance. 
+Ainda falta melhorar o design, mas por enquanto estou focado no funcionamento ideal do sistema.

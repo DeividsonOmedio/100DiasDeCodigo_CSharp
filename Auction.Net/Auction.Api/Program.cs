@@ -75,6 +75,7 @@ builder.Services.AddScoped<IUpdateAuctionService, UpdateAuctionService>();
 builder.Services.AddScoped<IManageOffersService, ManageOffersService>();
 builder.Services.AddScoped<IManageOffersRepository, ManageOffersRepository>();
 builder.Services.AddScoped<ICreateOfferRepository, CreateOfferRepository>();
+builder.Services.AddScoped<ICreateOfferService, CreateOfferService>();
 builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IItemsRepository, ItemsRepository>();
@@ -91,7 +92,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseCors(policy =>
-    policy.WithOrigins("http://localhost:7186", "https://localhost:7186")
+    policy.AllowAnyOrigin()
     .AllowAnyMethod()
     .AllowAnyHeader()
     .WithHeaders(HeaderNames.ContentType)

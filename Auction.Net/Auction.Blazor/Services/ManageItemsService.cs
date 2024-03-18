@@ -28,7 +28,7 @@ namespace Auction.Blazor.Services
 
         public async Task<string?> DeleteItem(int idItem)
         {
-            var response = await _httpClient.DeleteAsync($"DeleteItem/{idItem}");
+            var response = await _httpClient.DeleteAsync($"Items/DeleteItem/{idItem}");
             return response.Content.ToString();
         }
     }

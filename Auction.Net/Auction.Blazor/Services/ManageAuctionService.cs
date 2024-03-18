@@ -14,7 +14,7 @@ namespace Auction.Blazor.Services
             return await _httpClient
                 .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 throw new NotImplementedException();
             }
@@ -26,7 +26,7 @@ namespace Auction.Blazor.Services
                 return await _httpClient
                     .GetFromJsonAsync<AuctionModel>($"Auction/GetAuctionById/{id}");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }
@@ -38,7 +38,7 @@ namespace Auction.Blazor.Services
                 return await _httpClient
                     .GetFromJsonAsync<AuctionModel>($"GetAuctionByName/{name}");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }
@@ -50,7 +50,7 @@ namespace Auction.Blazor.Services
                 return await _httpClient
                 .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }
@@ -62,7 +62,7 @@ namespace Auction.Blazor.Services
                 return await _httpClient
                 .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }
@@ -74,7 +74,7 @@ namespace Auction.Blazor.Services
                 return await _httpClient
                 .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }
@@ -87,7 +87,7 @@ namespace Auction.Blazor.Services
                 return await _httpClient
                 .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }
@@ -100,7 +100,7 @@ namespace Auction.Blazor.Services
                 return await _httpClient
                 .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }
@@ -112,7 +112,7 @@ namespace Auction.Blazor.Services
                 return await _httpClient
                     .GetFromJsonAsync<AuctionModel>($"Auction/GetAuctionById/{id}");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }
@@ -125,7 +125,7 @@ namespace Auction.Blazor.Services
                 var response = await _httpClient.PostAsJsonAsync<AuctionModel>("Auction/CreateAuction", novoLeilao);
                 return await response.Content.ReadFromJsonAsync<AuctionModel>();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }
@@ -139,7 +139,7 @@ namespace Auction.Blazor.Services
                 //    .GetFromJsonAsync<string($"Auction/GetAuctionById/{id}");
                 return null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotImplementedException();
             }

@@ -14,14 +14,11 @@ namespace Auction.Api.Controllers
         private readonly ICreateOfferService _createOfferService = createOfferService;
 
         [ServiceFilter(typeof(AuthenticationUserAttributes))]
-        [HttpPost]
-        [Route("{itemId}")]
-        public IActionResult CreatOffer(
-            [FromRoute] int itemId,
-            [FromBody] RequestCreateOfferJson request)
+        [HttpPost("createoffer/{itemId:int}")]
+        public async Task<ActionResult<OfferModel>> CreatOffer(int itemId, RequestCreateOfferJson request)
         {
-            var result = _createOfferService.Execute(itemId, request);
-            return Created(string.Empty, result);
+            var result = await _createOfferService.Execute(itemId, request);
+            return Ok(result);
         }
     }
 }

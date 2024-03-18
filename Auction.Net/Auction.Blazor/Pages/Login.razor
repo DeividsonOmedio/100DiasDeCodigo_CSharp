@@ -24,13 +24,12 @@
 
 @code {
     private int currentCount = 0;
-    public string Email = "deividson@gmail.com";
-    public string Password = "********************";
-    public string token = "";
+    public string Email = "";
+    public string Password = "";
+    public string? token = "";
     public async void Logar()
     {
-        string pass = "deividson@123";
-        token = await AuthService.GetToken(Email, pass);
+        token = await AuthService.GetToken(Email, Password);
         if (token != null) navigation.NavigateTo("/user");
     }
 }

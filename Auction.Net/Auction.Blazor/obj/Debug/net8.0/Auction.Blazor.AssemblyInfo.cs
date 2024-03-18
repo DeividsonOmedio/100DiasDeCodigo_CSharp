@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Auction.Blazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be7ff1004dd90d471c7a03c17a6ea71658f65b8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+283abc41ea9b55125cdacc24f8915e0baaa9281a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Auction.Blazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Auction.Blazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

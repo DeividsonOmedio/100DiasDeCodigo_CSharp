@@ -11,10 +11,9 @@
         }
         else
         {
+            <h2>Items do @Auction.Name</h2>
             @foreach (var item in Auction.Items)
             {
-                <h2>Items do @Auction.Name
-                </h2>
                 <table class="table">
                     <thead>
                         <tr>
@@ -33,9 +32,9 @@
                             <td>@item.Name</td>
                             <td>@item.Brand</td>
                             <td>@item.Condition</td>
-                            <td>@item.BasePrice</td>
+                            <td>@item.BasePrice.ToString("C1")</td>
                             <td>
-                                <button  @onclick="(()=>DarLance(item.Id))">
+                                <button  @onclick="(()=>DarLance(item))">
                                     Dar Lance
                                 </button>
                             </td>
@@ -55,12 +54,12 @@ else
 }
 else
 {
-<Auction.Blazor.Components.Offer.OfferCreate ></Auction.Blazor.Components.Offer.OfferCreate>
+<Auction.Blazor.Components.Offer.OfferCreate Item="@Item"></Auction.Blazor.Components.Offer.OfferCreate>
 }
 @code {
-    [CascadingParameter] public AuctionModel Auction { get; set; }
+    [CascadingParameter] public AuctionModel Auction { get; set; } = new();
     public int count = 0;
-    public int IdItem { get; set; }
+    public ItemModel Item { get; set; } = new();
     private bool AddItems = false;
     public bool Exibir = false;
     public void Bid()
@@ -70,9 +69,9 @@ else
     public void CountPlus() => count++;
     public void AddItem() => AddItems = true;
 
-    public void DarLance(int idItem)
+    public void DarLance(ItemModel item)
     {
-        IdItem = idItem;
+        Item = item;
         Exibir = true;
     }
   
