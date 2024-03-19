@@ -12,7 +12,6 @@ namespace Infra.Repository
 
         public async Task<OfferModel> Execute(int itemId, RequestCreateOfferJson request)
         {
-
             var usuario = _userLogged.User();
 
             var offer = new OfferModel

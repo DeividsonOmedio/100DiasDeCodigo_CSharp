@@ -1,15 +1,15 @@
-﻿using Domain.Interfaces.RepositoryInterfaces;
+﻿using Domain.Interfaces;
+using Domain.Interfaces.RepositoryInterfaces;
 using Entities.Entities;
 using Infra.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Repository
 {
-    public class AuctionRepository : IAuctionRepository
+    public class AuctionRepository(AuctionDbContext auctionDbContext, ILoggedUser userLogged) : IAuctionRepository
     {
-        private readonly AuctionDbContext _auctionDbContext;
-
-        public AuctionRepository(AuctionDbContext auctionDbContext) => _auctionDbContext = auctionDbContext;
+        private readonly AuctionDbContext _auctionDbContext = auctionDbContext;
+        private readonly ILoggedUser _userLogged = userLogged;
 
         public async Task<List<AuctionModel>?> GetAll()
         {
@@ -131,7 +131,6 @@ namespace Infra.Repository
             }
         }
 
-
         public async Task<AuctionModel?> ChangeAuction(int id, AuctionModel leilao)
         {
             var result = await _auctionDbContext.Auctions.FirstOrDefaultAsync(auction => auction.Id == id);
@@ -153,6 +152,8 @@ namespace Infra.Repository
 
         public async Task<AuctionModel?> CreateNewAuction(AuctionModel novoLeilao)
         {
+            var usuario = _userLogged.User();
+            novoLeilao.UserId = usuario.Id;
             try
             {
                 await _auctionDbContext.Auctions.AddAsync(novoLeilao);
@@ -164,7 +165,6 @@ namespace Infra.Repository
                 return null;
             }
         }
-
         public async Task<string> DeleteAuction(int id)
         {
             var result = await _auctionDbContext.Auctions.FirstOrDefaultAsync(auction => auction.Id == id);

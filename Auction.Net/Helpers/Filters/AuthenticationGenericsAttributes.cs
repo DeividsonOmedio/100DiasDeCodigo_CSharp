@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Helpers.Filters
 {
@@ -24,14 +19,10 @@ namespace Helpers.Filters
                     context.Result = new UnauthorizedObjectResult("Token is missing");
                     return;
                 }
-
                 var idUser = TokenFilter.DecodeJwtToken(token);
-
                 var result = _tokenFilter.GetUser(idUser);
-
                 if (result == null)
                     context.Result = new UnauthorizedObjectResult("not valid");
-
             }
             catch (Exception ex)
             {

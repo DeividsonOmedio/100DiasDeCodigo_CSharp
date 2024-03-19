@@ -19,9 +19,6 @@
 </div>
 
 
-
-
-
 @code {
     private int currentCount = 0;
     public string Email = "";
@@ -30,6 +27,6 @@
     public async void Logar()
     {
         token = await AuthService.GetToken(Email, Password);
-        if (token != null) navigation.NavigateTo("/user");
+        if (token != null) navigation.NavigateTo("/dashboard");
     }
 }

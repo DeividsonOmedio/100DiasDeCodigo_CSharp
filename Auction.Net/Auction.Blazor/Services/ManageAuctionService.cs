@@ -92,7 +92,6 @@ namespace Auction.Blazor.Services
                 throw new NotImplementedException();
             }
         }
-
         public async Task<IEnumerable<AuctionModel>?> GetByProgrammed()
         {
             try
@@ -117,7 +116,6 @@ namespace Auction.Blazor.Services
                 throw new NotImplementedException();
             }
         }
-
         public async Task<AuctionModel?> CreateNewAuction(AuctionModel novoLeilao)
         {
             try
@@ -130,14 +128,12 @@ namespace Auction.Blazor.Services
                 throw new NotImplementedException();
             }
         }
-
         public async Task<string?> DeleteAuction(int id)
         {
             try
             {
-                //return await _httpClient
-                //    .GetFromJsonAsync<string($"Auction/GetAuctionById/{id}");
-                return null;
+                return await _httpClient
+                    .GetFromJsonAsync<string>($"Auction/GetAuctionById/{id}");
             }
             catch (Exception)
             {

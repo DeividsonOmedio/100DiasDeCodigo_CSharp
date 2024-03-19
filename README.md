@@ -151,3 +151,9 @@ Dia 28/100
 Construção de API Rest com C# - Continuação
 Hoje continue nos componentes para dar os lances, alguns bugs levaram tempo, mas no final entendi onde podia ser melhorado e agora esta funcionando. O usuário somente quando esta logado pode dar o lance. 
 Ainda falta melhorar o design, mas por enquanto estou focado no funcionamento ideal do sistema.
+
+Dia 29/100
+Construção de API Rest com C# - Continuação
+Hoje comecei a trabalhar na parte de autorização do no front-end, o intuído é de que cada nível de usuário possa acessar somente aquilo que lhe compete. Para isso no back-end ao cadastrar o usuário é necessário passar um atribuído de categoria do usuario, essas categorias já foram pré-definidas em enum com três opções. Ao acessar nosso front, o usuário que ainda não logou visualiza um mínimo de informações para que ele seja inspirado a se cadastrar ou logar e assim de acordo com seu nível dentro do sistema, seja direcionado as telas e funções que lhe competem.
+Obs.: O usuário ao se cadastrar possui automaticamente o nível "stantard", podem depois chegar ao nível de vip. 
+

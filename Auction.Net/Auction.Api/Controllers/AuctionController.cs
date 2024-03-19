@@ -1,17 +1,15 @@
 ﻿using Domain.Interfaces.ServicesInterfaces;
 using Entities.Entities;
+using Helpers.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Auction.Api.Controllers
 {
-
-    public class AuctionController : GenericsController
+    [Route("[controller]")]
+    [ApiController]
+    public class AuctionController(IUpdateAuctionService updateAuctionService) : ControllerBase
     {
-
-        private readonly IUpdateAuctionService _updateAuctionService;
-
-        public AuctionController(IUpdateAuctionService updateAuctionService) => _updateAuctionService = updateAuctionService;
-
+       private readonly IUpdateAuctionService _updateAuctionService = updateAuctionService;
 
         [HttpGet("GetAllAuction")]
         [ProducesResponseType(typeof(AuctionModel), StatusCodes.Status200OK)]
@@ -21,7 +19,6 @@ namespace Auction.Api.Controllers
             var result = await _updateAuctionService.GetAll();
             if (result == null)
                 return NoContent();
-
             return Ok(result);
         }
         [HttpGet("GetAuctionById/{id:int}")]
@@ -30,7 +27,6 @@ namespace Auction.Api.Controllers
             var result = await _updateAuctionService.GetById(id);
             if (result == null)
                 return NoContent();
-
             return Ok(result);
         }
         [HttpGet("GetAuctionCurrent")]
@@ -39,7 +35,6 @@ namespace Auction.Api.Controllers
             var result = await _updateAuctionService.GetCurrent();
             if (result == null)
                 return NoContent();
-
             return Ok(result);
         }
         [HttpGet("GetAuctionByName/{name}")]
@@ -57,7 +52,6 @@ namespace Auction.Api.Controllers
             var result = _updateAuctionService.GetByDate(data);
             if (result == null)
                 return Ok("Não há Leilões nessa data");
-
             return Ok(result);
         }
 
@@ -67,7 +61,6 @@ namespace Auction.Api.Controllers
             var result = _updateAuctionService.GetByPeriod(dataInicial, dataFinal);
             if (result == null)
                 return Ok("Não há Leilões neste período");
-
             return Ok(result);
         }
 
@@ -77,7 +70,6 @@ namespace Auction.Api.Controllers
             var result = _updateAuctionService.GetByProgrammed();
             if (result == null)
                 return Ok("Não há Leilões Ativos No Momento");
-
             return Ok(result);
         }
 
@@ -87,19 +79,18 @@ namespace Auction.Api.Controllers
             var result = _updateAuctionService.GetByClosed();
             if (result == null)
                 return Ok("Não há Leilões Ativos No Momento");
-
             return Ok(result);
         }
-
+        [ServiceFilter(typeof(AuthenticationGenericsAttributes))]
         [HttpPost("CreateAuction")]
         public async Task<ActionResult<AuctionModel>> CreateAuction(AuctionModel newAuction)
         {
             var result = await _updateAuctionService.CreateNewAuction(newAuction);
             if (result == null)
                 return NoContent();
-
             return Ok(result);
         }
+        [ServiceFilter(typeof(AuthenticationGenericsAttributes))]
         [HttpPut("ChangeDataAuction")]
         public IActionResult ChangeDataAuction(int id, AuctionModel leilao)
         {
@@ -107,6 +98,7 @@ namespace Auction.Api.Controllers
             if (result == null) return NotFound("Não encontramos o ID informado");
             return Ok(result);
         }
+        [ServiceFilter(typeof(AuthenticationGenericsAttributes))]
         [HttpPut("DeleteAuction")]
         public IActionResult DeleteAuction(int id)
         {
