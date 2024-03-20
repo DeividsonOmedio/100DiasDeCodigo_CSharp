@@ -13,7 +13,6 @@ namespace Helpers.Filters
             try
             {
                 var token = TokenFilter.TokenOnRequest(context.HttpContext);
-
                 if (string.IsNullOrEmpty(token))
                 {
                     context.Result = new UnauthorizedObjectResult("Token is missing");

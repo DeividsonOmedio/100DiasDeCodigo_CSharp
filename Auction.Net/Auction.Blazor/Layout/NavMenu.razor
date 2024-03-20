@@ -1,4 +1,8 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject IAuthService authService
+@inject NavigationManager navigation
+<AuthorizeView>
+    <Authorized>
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Auction.Blazor</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -6,7 +10,6 @@
         </button>
     </div>
 </div>
-
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
         <div class="nav-item px-3">
@@ -20,20 +23,31 @@
             </NavLink>
         </div>
         <div class="nav-item px-3">
+                    <button @onclick="(()=> Logout())">Logout</button><span>@context.User.Identity.Name!</span>
+        </div>
+    </nav>
+</div>
+    </Authorized>
+<NotAuthorized>
+        <div class="nav-item px-3">
             <NavLink class="nav-link" href="login">
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Login
             </NavLink>
         </div>
-    </nav>
-</div>
+
+</NotAuthorized>
+</AuthorizeView>
 
 @code {
     private bool collapseNavMenu = true;
-
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+    public void Logout()
+    {
+        authService.Logout();
+        navigation.NavigateTo("/");
     }
 }

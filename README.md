@@ -157,3 +157,6 @@ Construção de API Rest com C# - Continuação
 Hoje comecei a trabalhar na parte de autorização do no front-end, o intuído é de que cada nível de usuário possa acessar somente aquilo que lhe compete. Para isso no back-end ao cadastrar o usuário é necessário passar um atribuído de categoria do usuario, essas categorias já foram pré-definidas em enum com três opções. Ao acessar nosso front, o usuário que ainda não logou visualiza um mínimo de informações para que ele seja inspirado a se cadastrar ou logar e assim de acordo com seu nível dentro do sistema, seja direcionado as telas e funções que lhe competem.
 Obs.: O usuário ao se cadastrar possui automaticamente o nível "stantard", podem depois chegar ao nível de vip. 
 
+Dia 30/100
+Construção de API Rest com C# - Continuação
+Hoje continuei a parte de autenticação no blazor, criei uma classe que recebe o token vindo da api, salva no localStorage do navegador e recupera os parâmetros desse token para que o usuário seja autorizado na aplicação, em seguida utilizei a tag <Authorized> para controlar a renderização dos componentes de acordo com seus status de autenticação.

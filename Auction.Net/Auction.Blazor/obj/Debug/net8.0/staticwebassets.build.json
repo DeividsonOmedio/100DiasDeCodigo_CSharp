@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kHa/fvi9a2q81b+aq5SnsUSpjVZ2A5c8SPWyKa0XqLw=",
+  "Hash": "U0YUr/GVb7W7r6+h/rzoQGRYQ4XkD8ojTordlIzTOPY=",
   "Source": "Auction.Blazor",
   "BasePath": "/",
   "Mode": "Root",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\deividson\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.1\\build\\net8.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm",
+      "SourceId": "Auction.Blazor",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\webcil\\Blazored.LocalStorage.wasm"
     },
     {
       "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\BlazorInputFile.wasm",
@@ -452,6 +471,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\webcil\\Microsoft.AspNetCore.Authorization.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.wasm",
+      "SourceId": "Auction.Blazor",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\webcil\\Microsoft.AspNetCore.Components.Authorization.wasm"
     },
     {
       "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.wasm",
@@ -7883,6 +7921,25 @@
       "OriginalItemSpec": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.Cryptography.Algorithms.wasm"
     },
     {
+      "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\compressed\\gdww3zs592.gz",
+      "SourceId": "Auction.Blazor",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm"
+    },
+    {
       "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\compressed\\go6c7p81nc.gz",
       "SourceId": "Auction.Blazor",
       "SourceType": "Computed",
@@ -8565,6 +8622,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.ThreadPool.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\compressed\\ktsjbahkx6.gz",
+      "SourceId": "Auction.Blazor",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.wasm"
     },
     {
       "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\compressed\\kwp8cek09f.gz",

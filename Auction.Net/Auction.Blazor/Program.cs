@@ -1,6 +1,9 @@
 using Auction.Blazor;
 using Auction.Blazor.Services;
 using Auction.Blazor.Services.Interfaces;
+using BlazorAppAgenda.Client;
+using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -19,5 +22,7 @@ builder.Services.AddScoped<IManageAuctionService, ManageAuctionService>();
 builder.Services.AddScoped<IManageItemsService, ManageItemsService>();
 builder.Services.AddScoped<IManageUsersService, ManageUsersService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-
+builder.Services.AddScoped<AuthenticationStateProvider, ApiAuthenticationStateProvider>();
+builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddAuthorizationCore();
 await builder.Build().RunAsync();
