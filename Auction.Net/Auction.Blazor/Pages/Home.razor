@@ -4,6 +4,22 @@
 
 <h1>Leilões</h1>
 
-<h4>Bem Vindo ao melhor sistema de Leilão online</h4>
-<p>Aqui você pode criar leilões, Gerencia-los e também coferir os leilões ativos e dar seus lances</p>
-<p>Comece Hoje mesmo a usufruir!!!</p>
+
+<br />
+<AuthorizeView Roles="administrator">
+    <Authorized>
+    <p>Aqui só visualiza porque voce é admin</p>
+    </Authorized>
+    <NotAuthorized>
+        <p>Voce não é admin, e por isso não visualiza essa parte do conteudo</p>
+    </NotAuthorized>
+</AuthorizeView>
+<AuthorizeView Roles="vip">
+    <Authorized>
+<br />
+<h1>Aqui só visualiza porque voce é vip</h1>
+    </Authorized>
+    <NotAuthorized>
+        <p>Voce não é vip, e por isso não visualiza essa parte do conteudo</p>
+    </NotAuthorized>
+</AuthorizeView>

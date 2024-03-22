@@ -1,0 +1,52 @@
+﻿@page "/sign"
+@inject IManageUsersService userService
+@inject NavigationManager navigation
+
+<PageTitle>Sign</PageTitle>
+
+<h1>Cadastre-se</h1>
+
+
+<EditForm Model="@User" OnValidSubmit="SignIn" class="bg-opacity-50" style="font-size: 1rem;">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label for="Auction.Name">Nome</label>
+            <InputText @bind-Value="User.Name" class="form-control" />
+            <ValidationMessage For="@(() => User.Name)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label for="Auction.Name">E-mail</label>
+            <InputText @bind-Value="User.Email" class="form-control" />
+            <ValidationMessage For="@(() => User.Email)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <Auction.Blazor.Components.Shared.InputPassword class="input" Title="Password" @bind-Value="@User.Password"></Auction.Blazor.Components.Shared.InputPassword>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">
+        @ButtonTextSubmit
+    </button>
+    <button type="button" class="btn btn-success" @onclick="NavigateToDashboard">
+        @ButtonTextCancelar
+    </button>
+</EditForm>
+
+@code {
+    public UserModel User { get; set; } = new();
+    [Parameter] public string ButtonTextSubmit { get; set; } = "Cadastrar";
+    [Parameter] public string ButtonTextCancelar { get; set; } = "Cancelar";
+    public async Task SignIn()
+    {
+        var result = await userService.CreateUser(User);
+        await Task.CompletedTask;
+
+        navigation.NavigateTo("/dashboard");
+    }
+    private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
+}

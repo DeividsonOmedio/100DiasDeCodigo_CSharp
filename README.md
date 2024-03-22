@@ -160,3 +160,8 @@ Obs.: O usuário ao se cadastrar possui automaticamente o nível "stantard", pod
 Dia 30/100
 Construção de API Rest com C# - Continuação
 Hoje continuei a parte de autenticação no blazor, criei uma classe que recebe o token vindo da api, salva no localStorage do navegador e recupera os parâmetros desse token para que o usuário seja autorizado na aplicação, em seguida utilizei a tag <Authorized> para controlar a renderização dos componentes de acordo com seus status de autenticação.
+
+Dia 32/100
+Construção de API Rest com C# - Continuação
+Algo de interessante no dia de hoje, foi quando me deparei ao criar os componentes de login e de cadastro, o blazor tem EditForm, que é um componente nativo para trabalhar com formulários, porém dentro do EditForm não contem o InputPassword, e com isso eu não conseguia mascarar as senhas. A solução foi criar um componente que herda p InputBase e implementar o método abstrato TryParseValueFromString para mascarar nossa senha, e utilizamos o evento OnChange para atualizarmos o estado do componente.
+
