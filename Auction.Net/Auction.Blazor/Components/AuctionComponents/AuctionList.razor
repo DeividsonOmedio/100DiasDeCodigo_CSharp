@@ -1,6 +1,8 @@
 ﻿@if(!ExibirItens)
 {
-    <a class="btnCreate" href="/createauction">Criar Leilão</a>
+    <AuthorizeView Roles="administrator, vip">
+        <a class="btnCreate" href="/createauction">Criar Leilão</a>
+    </AuthorizeView>
 
     <h3>Lista de Leilões</h3>
     @if (Auction == null)

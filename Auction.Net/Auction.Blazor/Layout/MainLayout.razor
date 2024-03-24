@@ -1,15 +1,27 @@
 ﻿@inherits LayoutComponentBase
-
     <div class="page">
     <div class="sidebar">
         <NavMenu />
     </div>
 
     <main>
-        <div class="top-row px-4">
+
+            
+        <div class="top-row px-4 justify-content-between ">
+        <AuthorizeView Roles="standard">
+                <a class="mx-0" href="#">Se Torne Vip</a>
+        </AuthorizeView>
+            <AuthorizeView Roles="administrator, vip">
+                <h5 class="mx-0">Bem Vindo! <span>@(context.User.Claims.FirstOrDefault(claim => claim.Type == "name")?.Value)</span></h5>
+        </AuthorizeView>
+        <AuthorizeView>
+            <NotAuthorized>
+                    <a class="mx-0" href="login">Entre, é Grátis!</a>
+            </NotAuthorized>
+        </AuthorizeView>
+
             <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
         </div>
-
         <article class="content px-4">
             @Body
         </article>

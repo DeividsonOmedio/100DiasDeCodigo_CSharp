@@ -4,21 +4,21 @@
 <h2>Dar Lance</h2>
 
 <div>
-    <ul class="align-content-center border-1">
-        <li>@Item.Brand</li>
-        <li>@Item.Name</li>
-        <li>@Item.Condition</li>
-        <li>@Item.BasePrice.ToString("C2")</li>
+    <ul class="align-content-center border-1 list-unstyled">
+        <li><span>Nome: </span> @Item.Brand</li>
+        <li><span>Descrição: </span> @Item.Name</li>
+        <li><span>Estado: </span> @Item.Condition</li>
+        <li><span>Preço Base</span> @Item.BasePrice.ToString("C2")</li>
     </ul>
     <EditForm Model="@Offer" OnValidSubmit="CreateOffer" class="bg-opacity-50" style="font-size: 1rem;">
     <DataAnnotationsValidator />
     <ValidationSummary />
-    <div class="modal-body">
+        <div class="modal-body mx-5">
         <label for="Offer.Price">Oferta</label>
         <InputNumber  @bind-Value="Offer.Price" class="form-control w-25" />
         <ValidationMessage For="@(() =>Offer.Price)" />
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer justify-content-lg-start mx-5">
         
             <button @onclick="(()=>CreateOffer())" class="btn btn-primary start-0">Dar Lance</button>
     </div>

@@ -4,7 +4,10 @@
 {
     @if (!AddItems)
     {
-        <button class="btnCreate" @onclick="(()=>AddItem())">Adicionat Item</button>
+        <AuthorizeView Roles="administrator, vip">
+            <button class="btnCreate" @onclick="(()=>AddItem())">Adicionat Item</button>
+        </AuthorizeView>
+
         @if (Auction == null)
         {
             <p>Não Foram Encontrados Itens Para Esse Leilão</p>
@@ -14,29 +17,31 @@
             <h2>Items do @Auction.Name</h2>
             @foreach (var item in Auction.Items)
             {
+               CountPlus();
                 <table class="table">
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Nome</th>
-                            <th>Marca</th>
-                            <th>Condição</th>
-                            <th>Preço Base</th>
-                            <th></th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Condição</th>
+                            <th scope="col">Preço Base</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        CountPlus();
                         <tr>
-                            <td>@count</td>
+                            <td scope="row">@count</td>
                             <td>@item.Name</td>
                             <td>@item.Brand</td>
                             <td>@item.Condition</td>
-                            <td>@item.BasePrice.ToString("C1")</td>
+                            <td>@item.BasePrice.ToString("C2")</td>
                             <td>
-                                <button  @onclick="(()=>DarLance(item))">
-                                    Dar Lance
-                                </button>
+                                <AuthorizeView Roles="standard, vip">
+                                    <button  @onclick="(()=>DarLance(item))">
+                                        Dar Lance
+                                    </button>
+                                </AuthorizeView>
                             </td>
                         </tr>
                     </tbody>

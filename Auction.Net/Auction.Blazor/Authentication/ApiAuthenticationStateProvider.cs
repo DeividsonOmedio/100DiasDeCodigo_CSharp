@@ -91,7 +91,7 @@ namespace BlazorAppAgenda.Client
                 }
             }
             claims.AddRange(keyValuePairs.Select(kvp => new Claim(kvp.Key, kvp.Value.ToString())));
-
+            
                 return claims;
         }
         private byte[] ParseBase64WithoutPadding(string base64)

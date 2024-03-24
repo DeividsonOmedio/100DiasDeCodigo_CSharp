@@ -1,6 +1,13 @@
-body[b-629myw2m1d]{
-    background-color: aquamarine;
+#btnVoltar[b-629myw2m1d] {
+    background-color: #ffffff00;
+    border: none;
+    font-size: xx-large;
+    margin-left: -6px;
+    margin-bottom: 15px
 }
-th[b-629myw2m1d], td[b-629myw2m1d] {
+th:not(:first-child)[b-629myw2m1d], td:not(:first-child)[b-629myw2m1d] {
     width: 15%
+}
+th:first-child[b-629myw2m1d], td:first-child[b-629myw2m1d] {
+    width: 20%
 }

@@ -8,6 +8,10 @@ main[b-4ql40ifed5] {
     flex: 1;
 }
 
+ul[b-4ql40ifed5]{
+    list-style-type: none;
+}
+
 .sidebar[b-4ql40ifed5] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
 }

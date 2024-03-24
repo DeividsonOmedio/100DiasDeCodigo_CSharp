@@ -18,6 +18,7 @@ namespace Helpers.Filters
                 {
                     new Claim("id", employee.Id.ToString()),
                     new Claim("email", employee.Email.ToLower()),
+                    new Claim("name", employee.Name),
                     new Claim(ClaimTypes.Role, employee.Type.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddHours(3),

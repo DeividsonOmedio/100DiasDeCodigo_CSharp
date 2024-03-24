@@ -1,13 +1,24 @@
 /* /Components/AuctionComponents/AuctionList.razor.rz.scp.css */
-body[b-629myw2m1d]{
-    background-color: aquamarine;
+#btnVoltar[b-629myw2m1d] {
+    background-color: #ffffff00;
+    border: none;
+    font-size: xx-large;
+    margin-left: -6px;
+    margin-bottom: 15px
 }
-th[b-629myw2m1d], td[b-629myw2m1d] {
+th:not(:first-child)[b-629myw2m1d], td:not(:first-child)[b-629myw2m1d] {
     width: 15%
 }
+th:first-child[b-629myw2m1d], td:first-child[b-629myw2m1d] {
+    width: 20%
+}
 /* /Components/ItemsComponents/ItemListComponent.razor.rz.scp.css */
-#btnVoltar[b-0ut2g3qacc] {
-    font-size: 2rem;
+
+th:not(:first-child)[b-0ut2g3qacc], td:not(:first-child)[b-0ut2g3qacc] {
+    width: 15%
+}
+th:first-child[b-0ut2g3qacc], td:first-child[b-0ut2g3qacc] {
+    width: 5%
 }
 /* /Layout/MainLayout.razor.rz.scp.css */
 .page[b-4ql40ifed5] {
@@ -18,6 +29,10 @@ th[b-629myw2m1d], td[b-629myw2m1d] {
 
 main[b-4ql40ifed5] {
     flex: 1;
+}
+
+ul[b-4ql40ifed5]{
+    list-style-type: none;
 }
 
 .sidebar[b-4ql40ifed5] {
@@ -171,8 +186,6 @@ main[b-4ql40ifed5] {
         overflow-y: auto;
     }
 }
-/* /Pages/Dashboard.razor.rz.scp.css */
-
 /* /Pages/Login.razor.rz.scp.css */
 body[b-mp5ot86o2c] {
 }

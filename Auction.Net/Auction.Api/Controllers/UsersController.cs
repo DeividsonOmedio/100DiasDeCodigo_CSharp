@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces.ServicesInterfaces;
+﻿using Domain.Interfaces;
+using Domain.Interfaces.ServicesInterfaces;
 using Entities.Entities;
 using Helpers.Filters;
 using Microsoft.AspNetCore.Authorization;
@@ -9,9 +10,10 @@ namespace Auction.Api.Controllers
 {
 
     [ServiceFilter(typeof(AuthenticationAdminAttributes))]
-    public class UsersController(IUsersService usersService) : GenericsController
+    public class UsersController(IUsersService usersService, ILoggedUser loggedUser) : GenericsController
     {
         private readonly IUsersService _usersService = usersService;
+        private readonly ILoggedUser _loggedUser = loggedUser;
 
         [ServiceFilter(typeof(AuthenticationAdminAttributes))]
         [HttpGet("GetAllUsers")]

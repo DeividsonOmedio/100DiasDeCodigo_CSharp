@@ -165,3 +165,11 @@ Dia 32/100
 Construção de API Rest com C# - Continuação
 Algo de interessante no dia de hoje, foi quando me deparei ao criar os componentes de login e de cadastro, o blazor tem EditForm, que é um componente nativo para trabalhar com formulários, porém dentro do EditForm não contem o InputPassword, e com isso eu não conseguia mascarar as senhas. A solução foi criar um componente que herda p InputBase e implementar o método abstrato TryParseValueFromString para mascarar nossa senha, e utilizamos o evento OnChange para atualizarmos o estado do componente.
 
+Dia 33/100
+Construção de API Rest com C# - Continuação
+Hoje trabalhei com uma espécie de "rotas" dentro do front-end, não é bem a parte de roteamento do blazor, por isso as aspas, mas defini tudo oque cada usuário vai visualizar de acordo com o seu nível de permissão. Utilizei o AuthorizeView juntamente com as Roles para ocultar ou exibir componentes específicos, assim limitando ou liberando o acesso do usuário determinadas partes da aplicação.
+Vemos na primeira imagem que está logado um usuário de nível standard e por isso ele não tem acesso ao botão "Criar Leilão", já na segunda imagem, é a mesmo página, porém por ser um usuário Vip, agora já se tem o botão.
+
+Dia 34/100
+Construção de API Rest com C# - Continuação
+Hoje foi dia de ajustes no front-end, pequenos detalhes que fazem a diferença para uma melhor experiência do usuário. 

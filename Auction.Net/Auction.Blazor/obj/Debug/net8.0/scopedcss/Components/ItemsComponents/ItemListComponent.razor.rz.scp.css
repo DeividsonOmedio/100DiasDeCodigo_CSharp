@@ -1,3 +1,7 @@
-#btnVoltar[b-0ut2g3qacc] {
-    font-size: 2rem;
+
+th:not(:first-child)[b-0ut2g3qacc], td:not(:first-child)[b-0ut2g3qacc] {
+    width: 15%
+}
+th:first-child[b-0ut2g3qacc], td:first-child[b-0ut2g3qacc] {
+    width: 5%
 }

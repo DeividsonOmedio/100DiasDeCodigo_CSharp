@@ -1,7 +1,7 @@
 ﻿@inject IAuthService authService
+@inject IManageUsersService manageUser
 @inject NavigationManager navigation
-<AuthorizeView>
-    <Authorized>
+
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Auction.Blazor</a>
@@ -22,23 +22,30 @@
                 <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Dashboard
             </NavLink>
         </div>
-        <div class="nav-item px-3">
-                    <button @onclick="(()=> Logout())">Logout</button><span>@context.User.Identity.Name!</span>
-        </div>
+        <AuthorizeView>
+            <Authorized>
+                <div class="nav-item px-3" @onclick="(()=> Logout())">
+                    <button class="bg-transparent text-light" >
+                        <span class="bi bi-list-nested-nav-menu"  aria-hidden="true"></span>Logout
+                        <br />
+                        <span>@(context.User.Claims.FirstOrDefault(claim => claim.Type == "name")?.Value)</span>
+                    </button>
+                </div>
+            </Authorized>
+            <NotAuthorized>
+                 <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="login">
+                            <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Login
+                    </NavLink>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
     </nav>
 </div>
-    </Authorized>
-<NotAuthorized>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="login">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Login
-            </NavLink>
-        </div>
 
-</NotAuthorized>
-</AuthorizeView>
 
 @code {
+    public UserModel? User { get; set; }
     private bool collapseNavMenu = true;
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
     private void ToggleNavMenu()
@@ -50,4 +57,5 @@
         authService.Logout();
         navigation.NavigateTo("/");
     }
+    
 }
