@@ -1,12 +1,10 @@
 ﻿using Domain.Interfaces.ServicesInterfaces;
-using Domain.Services;
 using Entities.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Auction.Api.Controllers
 {
- 
+
     public class ItemsController : GenericsController
     {
         private readonly IUpdateItemsService _updateItemsService;

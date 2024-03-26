@@ -5,24 +5,8 @@
 <h1>Leilões</h1>
 
 
-<br />
-<AuthorizeView Roles="administrator">
-    <Authorized>
-        <span>@context.User.Claims.FirstOrDefault(claim => claim.Type == "name")</span>
-    <p>Aqui só visualiza porque voce é admin</p>
-        <span>@(context.User.Claims.FirstOrDefault(claim => claim.Type == "name")?.Value)</span>
+<h4>Bem Vindo Ao Sistema De Leilão Online</h4>
 
-    </Authorized>
-    <NotAuthorized>
-        <p>Voce não é admin, e por isso não visualiza essa parte do conteudo</p>
-    </NotAuthorized>
-</AuthorizeView>
-<AuthorizeView Roles="vip">
-    <Authorized>
-<br />
-<h1>Aqui só visualiza porque voce é vip</h1>
-    </Authorized>
-    <NotAuthorized>
-        <p>Voce não é vip, e por isso não visualiza essa parte do conteudo</p>
-    </NotAuthorized>
-</AuthorizeView>
+<p>Aqui você pode criar Leilões, gerencia-los e também dar lances em leilões ativos.</p>
+
+<strong>Comece Hoje Mesmo A Desfrutar!!!</strong>

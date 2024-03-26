@@ -173,3 +173,8 @@ Vemos na primeira imagem que está logado um usuário de nível standard e por i
 Dia 34/100
 Construção de API Rest com C# - Continuação
 Hoje foi dia de ajustes no front-end, pequenos detalhes que fazem a diferença para uma melhor experiência do usuário. 
+
+Dia 35/100
+Construção de API Rest com C# - Continuação
+Reta Final!!!
+Ainda implementando alguns recursos, mas principalmente testando... Hoje corrigi um erro que gerava ao tentar cadastrar u novo usuário, como forma de otimização, a pagina de castro se tornou um componente que se comunica diretamente com a pagina de login e assim que o usuário se cadastra o login já é feito automaticamente e ele é redirecionado ao dashboard.

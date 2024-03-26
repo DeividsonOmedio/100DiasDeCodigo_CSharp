@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Auction.Api.Controllers
 {
 
-    [ServiceFilter(typeof(AuthenticationAdminAttributes))]
+    //[ServiceFilter(typeof(AuthenticationAdminAttributes))]
     public class UsersController(IUsersService usersService, ILoggedUser loggedUser) : GenericsController
     {
         private readonly IUsersService _usersService = usersService;
@@ -27,55 +27,55 @@ namespace Auction.Api.Controllers
         }
 
         [HttpGet("GetUserById/{idUser:int}")]
-        public IActionResult GetUserById(int idUser)
+        public async Task<ActionResult<UserModel>> GetUserById(int idUser)
         {
-            var result = _usersService.GetUserById(idUser);
+            var result = await _usersService.GetUserById(idUser);
             if (result == null) return NoContent();
             return Ok(result);
         }
 
         [HttpGet("GetUserByName/{nameUser:alpha}")]
-        public IActionResult GetUserByName(string nameUser)
+        public async Task<ActionResult<UserModel>> GetUserByName(string nameUser)
         {
-            var result = _usersService.GetByName(nameUser);
+            var result = await _usersService.GetByName(nameUser);
             if (result == null) return Ok("Usuário não encontrado");
             return Ok(result);
         }
 
         [HttpGet("GetUserByEmail/{emailUser:alpha}")]
-        public IActionResult GetByEmail(string emailUser)
+        public async Task<ActionResult<UserModel>> GetByEmail(string emailUser)
         {
-            var result = _usersService.GetByEmail(emailUser);
+            var result = await _usersService.GetByEmail(emailUser);
             if (result == null) return Ok("Usuário não encontrado");
             return Ok(result);
         }
 
         [HttpPost("CreateUser")]
-        public IActionResult CreateUser(UserModel user)
+        public async Task<ActionResult<UserModel>> CreateUser(UserModel user)
         {
-            var result = _usersService.CreateUser(user);
-            if (result.ToString() == "Created") return Ok(user);
+            var result = await _usersService.CreateUser(user);
+            if (result?.ToString() == "Created") return Ok(user);
             return Ok(result);
         }
 
         [HttpPatch("ChangeNameUser")]
-        public IActionResult ChangeNameUser(int id, string name)
+        public async Task<ActionResult<UserModel>> ChangeNameUser(int id, string name)
         {
-            var result = _usersService.ChangeNameUser(id, name);
+            var result = await _usersService.ChangeNameUser(id, name);
             return Ok(result);
         }
 
         [HttpPatch("ChangeEmailUer/{idUser:int}/{emailUser:alpha}")]
-        public IActionResult ChangeEmailUer(int idUser, string emailUser)
+        public async Task<ActionResult<UserModel>> ChangeEmailUer(int idUser, string emailUser)
         {
-            var result = _usersService.ChangeEmailUer(idUser, emailUser);
+            var result = await _usersService.ChangeEmailUer(idUser, emailUser);
             return Ok(result);
         }
 
         [HttpPatch("ChangePasswordUser/{idUser:int}/{passwordUser:alpha}")]
-        public IActionResult ChangePasswordUser(int idUser, string passwordUser)
+        public async Task<ActionResult<UserModel>> ChangePasswordUser(int idUser, string passwordUser)
         {
-            var result = _usersService.ChangePasswordUser(idUser, passwordUser);
+            var result = await _usersService.ChangePasswordUser(idUser, passwordUser);
             return Ok(result);
         }
 

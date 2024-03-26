@@ -1,5 +1,4 @@
-﻿@page "/sign"
-@inject IManageUsersService userService
+﻿@inject IManageUsersService userService
 @inject NavigationManager navigation
 
 <PageTitle>Sign</PageTitle>
@@ -39,14 +38,17 @@
 
 @code {
     public UserModel User { get; set; } = new();
+    [Parameter] public EventCallback<UserModel> Login { get; set; }
     [Parameter] public string ButtonTextSubmit { get; set; } = "Cadastrar";
     [Parameter] public string ButtonTextCancelar { get; set; } = "Cancelar";
     public async Task SignIn()
     {
         var result = await userService.CreateUser(User);
         await Task.CompletedTask;
-
-        navigation.NavigateTo("/dashboard");
+        if (result is not null)
+        {
+            await Login.InvokeAsync(User);
+        }
     }
-    private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
+    private void NavigateToDashboard() => navigation.NavigateTo("/");
 }

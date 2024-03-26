@@ -39,17 +39,17 @@
             <ValidationMessage For="@(() => Item.BasePrice)" />
         </div>
     </div>
-    <div class="form-group row"> 
-            <label form="item">Foto do item</label>
+    @*  <div class="form-group row">
+    <label form="item">Foto do item</label>
         <BlazorInputFile.InputFile OnChange="HandleSelection"/>    
        </div>
     <div class="form-group row">
-        <div class="col-sm-4">
+         <div class="col-sm-4">
             <label form="item">Url Imagem</label>
             <InputText hidden @bind-Value="Item.Image" class="form-control" />
             <ValidationMessage For="@(() => Item.Image)" />
-        </div>
-    </div>
+        </div> 
+    </div>*@
     <button type="submit" class="btn btn-success">
          Salvar
     </button>
@@ -65,7 +65,7 @@
     {
         await manageItems.CreateNewItem(IdAuction, Item);
         await Task.CompletedTask;
-        navigation.NavigateTo("/dashboard");
+        navigation.Refresh();
     }
     private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
     
@@ -74,25 +74,25 @@
 
 
 
-    async Task HandleSelection(IFileListEntry[] files)
-    {
-        var file = files.FirstOrDefault();
-        if (file != null)
-        {
-            var ms = new MemoryStream();
-            await file.Data.CopyToAsync(ms);
-            ImageUploaded = ms.ToArray();
-            var base64 = Convert.ToBase64String(ImageUploaded);
-            var finalStr = string.Format("data:image/jpg;base64,{0}", base64);
-            imag = finalStr;
-            Item.Image = finalStr;
-            ImageUploaded = null;
-        }
-        else
-        {
-            imag = "images/Led_Zeppelin.jpg";
-        }
+    // async Task HandleSelection(IFileListEntry[] files)
+    // {
+    //     var file = files.FirstOrDefault();
+    //     if (file != null)
+    //     {
+    //         var ms = new MemoryStream();
+    //         await file.Data.CopyToAsync(ms);
+    //         ImageUploaded = ms.ToArray();
+    //         var base64 = Convert.ToBase64String(ImageUploaded);
+    //         var finalStr = string.Format("data:image/jpg;base64,{0}", base64);
+    //         imag = finalStr;
+    //         Item.Image = finalStr;
+    //         ImageUploaded = null;
+    //     }
+    //     else
+    //     {
+    //         imag = "images/Led_Zeppelin.jpg";
+    //     }
 
-    }
+    //}
 
 }

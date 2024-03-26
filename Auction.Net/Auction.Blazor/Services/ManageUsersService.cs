@@ -22,7 +22,7 @@ namespace Auction.Blazor.Services
 
         public async Task<string?> CreateUser(UserModel usuario)
         {
-            var response = await _httpClient.PostAsJsonAsync<UserModel>("User/CreateUser", usuario);
+            var response = await _httpClient.PostAsJsonAsync<UserModel>("Users/CreateUser", usuario);
             return response.Content.ToString();
         }
 

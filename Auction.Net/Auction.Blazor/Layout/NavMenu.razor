@@ -24,12 +24,11 @@
         </div>
         <AuthorizeView>
             <Authorized>
-                <div class="nav-item px-3" @onclick="(()=> Logout())">
-                    <button class="bg-transparent text-light" >
-                        <span class="bi bi-list-nested-nav-menu"  aria-hidden="true"></span>Logout
-                        <br />
-                        <span>@(context.User.Claims.FirstOrDefault(claim => claim.Type == "name")?.Value)</span>
-                    </button>
+                <div class="nav-item px-0 " @onclick="(()=> Logout())">
+                    <button class="bg-transparent text-light w-100 flex flex-column border-0">
+                        <span class="bi bi-list-nested-nav-menu text-start me-lg-0 m-1 "  aria-hidden="true"></span>Logout
+                        <p class="w-100 mx-lg-5 text-end">@(context.User.Claims.FirstOrDefault(claim => claim.Type == "name")?.Value)</p>
+                    </button>n
                 </div>
             </Authorized>
             <NotAuthorized>

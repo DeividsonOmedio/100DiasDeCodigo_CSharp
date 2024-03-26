@@ -4,6 +4,8 @@
 
 <PageTitle>Login</PageTitle>
 
+@if (!cadastroPage)
+{
 <h1>Login</h1>
 
 <div id="divLogin">
@@ -15,20 +17,39 @@
         <label>Senha</label>
         <InputText  @bind-Value="@Password"></InputText>
     </div>
-    <button class="btn btn-primary" @onclick="(()=> Logar())">Login</button>
+    <div class="flex justify-content-between">
+        <button class="btn btn-primary" @onclick="(()=> Logar())">Login</button>
+           <button class="btn btn-second" @onclick="(()=> Register())">Cadastrar</button>
+    </div>
 </div>
 <div>
-    <a href="/sign"></a>
-</div>
+        <button class="btn btn-second" @onclick="(()=> Register())"></button>
+    </div>
+}
+else
+{
+    <Sign Login="Registered"></Sign>
+}
 
 @code {
     private int currentCount = 0;
     public string Email = "";
     public string Password = "";
     public string? token = "";
+    public bool cadastroPage = false;
     public async void Logar()
     {
         token = await AuthService.GetToken(Email, Password);
         if (token != null) navigation.NavigateTo("/dashboard");
+    }
+    public void Registered(UserModel user)
+    {
+        Email = user.Email;
+        Password = user.Password;
+        Logar();
+    }
+    public void Register()
+    {
+        cadastroPage = true;
     }
 }
