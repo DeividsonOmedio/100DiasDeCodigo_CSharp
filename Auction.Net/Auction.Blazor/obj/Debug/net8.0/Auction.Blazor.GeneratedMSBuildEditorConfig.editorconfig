@@ -26,8 +26,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionByUser.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdWN0aW9uQ29tcG9uZW50c1xBdWN0aW9uQnlVc2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdWN0aW9uQ29tcG9uZW50c1xBdWN0aW9uQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionCurrent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdWN0aW9uQ29tcG9uZW50c1xBdWN0aW9uQ3VycmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Dashboards/AdminDashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXNoYm9hcmRzXEFkbWluRGFzaGJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Dashboards/VipDashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXNoYm9hcmRzXFZpcERhc2hib2FyZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/ItemsComponents/ItemCreate.razor]

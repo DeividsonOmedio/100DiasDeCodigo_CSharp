@@ -31,6 +31,18 @@ namespace Auction.Blazor.Services
                 throw new NotImplementedException();
             }
         }
+        public async Task<IEnumerable<AuctionModel>?> GetByUser(int idUser)
+        {
+            try
+            {
+                return await _httpClient
+                    .GetFromJsonAsync<IEnumerable<AuctionModel>>($"Auction/GetByUser/{idUser}");
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException();
+            }
+        }
         public async Task<AuctionModel?> GetByName(string name)
         {
             try

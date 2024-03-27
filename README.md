@@ -178,3 +178,7 @@ Dia 35/100
 Construção de API Rest com C# - Continuação
 Reta Final!!!
 Ainda implementando alguns recursos, mas principalmente testando... Hoje corrigi um erro que gerava ao tentar cadastrar u novo usuário, como forma de otimização, a pagina de castro se tornou um componente que se comunica diretamente com a pagina de login e assim que o usuário se cadastra o login já é feito automaticamente e ele é redirecionado ao dashboard.
+
+Dia 36/100
+Construção de API Rest com C# - Continuação
+Hoje criei mais alguns componentes seguindo a lógica de visualização apenas o usuário estiver logado e de acordo com o seu nível, utilizei a classe "AuthenticationStateProvider" para recuperar o id do token do usuário autenticado e assim mostrar as informações de leilões referentes a esse usuário.

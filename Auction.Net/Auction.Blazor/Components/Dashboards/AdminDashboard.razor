@@ -1,0 +1,43 @@
+﻿@inject AuthenticationStateProvider AuthenticationStateProvider
+<nav class="navbar navbar-light bg-light">
+    <form class="container-fluid justify-content-start">
+        <button class="btn btn-sm btn-outline-secondary me-2" type="button" @onclick="(()=>ManageView(0))">Leilões Atuais</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button" @onclick="(()=>ManageView(1))">Seus Leilões</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button" @onclick="(()=>ManageView(2))">Todos os Leilões</button>
+    </form>
+</nav>
+@if(view == 0)
+{
+      <AuctionCurrent></AuctionCurrent>
+}
+else if(view == 1)
+{
+    <AuctionByUser IdUser="@idUser"></AuctionByUser>
+}
+else if (view == 2)
+{
+    <AuctionList></AuctionList>
+}
+
+@code {
+    public int view = 0;
+    public int idUser = 0;
+    public void ManageView(int viewActual)
+    {
+        view = viewActual;
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        var idClaim = user.Claims.FirstOrDefault(claim => claim.Type == "id");
+        if (idClaim != null && int.TryParse(idClaim.Value, out int id))
+        {
+            idUser = id;
+        }
+        else
+        {
+            idUser = 0;
+        }
+    }
+}

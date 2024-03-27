@@ -11,6 +11,7 @@ namespace Domain.Interfaces.RepositoryInterfaces
     {
         Task<List<AuctionModel>?> GetAll();
         Task<AuctionModel?> GetById(int id);
+        Task<List<AuctionModel>?> GetByUser(int userId);
         Task<List<AuctionModel>?> GetByName(string name);
         Task<List<AuctionModel>?> GetByDate(DateTime data);
         Task<List<AuctionModel>?> GetByPeriod(DateTime dataInicial, DateTime dataFinal);

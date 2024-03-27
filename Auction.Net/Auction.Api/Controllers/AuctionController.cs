@@ -29,6 +29,14 @@ namespace Auction.Api.Controllers
                 return NoContent();
             return Ok(result);
         }
+        [HttpGet("GetByUser/{idUser:int}")]
+        public async Task<ActionResult<AuctionModel>> GetByUser(int idUser)
+        {
+            var result = await _updateAuctionService.GetByUser(idUser);
+            if (result == null)
+                return NoContent();
+            return Ok(result);
+        }
         [HttpGet("GetAuctionCurrent")]
         public async Task<ActionResult<List<AuctionModel>>> GetAuctionCurrent()
         {

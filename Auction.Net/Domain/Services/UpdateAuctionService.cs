@@ -10,26 +10,20 @@ namespace Domain.Services
 
         public Task<AuctionModel?> ChangeAuction(int id, AuctionModel leilao) =>
             _auctionRepository.ChangeAuction(id, leilao);
-
-
         public Task<AuctionModel?> CreateNewAuction(AuctionModel novoLeilao) =>
             _auctionRepository.CreateNewAuction(novoLeilao);
-
         public Task<string> DeleteAuction(int id) =>
             _auctionRepository.DeleteAuction(id);
-
         public Task<List<AuctionModel>?> GetCurrent() =>
             _auctionRepository.GetCurrent();
-
         public Task<List<AuctionModel>?> GetByClosed() =>
             _auctionRepository.GetByClosed();
-
         public Task<List<AuctionModel>?> GetByDate(DateTime date) =>
             _auctionRepository.GetByDate(date);
-
         public Task<AuctionModel?> GetById(int id) =>
             _auctionRepository.GetById(id);
-
+        public Task<List<AuctionModel>?> GetByUser(int userId) =>
+            _auctionRepository.GetByUser(userId);
         public Task<List<AuctionModel>?> GetByName(string name) =>
             _auctionRepository.GetByName(name);
 

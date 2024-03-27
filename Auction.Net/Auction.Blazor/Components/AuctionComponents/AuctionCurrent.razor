@@ -1,0 +1,64 @@
+﻿<h3>AuctionCurrent</h3>
+
+<AuthorizeView Roles="administrator, vip">
+    <a class="btnCreate" href="/createauction">Criar Leilão</a>
+</AuthorizeView>
+
+<h3>Lista de Leilões</h3>
+@if (Auction == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @if (Auction.Count() > 0)
+    {
+        @foreach (var auction in Auction)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Inicio</th>
+                        <th>Fim</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@auction.Name</td>
+                        <td>@auction.Starts</td>
+                        <td>@auction.Ends</td>
+                        <td><button @onclick="(()=> PassarItem(auction))">Itens</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        }
+    }
+}
+}
+else
+{
+<button @onclick="(() => RecarregarPage())" id="btnVoltar"> &larr; </button>
+<CascadingValue Value="@auctionItem">
+    <Auction.Blazor.Components.ItemsComponents.ItemListComponent></Auction.Blazor.Components.ItemsComponents.ItemListComponent>
+</CascadingValue>
+}
+@code {
+    [Inject] IManageAuctionService manageAuctionService { get; set; }
+    public IEnumerable<AuctionModel>? Auction { get; set; }
+    public AuctionModel auctionItem { get; set; } = new();
+    public bool ExibirItens = false;
+
+    protected override async Task OnInitializedAsync() => Auction = await manageAuctionService.GetCurrent();
+
+    public void RecarregarPage() => ExibirItens = false;
+
+    public void PassarItem(AuctionModel auctionIt)
+    {
+        auctionItem = auctionIt;
+        ExibirItens = true;
+    }
+
+}

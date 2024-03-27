@@ -6,6 +6,7 @@ namespace Auction.Blazor.Services.Interfaces
     {
         Task<IEnumerable<AuctionModel>?> GetAll();
         Task<AuctionModel?> GetById(int id);
+        Task<IEnumerable<AuctionModel>?> GetByUser(int idUser);
         Task<AuctionModel?> GetByName(string name);
         Task<IEnumerable<AuctionModel>?> GetCurrent();
         Task<IEnumerable<AuctionModel>?> GetByDate(DateTime data);

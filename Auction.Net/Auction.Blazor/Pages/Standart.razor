@@ -1,4 +1,16 @@
 ﻿@page "/dashboard"
 <PageTitle>Standart</PageTitle>
- 
-<Auction.Blazor.Components.AuctionComponents.AuctionList></Auction.Blazor.Components.AuctionComponents.AuctionList>
+ <AuthorizeView Roles="administrator">
+    <AdminDashboard ></AdminDashboard>
+ </AuthorizeView>
+ <AuthorizeView Roles="vip">
+    <VipDashboard></VipDashboard>
+ </AuthorizeView>
+ <AuthorizeView Roles="standard">
+        <AuctionCurrent></AuctionCurrent>
+ </AuthorizeView>
+ <AuthorizeView>
+     <NotAuthorized>
+         <AuctionCurrent></AuctionCurrent>
+     </NotAuthorized>
+ </AuthorizeView>

@@ -26,8 +26,6 @@ namespace Infra.Repository
                 return null;
             }
         }
-
-
         public async Task<AuctionModel?> GetById(int id)
         {
             try
@@ -36,6 +34,21 @@ namespace Infra.Repository
                     .Auctions
                     .Include(auction => auction.Items)
                     .FirstOrDefaultAsync(auction => auction.Id == id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public async Task<List<AuctionModel>?> GetByUser(int userId)
+        {
+            try
+            {
+                return await _auctionDbContext
+                    .Auctions
+                    .Include(auction => auction.Items)
+                    .Where(auction => auction.UserId == userId)
+                    .ToListAsync();
             }
             catch
             {
