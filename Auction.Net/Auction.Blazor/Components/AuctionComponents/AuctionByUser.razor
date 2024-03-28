@@ -1,46 +1,52 @@
-﻿<h3>AuctionByUser</h3>
-<p>teste</p>
-
-<AuthorizeView Roles="administrator, vip">
-    <a class="btnCreate" href="/createauction">Criar Leilão</a>
-</AuthorizeView>
-
-<h3>Lista de Leilões</h3>
-@if (Auction == null)
+﻿@if (!ExibirItens)
 {
-    <p><em>Loading...</em></p>
-}
-else
-{
-    @if (Auction.Count() > 0)
+    <AuthorizeView Roles="administrator, vip">
+        <a class="btnCreate" href="/createauction">Criar Leilão</a>
+    </AuthorizeView>
+    @if (!editAuction)
     {
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Inicio</th>
-                        <th>Fim</th>
-                        <th></th>
-                    </tr>
-                </thead>
-        @foreach (var auction in Auction)
+        <h3>Lista dos Seus Leilões</h3>
+        @if (Auction == null)
         {
-                <tbody>
-                    <tr>
-                        <td>@auction.Name</td>
-                        <td>@auction.Starts</td>
-                        <td>@auction.Ends</td>
-                        <td><button @onclick="(()=> PassarItem(auction))">Itens</button></td>
-                    </tr>
-                </tbody>
+            <img src="images/loading-gif.gif" />
         }
-            </table>
+        else
+        {
+            @if (Auction.Count() > 0)
+            {
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Inicio</th>
+                            <th>Fim</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    @foreach (var auction in Auction)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@auction.Name</td>
+                                <td>@auction.Starts</td>
+                                <td>@auction.Ends</td>
+                                <td><button @onclick="(()=> EditAuction(auction))">Editar</button></td>
+                                <td><button @onclick="(()=> PassarItem(auction))">Itens</button></td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            }
+        }
+    }
+    else
+    {
+        <ManageAuction Auction="@AuctionEspecific"></ManageAuction>
     }
 }
-}
 else
 {
-<button @onclick="(() => RecarregarPage())" id="btnVoltar"> &larr; </button>
 <CascadingValue Value="@auctionItem">
     <Auction.Blazor.Components.ItemsComponents.ItemListComponent></Auction.Blazor.Components.ItemsComponents.ItemListComponent>
 </CascadingValue>
@@ -49,15 +55,22 @@ else
     [Inject] IManageAuctionService manageAuctionService { get; set; }
     [Parameter] public int IdUser { get; set; }
     public IEnumerable<AuctionModel> Auction { get; set; }
+    public AuctionModel AuctionEspecific { get; set; }
     public AuctionModel auctionItem { get; set; } = new();
     public bool ExibirItens = false;
+    public bool editAuction = false;
+
+    public void EditAuction(AuctionModel auction) 
+    {
+        AuctionEspecific = auction;
+        editAuction = true;
+    }
     protected override async Task OnInitializedAsync()
     {
         Auction = await manageAuctionService.GetByUser(IdUser);
         await Task.CompletedTask;
     }
 
-    public void RecarregarPage() => ExibirItens = false;
 
     public void PassarItem(AuctionModel auctionIt)
     {

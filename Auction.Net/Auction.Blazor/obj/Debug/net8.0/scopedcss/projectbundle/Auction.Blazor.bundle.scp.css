@@ -7,10 +7,14 @@
     margin-bottom: 15px
 }
 th:not(:first-child)[b-629myw2m1d], td:not(:first-child)[b-629myw2m1d] {
-    width: 15%
-}
+/*    width: 15%
+*/}
 th:first-child[b-629myw2m1d], td:first-child[b-629myw2m1d] {
     width: 20%
+}
+/* /Components/Dashboards/AdminDashboard.razor.rz.scp.css */
+.btn[b-vwzw00qoqp]::before {
+    border: solid 1px green;
 }
 /* /Components/ItemsComponents/ItemListComponent.razor.rz.scp.css */
 

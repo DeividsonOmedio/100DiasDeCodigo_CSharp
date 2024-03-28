@@ -1407,3 +1407,4 @@ C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Aucti
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Authorization.wasm
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\obj\Debug\net8.0\compressed\gdww3zs592.gz
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\obj\Debug\net8.0\compressed\ktsjbahkx6.gz
+C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\obj\Debug\net8.0\scopedcss\Components\Dashboards\AdminDashboard.razor.rz.scp.css

@@ -1,16 +1,20 @@
 ﻿@page "/dashboard"
 <PageTitle>Standart</PageTitle>
- <AuthorizeView Roles="administrator">
+ 
+<AuthorizeView Roles="administrator">
     <AdminDashboard ></AdminDashboard>
  </AuthorizeView>
+ 
  <AuthorizeView Roles="vip">
     <VipDashboard></VipDashboard>
  </AuthorizeView>
+ 
  <AuthorizeView Roles="standard">
-        <AuctionCurrent></AuctionCurrent>
- </AuthorizeView>
- <AuthorizeView>
+         <AuctionCurrent></AuctionCurrent>
+ </AuthorizeView> 
+
+<AuthorizeView>
      <NotAuthorized>
          <AuctionCurrent></AuctionCurrent>
      </NotAuthorized>
- </AuthorizeView>
+</AuthorizeView>

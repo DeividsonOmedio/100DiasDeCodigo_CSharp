@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U0YUr/GVb7W7r6+h/rzoQGRYQ4XkD8ojTordlIzTOPY=",
+  "Hash": "PK4uzYQp+3Ney5iz/xlwqhycY+VIL33Im+q8Dgv/jLI=",
   "Source": "Auction.Blazor",
   "BasePath": "/",
   "Mode": "Root",
@@ -10769,6 +10769,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\icon-192.png"
+    },
+    {
+      "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\images\\loading-gif.gif",
+      "SourceId": "Auction.Blazor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/loading-gif.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\loading-gif.gif"
     },
     {
       "Identity": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\index.html",

@@ -99,7 +99,7 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
         [ServiceFilter(typeof(AuthenticationGenericsAttributes))]
-        [HttpPut("ChangeDataAuction")]
+        [HttpPut("ChangeAuction")]
         public IActionResult ChangeDataAuction(int id, AuctionModel leilao)
         {
             var result = _updateAuctionService.ChangeAuction(id, leilao);

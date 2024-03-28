@@ -4,17 +4,15 @@
         <a class="btnCreate" href="/createauction">Criar Leilão</a>
     </AuthorizeView>
 
-    <h3>Lista de Leilões</h3>
+    <h3>Lista de Todos os Leilões</h3>
     @if (Auction == null)
     {
-        <p><em>Loading...</em></p>
+        <img src="images/loading-gif.gif" />
     }
     else
     {
         @if (Auction.Count() > 0)
         {
-            @foreach (var auction in Auction)
-            {
                 <table class="table">
                     <thead>
                         <tr>
@@ -24,23 +22,23 @@
                             <th></th>
                         </tr>
                     </thead>
+            @foreach (var auction in Auction)
+            {
                     <tbody>
                         <tr>
                             <td>@auction.Name</td>
                             <td>@auction.Starts</td>
                             <td>@auction.Ends</td>
                             <td><button @onclick="(()=> PassarItem(auction))">Itens</button></td>
-                        
                         </tr>
                     </tbody>
-                </table>
             }
+                </table>
         }
     }
 }
-else
+else if(ExibirItens)
 {
-    <button @onclick="(() => RecarregarPage())" id="btnVoltar"> &larr; </button>
     <CascadingValue Value="@auctionItem">
         <Auction.Blazor.Components.ItemsComponents.ItemListComponent></Auction.Blazor.Components.ItemsComponents.ItemListComponent>
     </CascadingValue> 
@@ -53,7 +51,6 @@ else
 
     protected override async Task OnInitializedAsync() => Auction = await manageAuctionService.GetAll();
 
-    public void RecarregarPage() => ExibirItens = false; 
 
     public void PassarItem(AuctionModel auctionIt)
     {

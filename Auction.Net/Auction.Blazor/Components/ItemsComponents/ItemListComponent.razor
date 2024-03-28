@@ -1,89 +1,127 @@
 ﻿@inject IManageAuctionService manageAuctionService
 @inject NavigationManager navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
 @if (!Exibir)
 {
-    @if (!AddItems)
-    {
-        <AuthorizeView Roles="administrator, vip">
-            <button class="btnCreate" @onclick="(()=>AddItem())">Adicionat Item</button>
-        </AuthorizeView>
-
-        @if (Auction == null)
+    @if(!editItems){
+        @if (!AddItems)
         {
-            <p>Não Foram Encontrados Itens Para Esse Leilão</p>
+            <AuthorizeView Roles="administrator, vip">
+                <button class="btnCreate" @onclick="(()=>AddItem())">Adicionat Item</button>
+            </AuthorizeView>
+
+            @if (Auction == null)
+            {
+                <p>Não Foram Encontrados Itens Para Esse Leilão</p>
+            }
+            else
+            {
+                <h2>Items do @Auction.Name</h2>
+                @foreach (var item in Auction.Items)
+                {
+                   CountPlus();
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Condição</th>
+                                <th scope="col">Preço Base</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">@count</td>
+                                <td>@item.Name</td>
+                                <td>@item.Brand</td>
+                                <td>@item.Condition</td>
+                                <td>@item.BasePrice.ToString("C2")</td>
+                                <td>
+                                    <AuthorizeView Roles="standard">
+                                        <button  @onclick="(()=>DarLance(item))">
+                                            Dar Lance
+                                        </button>
+                                    </AuthorizeView>
+                                    <AuthorizeView Roles="vip, administrator">
+                                        @if(darLance)
+                                        {
+                                            <button  @onclick="(()=>DarLance(item))">
+                                                Dar Lance
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <button @onclick="(()=>EditItem(item))">
+                                                Editar Item
+                                            </button>
+                                        }
+                                    </AuthorizeView>
+                                    <AuthorizeView>
+                                        <NotAuthorized>
+                                           <a href="/login"><small>Faça Login para dar lance</small></a>
+                                        </NotAuthorized>
+                                    </AuthorizeView>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            }
         }
         else
         {
-            <h2>Items do @Auction.Name</h2>
-            @foreach (var item in Auction.Items)
-            {
-               CountPlus();
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Marca</th>
-                            <th scope="col">Condição</th>
-                            <th scope="col">Preço Base</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="row">@count</td>
-                            <td>@item.Name</td>
-                            <td>@item.Brand</td>
-                            <td>@item.Condition</td>
-                            <td>@item.BasePrice.ToString("C2")</td>
-                            <td>
-                                <AuthorizeView Roles="standard, vip">
-                                    <button  @onclick="(()=>DarLance(item))">
-                                        Dar Lance
-                                    </button>
-                                </AuthorizeView>
-                                <AuthorizeView>
-                                    <NotAuthorized>
-                                       <a href="/login"><small>Faça Login para dar lance</small></a>
-                                    </NotAuthorized>
-                                </AuthorizeView>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            }
-
+            <ItemCreate IdAuction="@Auction.Id"></ItemCreate>
         }
-
     }
-else
-{
-    <ItemCreate IdAuction
-    ="@Auction.Id"></ItemCreate>
+    else
+    {
+        <ManageItem Item="@Item"></ManageItem>
     }
 }
 else
 {
 <Auction.Blazor.Components.Offer.OfferCreate Item="@Item"></Auction.Blazor.Components.Offer.OfferCreate>
 }
+
 @code {
     [CascadingParameter] public AuctionModel Auction { get; set; } = new();
-    public int count = 0;
     public ItemModel Item { get; set; } = new();
+    public int count = 0;
+    public int idUser = 0;
     private bool AddItems = false;
     public bool Exibir = false;
-    public void Bid()
-    {
+    public bool darLance = false;
+    public bool editItems = false;
 
-    }
     public void CountPlus() => count++;
     public void AddItem() => AddItems = true;
-
+    public void EditItem(ItemModel item) 
+    {
+        Item = item;
+        editItems = true;
+    }
     public void DarLance(ItemModel item)
     {
         Item = item;
         Exibir = true;
     }
-  
-
+    protected override async Task OnInitializedAsync()
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+        var idClaim = user.Claims.FirstOrDefault(claim => claim.Type == "id");
+        if (idClaim != null && int.TryParse(idClaim.Value, out int id))
+        {
+            idUser = id;
+            if (id != Auction.UserId) darLance = true;
+        }
+        else
+        {
+            idUser = 0;
+        }
+    }
 }

@@ -182,3 +182,7 @@ Ainda implementando alguns recursos, mas principalmente testando... Hoje corrigi
 Dia 36/100
 Construção de API Rest com C# - Continuação
 Hoje criei mais alguns componentes seguindo a lógica de visualização apenas o usuário estiver logado e de acordo com o seu nível, utilizei a classe "AuthenticationStateProvider" para recuperar o id do token do usuário autenticado e assim mostrar as informações de leilões referentes a esse usuário.
+
+Dia 37/100
+Construção de API Rest com C# - Continuação
+Hoje trabalhei na parte de edição dos leilões e dos itens, o interessante é que o usuário vip ou administrador pode visualizar todos os leilões e itens disponíveis, porém logicamente ele só pode editar aquilo que foi criado por ele mesmo. Mesmo eu já tendo bloqueado isso na API, eu não quis deixar co que o sistema fizesse requisições de algo que não deveria, então tive que criar algumas lógicas para verificação de token e do usuário que criou o leilão para que o botão de edição só apareça ao usuário que realmente possa editar. 

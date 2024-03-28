@@ -1,0 +1,58 @@
+﻿<h2>Editar Leilão</h2>
+
+<EditForm Model="@Auction" OnValidSubmit="EditAuction" class="bg-opacity-50" style="font-size: 1rem;">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label for="Auction.Name">Nome</label>
+            <InputText @bind-Value="Auction.Name" class="form-control"/>
+            <ValidationMessage For="@(() => Auction.Name)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label for="Auction.Starts">Inicio</label>
+            <InputDate Type="InputDateType.DateTimeLocal"
+                       min="@DateTime.Today.ToString("yyyy-MM-dd")"
+                       @bind-Value="Auction.Starts" class="form-control" />
+            <ValidationMessage For="@(() => Auction.Starts)" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            <label for="Auction.Ends">Fim</label>
+            <InputDate Type="InputDateType.DateTimeLocal"
+                       min="@DateTime.Today.ToString("yyyy-MM-dd")"
+                       @bind-Value="Auction.Ends" class="form-control" />
+            <ValidationMessage For="@(() => Auction.Ends)" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">
+        @ButtonTextSubmit
+    </button>
+    <button type="button" class="btn btn-success" @onclick="NavigateToDashboard">
+        @ButtonTextCancelar
+    </button>
+</EditForm>
+
+@code {
+    [Inject] private NavigationManager navigation { get; set; }
+    [Inject] IManageAuctionService manageAuction { get; set; }
+    [Parameter] public AuctionModel Auction { get; set; } = new AuctionModel();
+    public string ButtonTextSubmit { get; set; } = "Salvar";
+    public string ButtonTextCancelar { get; set; } = "Cancelar";
+    protected override async Task OnInitializedAsync()
+    {
+        string teste = "";
+    }
+    public async Task EditAuction()
+    {
+        var result = await manageAuction.ChangeAuction(Auction.Id, Auction);
+        await Task.CompletedTask;
+        if(result != null) Auction = result;
+
+        navigation.NavigateTo("/dashboard");
+    }
+    private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
+}

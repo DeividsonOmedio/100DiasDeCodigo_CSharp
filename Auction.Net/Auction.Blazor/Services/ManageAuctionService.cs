@@ -60,7 +60,7 @@ namespace Auction.Blazor.Services
             try
             {
                 return await _httpClient
-                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAuctionCurrent");
             }
             catch (Exception)
             {
@@ -121,7 +121,7 @@ namespace Auction.Blazor.Services
             try
             {
                 return await _httpClient
-                    .GetFromJsonAsync<AuctionModel>($"Auction/GetAuctionById/{id}");
+                    .GetFromJsonAsync<AuctionModel>($"Auction/ChangeAuction/{id}");
             }
             catch (Exception)
             {
