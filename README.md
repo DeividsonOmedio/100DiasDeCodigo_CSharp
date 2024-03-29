@@ -186,3 +186,8 @@ Hoje criei mais alguns componentes seguindo a lógica de visualização apenas o
 Dia 37/100
 Construção de API Rest com C# - Continuação
 Hoje trabalhei na parte de edição dos leilões e dos itens, o interessante é que o usuário vip ou administrador pode visualizar todos os leilões e itens disponíveis, porém logicamente ele só pode editar aquilo que foi criado por ele mesmo. Mesmo eu já tendo bloqueado isso na API, eu não quis deixar co que o sistema fizesse requisições de algo que não deveria, então tive que criar algumas lógicas para verificação de token e do usuário que criou o leilão para que o botão de edição só apareça ao usuário que realmente possa editar. 
+
+Dia 38/100
+Construção de API Rest com C# - Continuação
+Nem tudo são flores...
+Hoje enquanto implementava mais algumas funções do sistema, me deparei com algo que já estava resolvido a alguns dias atrás, o token não esta sendo enviado para o back-end, então quando tento utilizar endpoints protegidos por autenticação eu não tenho acesso, mesmo depois de ter um token no front-end. Com calma vou identificar a raiz do problema, e aproveitar essa oportunidade para compreender ainda mais esse caminho da autenticação.

@@ -120,8 +120,8 @@ namespace Auction.Blazor.Services
         {
             try
             {
-                return await _httpClient
-                    .GetFromJsonAsync<AuctionModel>($"Auction/ChangeAuction/{id}");
+                var result = await _httpClient.PutAsJsonAsync<AuctionModel>($"Auction/ChangeAuction/{id}", leilao);
+                return await result.Content.ReadFromJsonAsync<AuctionModel>();
             }
             catch (Exception)
             {

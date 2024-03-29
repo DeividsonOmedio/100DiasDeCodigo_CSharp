@@ -99,15 +99,15 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
         [ServiceFilter(typeof(AuthenticationGenericsAttributes))]
-        [HttpPut("ChangeAuction")]
-        public IActionResult ChangeDataAuction(int id, AuctionModel leilao)
+        [HttpPut("ChangeAuction/{id:int}")]
+        public async Task<ActionResult<AuctionModel>> ChangeDataAuction(int id, AuctionModel leilao)
         {
-            var result = _updateAuctionService.ChangeAuction(id, leilao);
+            var result = await _updateAuctionService.ChangeAuction(id, leilao);
             if (result == null) return NotFound("Não encontramos o ID informado");
             return Ok(result);
         }
         [ServiceFilter(typeof(AuthenticationGenericsAttributes))]
-        [HttpPut("DeleteAuction")]
+        [HttpPut("DeleteAuction/{id:int}")]
         public IActionResult DeleteAuction(int id)
         {
             var result = _updateAuctionService.DeleteAuction(id);
