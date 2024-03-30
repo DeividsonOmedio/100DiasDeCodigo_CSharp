@@ -57,21 +57,35 @@
         Cancelar
     </button>
 </EditForm>
+<Modal showModal="@showModal" titulo="@titulo" conteudo="@conteudo"></Modal>
+
 @code {
     private ItemModel Item { get; set; } = new();
     [Parameter] public int IdAuction { get; set; }
-
+    private bool showModal = false;
+    private string titulo = string.Empty;
+    private string conteudo = string.Empty;
     public async Task CreateItem()
     {
-        await manageItems.CreateNewItem(IdAuction, Item);
-        await Task.CompletedTask;
-        navigation.Refresh();
+        var result = await manageItems.CreateNewItem(IdAuction, Item);
+        if (result.GetType != null)
+        {
+            titulo = "Sucesso";
+            conteudo = "Item Criado com Sucesso";
+        }
+        else
+        {
+            titulo = "Falha";
+            conteudo = "Item ao Criar Leilão";
+        }
+        ShowModal();
     }
     private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
     
     public byte[] ImageUploaded { get; set; }
     public string imag { get; set; }
 
+    private void ShowModal() => showModal = true;
 
 
     // async Task HandleSelection(IFileListEntry[] files)

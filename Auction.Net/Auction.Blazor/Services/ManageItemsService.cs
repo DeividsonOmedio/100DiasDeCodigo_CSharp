@@ -22,7 +22,7 @@ namespace Auction.Blazor.Services
         
         public async Task<ItemModel?> ChangeItem(int idItem,ItemModel item)
         {
-            var response = await _httpClient.PatchAsJsonAsync<ItemModel>($"Items/{idItem}", item);
+            var response = await _httpClient.PatchAsJsonAsync<ItemModel>($"Items/ChangeItem/{idItem}", item);
             return await response.Content.ReadFromJsonAsync<ItemModel>();
         }
 

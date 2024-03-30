@@ -39,18 +39,34 @@
     </button>
 </EditForm>
 
+<Modal showModal="@showModal" titulo="@titulo" conteudo="@conteudo"></Modal>
 @code {
+
+
     [Inject] private NavigationManager navigation { get; set; }
     [Inject] IManageAuctionService manageAuction { get; set; }
     public AuctionModel Auction { get; set; } = new AuctionModel();
     [Parameter] public string ButtonTextSubmit { get; set; } = "Salvar";
     [Parameter] public string ButtonTextCancelar { get; set; } = "Cancelar";
+    private bool showModal = false;
+    private string titulo = string.Empty;
+    private string conteudo = string.Empty;
+
     public async Task CreateAuction()
     {
-        await manageAuction.CreateNewAuction(Auction);
-        await Task.CompletedTask;
-        
-        navigation.NavigateTo("/dashboard");
+        var result = await manageAuction.CreateNewAuction(Auction);
+        if(result.GetType != null)
+        {
+            titulo = "Sucesso";
+            conteudo = "Leilão Criado com Sucesso";
+        }
+        else
+        {
+            titulo = "Falha";
+            conteudo = "Falha ao Criar Leilão";
+        }
+        ShowModal();
     }
+    private void ShowModal() => showModal = true;
     private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
 }

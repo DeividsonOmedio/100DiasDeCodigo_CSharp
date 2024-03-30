@@ -24,7 +24,7 @@ namespace BlazorAppAgenda.Client
                 return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
             }
             _httpClient.DefaultRequestHeaders.Authorization =
-                 new AuthenticationHeaderValue("bearer", savedToken);
+                 new AuthenticationHeaderValue("Bearer", savedToken);
 
             return new AuthenticationState(new ClaimsPrincipal(
               new ClaimsIdentity(ParseClaimsFromJwt(savedToken), "jwt")));

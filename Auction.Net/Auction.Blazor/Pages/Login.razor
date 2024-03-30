@@ -1,7 +1,6 @@
 ﻿@page "/login"
 @inject IAuthService AuthService
-@inject NavigationManager navigation
-
+@inject IJSRuntime JSRuntime
 <PageTitle>Login</PageTitle>
 
 @if (!cadastroPage)
@@ -40,7 +39,7 @@ else
     public async void Logar()
     {
         token = await AuthService.GetToken(Email, Password);
-        if (token != null) navigation.NavigateTo("/dashboard");
+        if (token != null) await JSRuntime.InvokeVoidAsync("location.reload");
     }
     public void Registered(UserModel user)
     {

@@ -191,3 +191,8 @@ Dia 38/100
 Construção de API Rest com C# - Continuação
 Nem tudo são flores...
 Hoje enquanto implementava mais algumas funções do sistema, me deparei com algo que já estava resolvido a alguns dias atrás, o token não esta sendo enviado para o back-end, então quando tento utilizar endpoints protegidos por autenticação eu não tenho acesso, mesmo depois de ter um token no front-end. Com calma vou identificar a raiz do problema, e aproveitar essa oportunidade para compreender ainda mais esse caminho da autenticação.
+
+Dia 39/100
+Construção de API Rest com C# - Continuação
+Coisas que só acontecem com quem programa...
+Hoje foquei em corrigir o erro na autenticação, o usuário recebia o token no front, porem quando acessava a API, retornava não autorizado. Depois de um bom tempo, erro descoberto, ao passar o token nos parâmetros para a solicitação da API, a palavra bearer estava com o "b" minúsculo, enquanto a API esperava o "B" maiúsculo. Corrigido o problema, sistema funcionando novamente e aproveitei para criar o componente modal para exibir uma resposta a solicitação do cliente. 

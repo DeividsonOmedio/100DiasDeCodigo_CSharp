@@ -1,0 +1,29 @@
+﻿@inject NavigationManager navigation
+<!-- Modal -->
+<div class="modal" tabindex="-1" style="display: @(showModal ? "block" : "none")">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">@titulo</h5>
+                <button type="button" class="btn-close" @onclick="CloseModal"></button>
+            </div>
+            <div class="modal-body">
+                @conteudo
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="CloseModal">Close</button>
+                <button type="button" class="btn btn-primary" @onclick="Redirecionar">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    [Parameter] public bool showModal { get; set; }
+    [Parameter] public string conteudo { get; set; } = string.Empty;
+    [Parameter] public string titulo { get; set; } = string.Empty;
+
+    private void CloseModal() => showModal = false;
+    private void Redirecionar() => navigation.NavigateTo("/Dashboard");
+}

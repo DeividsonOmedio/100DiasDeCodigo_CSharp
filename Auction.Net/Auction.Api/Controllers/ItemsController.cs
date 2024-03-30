@@ -48,11 +48,10 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
         [HttpPatch("ChangeItem/{idItem:int}")]
-        public IActionResult ChangeItem(int idItem,ItemModel item)
+        public async Task<ActionResult<ItemModel>> ChangeItem(int idItem,ItemModel item)
         {
-            //DoTo
             if (item == null) return NoContent();
-            var result = _updateItemsService.changeItem(item);
+            var result = await _updateItemsService.changeItem(item);
             if (result == null) return Ok("Id Invalido");
             return Ok(result);
         }

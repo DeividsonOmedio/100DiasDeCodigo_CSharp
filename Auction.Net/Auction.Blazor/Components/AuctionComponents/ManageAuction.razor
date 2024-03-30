@@ -35,6 +35,7 @@
         @ButtonTextCancelar
     </button>
 </EditForm>
+<Modal showModal="@showModal" titulo="@titulo" conteudo="@conteudo"></Modal>
 
 @code {
     [Inject] private NavigationManager navigation { get; set; }
@@ -42,6 +43,9 @@
     [Parameter] public AuctionModel Auction { get; set; } = new AuctionModel();
     public string ButtonTextSubmit { get; set; } = "Salvar";
     public string ButtonTextCancelar { get; set; } = "Cancelar";
+    private bool showModal = false;
+    private string titulo = string.Empty;
+    private string conteudo = string.Empty;
     protected override async Task OnInitializedAsync()
     {
         string teste = "";
@@ -49,10 +53,18 @@
     public async Task EditAuction()
     {
         var result = await manageAuction.ChangeAuction(Auction.Id, Auction);
-        await Task.CompletedTask;
-        if(result != null) Auction = result;
-
-        navigation.NavigateTo("/dashboard");
+        if (result.GetType != null)
+        {
+            titulo = "Sucesso";
+            conteudo = "Leilão Alterado com Sucesso";
+        }
+        else
+        {
+            titulo = "Falha";
+            conteudo = "Falha ao Alterar Leilão";
+        }
+        ShowModal();
     }
+    private void ShowModal() => showModal = true;
     private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
 }

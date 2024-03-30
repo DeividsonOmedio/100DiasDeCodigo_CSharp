@@ -1,13 +1,11 @@
 ﻿using Auction.Blazor.Services.Interfaces;
+using Auction.Blazor.Shared;
 using BlazorAppAgenda.Client;
 using Blazored.LocalStorage;
 using Entities.Entities;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using System.Text.Json;
-using System.Text;
-using Auction.Blazor.Shared;
 
 namespace Auction.Blazor.Services
 {
@@ -34,7 +32,7 @@ namespace Auction.Blazor.Services
                     .MarkUserAsAuthenticated(email);
                 await ((ApiAuthenticationStateProvider)_authenticationStateProvider).GetAuthenticationStateAsync();
                 _httpClient.DefaultRequestHeaders.Authorization = new
-                    AuthenticationHeaderValue("bearer", tokenResponse.Token);
+                    AuthenticationHeaderValue("Bearer", tokenResponse.Token);
                 return tokenResponse.Token;
             }
             return null;

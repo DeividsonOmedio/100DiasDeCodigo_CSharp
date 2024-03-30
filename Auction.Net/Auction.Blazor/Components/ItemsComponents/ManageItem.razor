@@ -47,16 +47,28 @@
         Cancelar
     </button>
 </EditForm>
+<Modal showModal="@showModal" titulo="@titulo" conteudo="@conteudo"></Modal>
+
 @code {
     [Parameter] public ItemModel Item { get; set; }
-
+    private bool showModal = false;
+    private string titulo = string.Empty;
+    private string conteudo = string.Empty;
     public async Task EditItem()
     {
-        await manageItems.ChangeItem(Item.Id, Item);
-        await Task.CompletedTask;
-        navigation.Refresh();
+        var result = await manageItems.ChangeItem(Item.Id, Item);
+        if (result.GetType != null)
+        {
+            titulo = "Sucesso";
+            conteudo = "Item Alterado com Sucesso";
+        }
+        else
+        {
+            titulo = "Falha";
+            conteudo = "Falha ao Alterar Leilão";
+        }
+        ShowModal();
     }
+    private void ShowModal() => showModal = true;
     private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
-
-
 }

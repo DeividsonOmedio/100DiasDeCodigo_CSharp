@@ -17,10 +17,7 @@ else if(view == 1)
 @code {
     public int view = 0;
     public int idUser = 0;
-    public void ManageView(int viewActual)
-    {
-        view = viewActual;
-    }
+    public void ManageView(int viewActual) => view = viewActual;
     protected override async Task OnInitializedAsync()
     {
         var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
