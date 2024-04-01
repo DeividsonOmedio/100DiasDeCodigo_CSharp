@@ -196,3 +196,7 @@ Dia 39/100
 Construção de API Rest com C# - Continuação
 Coisas que só acontecem com quem programa...
 Hoje foquei em corrigir o erro na autenticação, o usuário recebia o token no front, porem quando acessava a API, retornava não autorizado. Depois de um bom tempo, erro descoberto, ao passar o token nos parâmetros para a solicitação da API, a palavra bearer estava com o "b" minúsculo, enquanto a API esperava o "B" maiúsculo. Corrigido o problema, sistema funcionando novamente e aproveitei para criar o componente modal para exibir uma resposta a solicitação do cliente. 
+
+Dia 40/100
+Construção de API Rest com C# - Continuação
+Criação do componente para gerenciamento das ofertas, e ajustes nos componentes de dar lance e editar itens leilões, após o inicio do leilão não é permitido editar itens e só a data de encerramento do leilão pode ser alterada.

@@ -1,0 +1,48 @@
+﻿@inject IManageOffersService manageOffer
+@inject IManageUsersService manageUser
+<h3>Gerenciar Ofertas</h3>
+@if(Offer != null)
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col">Oferta</th>
+            <th scope="col">Data</th>
+            <th scope="col">Usuário</th>
+        </tr>
+    </thead>
+    @foreach(var offer in Offer)
+    {
+            CountPlus();
+            <tbody>
+            <tr>
+                    <td scope="row">@count</td>
+                    <td>@offer.Price.ToString("C2")</td>
+                    <td>@offer.CreatedOn</td>
+                    <td>@offer.UserId</td>
+            </tr>
+        </tbody>
+    }
+    </table>
+}
+else
+{
+    <h3>Não forma encontradas ofertas para este item!</h3>
+}
+
+@code {
+    [Parameter] public ItemModel Item { get; set; } = new();
+
+    public IEnumerable<OfferModel>? Offer { get; set; }
+    public UserModel User { get; set; } = new();
+    public int count = 0;
+
+    public void CountPlus() => count++;
+    protected override async Task OnInitializedAsync() 
+    {
+        Offer = await manageOffer.GetAllOffersByItem(Item.Id);
+        await Task.CompletedTask;
+    }
+
+}

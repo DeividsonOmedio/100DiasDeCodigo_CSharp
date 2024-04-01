@@ -1,5 +1,6 @@
 ﻿@page "/login"
 @inject IAuthService AuthService
+@inject NavigationManager navigation
 @inject IJSRuntime JSRuntime
 <PageTitle>Login</PageTitle>
 
@@ -36,10 +37,13 @@ else
     public string Password = "";
     public string? token = "";
     public bool cadastroPage = false;
+    private string lastVisitedPage = "";
     public async void Logar()
     {
         token = await AuthService.GetToken(Email, Password);
-        if (token != null) await JSRuntime.InvokeVoidAsync("location.reload");
+        lastVisitedPage = navigation.Uri;
+        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "lastVisitedPage", lastVisitedPage);
+        if (token != null) navigation.NavigateTo("/dashboard");
     }
     public void Registered(UserModel user)
     {
@@ -47,8 +51,6 @@ else
         Password = user.Password;
         Logar();
     }
-    public void Register()
-    {
-        cadastroPage = true;
-    }
+    public void Register() => cadastroPage = true;
+
 }

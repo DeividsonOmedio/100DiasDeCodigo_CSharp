@@ -1,4 +1,6 @@
 ﻿@page "/dashboard"
+@inject NavigationManager navigation
+@inject IJSRuntime JSRuntime
 
 <PageTitle>Dashboard</PageTitle>
  
@@ -21,6 +23,16 @@
 </AuthorizeView>
 @code
 {
+    protected override async Task OnInitializedAsync()
+    {
+        var storedLastVisitedPage = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "lastVisitedPage");
 
+        if (storedLastVisitedPage != null)
+        {
+            await RemoveLastVisitedPageFromLocalStorage();
+            navigation.Refresh();
+        }
+    }
+    private async Task RemoveLastVisitedPageFromLocalStorage() => await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "lastVisitedPage");
 
 }

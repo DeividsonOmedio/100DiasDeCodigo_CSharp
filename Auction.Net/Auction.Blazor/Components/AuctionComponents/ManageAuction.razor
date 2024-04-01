@@ -3,22 +3,25 @@
 <EditForm Model="@Auction" OnValidSubmit="EditAuction" class="bg-opacity-50" style="font-size: 1rem;">
     <DataAnnotationsValidator />
     <ValidationSummary />
-    <div class="form-group row">
-        <div class="col-sm-4">
-            <label for="Auction.Name">Nome</label>
-            <InputText @bind-Value="Auction.Name" class="form-control"/>
-            <ValidationMessage For="@(() => Auction.Name)" />
+    @if(Auction.Starts > DateTime.Today)
+    {    
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="Auction.Name">Nome</label>
+                <InputText @bind-Value="Auction.Name" class="form-control"/>
+                <ValidationMessage For="@(() => Auction.Name)" />
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-sm-4">
-            <label for="Auction.Starts">Inicio</label>
-            <InputDate Type="InputDateType.DateTimeLocal"
-                       min="@DateTime.Today.ToString("yyyy-MM-dd")"
-                       @bind-Value="Auction.Starts" class="form-control" />
-            <ValidationMessage For="@(() => Auction.Starts)" />
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="Auction.Starts">Inicio</label>
+                <InputDate Type="InputDateType.DateTimeLocal"
+                           min="@DateTime.Today.ToString("yyyy-MM-dd")"
+                           @bind-Value="Auction.Starts" class="form-control" />
+                <ValidationMessage For="@(() => Auction.Starts)" />
+            </div>
         </div>
-    </div>
+    }
     <div class="form-group row">
         <div class="col-sm-4">
             <label for="Auction.Ends">Fim</label>
@@ -28,10 +31,10 @@
             <ValidationMessage For="@(() => Auction.Ends)" />
         </div>
     </div>
-    <button type="submit" class="btn btn-success">
+    <button type="submit" class="btn btn-success mt-2">
         @ButtonTextSubmit
     </button>
-    <button type="button" class="btn btn-success" @onclick="NavigateToDashboard">
+    <button type="button" class="btn btn-success mt-2" @onclick="NavigateToDashboard">
         @ButtonTextCancelar
     </button>
 </EditForm>

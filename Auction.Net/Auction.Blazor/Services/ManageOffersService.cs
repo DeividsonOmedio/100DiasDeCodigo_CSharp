@@ -8,14 +8,17 @@ namespace Auction.Blazor.Services
     {
         public HttpClient _httpClient = httpClient;
 
-        public Task<IEnumerable<OfferModel>?> GetAllOffers() =>
-            _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/GetAllOffers");
+        public async Task<IEnumerable<OfferModel>?> GetAllOffers() =>
+            await _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/GetAllOffers");
 
         public Task<IEnumerable<OfferModel>?> GetAllOfferByIdAuction(int idAuction) =>
             _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/getAllOfferById/{idAuction}");
 
-        public Task<IEnumerable<OfferModel>?> GetAllOffersByItem(int idItem) =>
-            _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/getAllOffersByItem/{idItem}");
+        public async Task<IEnumerable<OfferModel>?> GetAllOffersByItem(int idItem)
+        {
+            var result = await _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/getAllOffersByItem/{idItem}");
+            return result;
+        }
 
         public Task<IEnumerable<OfferModel>?> GetAllOffersByUser(int idUser) =>
             _httpClient.GetFromJsonAsync<IEnumerable<OfferModel>>($"ManageOffers/getAllOffersByUser");

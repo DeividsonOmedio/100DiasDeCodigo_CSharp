@@ -1,72 +1,72 @@
 ﻿using Domain.Interfaces.ServicesInterfaces;
+using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Auction.Api.Controllers
 {
-    public class ManageOffersController : GenericsController 
+    public class ManageOffersController(IManageOffersService manageOffersService) : GenericsController 
     {
-        private readonly IManageOffersService _manageOffersService;
-        public ManageOffersController(IManageOffersService manageOffersService) => _manageOffersService = manageOffersService;
+        private readonly IManageOffersService _manageOffersService = manageOffersService;
 
         [HttpGet("GetAllOffers")]
-        public IActionResult GetAllOffers()
+        public async Task<ActionResult<List<OfferModel>?>> GetAllOffers()
         {
-            var result = _manageOffersService.GetAllOffers();
+            var result = await _manageOffersService.GetAllOffers();
             if (result == null) return Ok("Não encontarmos ofertas");
             return Ok(result);
         }
 
-        [HttpGet("getAllOfferById/({idOffer:int})")]
-        public IActionResult getAllOfferByIdAuction(int idOffer)
+        [HttpGet("getAllOfferById/{idOffer:int}")]
+        public async Task<ActionResult<List<OfferModel>?>> getAllOfferByIdAuction(int idOffer)
         {
-            var result = _manageOffersService.GetAllOfferByIdAuction(idOffer);
+            var result = await _manageOffersService.GetAllOfferByIdAuction(idOffer);
             if (result == null) return Ok("Não encontarmos ofertas");
             return Ok(result);
         }
 
-        [HttpGet("getAllOffersByItem/({idItem:int})")]
-        public IActionResult getAllOffersByItem(int idItem)
+        [HttpGet("getAllOffersByItem/{idItem:int}")]
+        public async Task<ActionResult<List<OfferModel>?>> getAllOffersByItem(int idItem)
         {
-            var result = _manageOffersService.GetAllOffersByItem(idItem);
+            var result = await _manageOffersService.GetAllOffersByItem(idItem);
             if (result == null) return Ok("Não encontarmos ofertas");
             return Ok(result);
         }
 
-        [HttpGet("getAllOffersByUser/({idUser:int})")]
-        public IActionResult getAllOffersByUser(int idUser)
+        [HttpGet("getAllOffersByUser/{idUser:int}")]
+        public async Task<ActionResult<List<OfferModel>?>> getAllOffersByUser(int idUser)
         {
-            var result = _manageOffersService.GetAllOffersByUser(idUser);
+            var result = await _manageOffersService.GetAllOffersByUser(idUser);
             if (result == null) return Ok("Não encontarmos ofertas");
             return Ok(result);
         }
 
-        [HttpGet("GetOffersByUserByItem/({idUser:int})/({idItem:int})")]
-        public IActionResult GetOffersByUserByItem(int idUser, int idItem)
+        [HttpGet("GetOffersByUserByItem/{idUser:int}/{idItem:int}")]
+        public async Task<ActionResult<List<OfferModel>?>> GetOffersByUserByItem(int idUser, int idItem)
         {
-            var result = _manageOffersService.GetOffersByUserByItem(idUser, idItem);
+            var result = await _manageOffersService.GetOffersByUserByItem(idUser, idItem);
             if (result == null) return Ok("Não encontarmos ofertas");
             return Ok(result);
         }
 
-        [HttpGet("GetMoreOfferByItem/({idItem:int})")]
-        public IActionResult GetMoreOfferByItem(int idItem)
+        [HttpGet("GetMoreOfferByItem/{idItem:int}")]
+        public async Task<ActionResult<OfferModel>?> GetMoreOfferByItem(int idItem)
         {
-            var result = _manageOffersService.GetMoreOfferByItem(idItem);
+            var result = await _manageOffersService.GetMoreOfferByItem(idItem);
             if (result == null) return Ok("Não encontarmos os lances");
             return Ok(result);
         }
 
         [HttpGet("GetOffersInAuctionActive")]
-        public IActionResult GetOffersInLeiloesAtivos()
+        public async Task<ActionResult<List<OfferModel>?>> GetOffersInLeiloesAtivos()
         {
-            var result = _manageOffersService.GetOffersInLeiloesActive();
+            var result = await _manageOffersService.GetOffersInLeiloesActive();
             return Ok(result);
         }
 
         [HttpGet("GetOffersInAuctionClosed")]
-        public IActionResult GetOffersInLeiloesEncerrados()
+        public async Task<ActionResult<List<OfferModel>?>> GetOffersInLeiloesEncerrados()
         {
-            var result = _manageOffersService.GetOffersInLeiloesClosed();
+            var result = await _manageOffersService.GetOffersInLeiloesClosed();
             return Ok(result);
         }
 

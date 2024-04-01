@@ -54,9 +54,19 @@
                                         }
                                         else
                                         {
-                                            <button @onclick="(()=>EditItem(item))">
-                                                Editar Item
-                                            </button>
+                                            @if(Auction.Starts > DateTime.Today)
+                                            {
+                                                <button @onclick="(()=>EditItem(item))">
+                                                    Editar Item
+                                                </button>
+                                            }
+                                            else
+                                            {
+                                                <button @onclick="(()=>VerOferatas(item))">
+                                                    Ver Ofertas
+                                                </button>
+                                                
+                                            }
                                         }
                                     </AuthorizeView>
                                     <AuthorizeView>
@@ -82,6 +92,10 @@
         <ManageItem Item="@Item"></ManageItem>
     }
 }
+else if(Exibir && verOfertas)
+{
+    <ManagerOffer Item="@Item"></ManagerOffer>
+}
 else
 {
 <Auction.Blazor.Components.Offer.OfferCreate Item="@Item"></Auction.Blazor.Components.Offer.OfferCreate>
@@ -96,6 +110,7 @@ else
     public bool Exibir = false;
     public bool darLance = false;
     public bool editItems = false;
+    public bool verOfertas = false;
 
     public void CountPlus() => count++;
     public void AddItem() => AddItems = true;
@@ -123,5 +138,11 @@ else
         {
             idUser = 0;
         }
+    }
+    public void VerOferatas(ItemModel item)
+    {
+        verOfertas = true;
+        Exibir = true;
+        Item = item;
     }
 }
