@@ -1,48 +1,102 @@
 ﻿@inject IManageOffersService manageOffer
 @inject IManageUsersService manageUser
 <h3>Gerenciar Ofertas</h3>
-@if(Offer != null)
+@if (Offer != null && Offer.Any())
 {
-<table class="table">
-    <thead>
-        <tr>
-            <th></th>
-            <th scope="col">Oferta</th>
-            <th scope="col">Data</th>
-            <th scope="col">Usuário</th>
-        </tr>
-    </thead>
-    @foreach(var offer in Offer)
+    if(MoreOffer != null)
     {
-            CountPlus();
+        @if(dateEndAuction > DateTime.Now)
+        {
+            <h3>A maior oferta ate agora é:</h3>
+        }
+        else
+        {
+            <h3>A maior oferta para este item foi:</h3>
+        }
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th scope="col">Oferta</th>
+                    <th scope="col">Data/Hora</th>
+                    <th scope="col">Usuário</th>
+                </tr>
+            </thead>
             <tbody>
-            <tr>
-                    <td scope="row">@count</td>
-                    <td>@offer.Price.ToString("C2")</td>
-                    <td>@offer.CreatedOn</td>
-                    <td>@offer.UserId</td>
-            </tr>
-        </tbody>
+                    
+                    <tr>
+                        <th>&nbsp;</th>
+                        <td>@MoreOffer.Price.ToString("C2")</td>
+                        <td>@MoreOffer.CreatedOn</td>
+                        <td>@userNameMoreOffer.Name</td>
+                    </tr>
+            </tbody>
+        </table>
     }
-    </table>
+    var namesLoaded = userName.Count == Offer.Count();
+    if (namesLoaded)
+    {
+        <h4>Todas as Ofertas</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th scope="col">Oferta</th>
+                    <th scope="col">Data/Hora</th>
+                    <th scope="col">Usuário</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Offer.Count(); i++)
+                {
+                    var offer = Offer.ToArray();
+                    var name = userName.ToArray();
+                    CountPlus();
+                    <tr>
+                        <td scope="row">@count</td>
+                        <td>@offer[i].Price.ToString("C2")</td>
+                        <td>@offer[i].CreatedOn</td>
+                        <td>@name[i]</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Aguarde enquanto os nomes de usuário estão sendo carregados...</p>
+    }
 }
 else
 {
-    <h3>Não forma encontradas ofertas para este item!</h3>
+    <h3>Não foram encontradas ofertas para este item!</h3>
 }
 
 @code {
     [Parameter] public ItemModel Item { get; set; } = new();
-
+    [Parameter] public DateTime dateEndAuction { get; set; }
     public IEnumerable<OfferModel>? Offer { get; set; }
-    public UserModel User { get; set; } = new();
+    public OfferModel? MoreOffer { get; set; }
+    public UserModel? userNameMoreOffer { get; set; } = new();
+    public List<string> userName { get; set; } = new();
     public int count = 0;
 
     public void CountPlus() => count++;
-    protected override async Task OnInitializedAsync() 
+
+    protected override async Task OnInitializedAsync()
     {
         Offer = await manageOffer.GetAllOffersByItem(Item.Id);
-        await Task.CompletedTask;
+        await LoadUserNames();
+        MoreOffer = await manageOffer.GetMoreOfferByItem(Item.Id);
+        userNameMoreOffer = await manageUser.GetUserById(MoreOffer.UserId);
     }
 
+    private async Task LoadUserNames()
+    {
+        foreach (var offer in Offer)
+        {
+            var user = await manageUser.GetUserById(offer.UserId);
+            userName.Add(user.Name);
+        }
+    }
 }

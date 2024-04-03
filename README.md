@@ -200,3 +200,7 @@ Hoje foquei em corrigir o erro na autenticação, o usuário recebia o token no 
 Dia 40/100
 Construção de API Rest com C# - Continuação
 Criação do componente para gerenciamento das ofertas, e ajustes nos componentes de dar lance e editar itens leilões, após o inicio do leilão não é permitido editar itens e só a data de encerramento do leilão pode ser alterada.
+
+Dia 41/100
+Construção de API Rest com C# - Continuação
+Hoje continuei no componente para gerenciamento das ofertas, além disso, revisei o código buscando formas de refatorar o mesmo, buscando uma melhor legibilidade e melhor performance para o sistema.
