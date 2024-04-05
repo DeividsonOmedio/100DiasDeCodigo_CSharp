@@ -1,77 +1,84 @@
 ﻿@inject IManageOffersService manageOffer
 @inject IManageUsersService manageUser
 <h3>Gerenciar Ofertas</h3>
-@if (Offer != null && Offer.Any())
+@if (Offer != null)
 {
-    if(MoreOffer != null)
+    @if (Offer.Any())
     {
-        @if(dateEndAuction > DateTime.Now)
+        if (MoreOffer != null)
         {
-            <h3>A maior oferta ate agora é:</h3>
-        }
-        else
-        {
-            <h3>A maior oferta para este item foi:</h3>
-        }
-        <table class="table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th scope="col">Oferta</th>
-                    <th scope="col">Data/Hora</th>
-                    <th scope="col">Usuário</th>
-                </tr>
-            </thead>
-            <tbody>
-                    
+            @if (dateEndAuction > DateTime.Now)
+            {
+                <h3>A maior oferta ate agora é:</h3>
+            }
+            else
+            {
+                <h3>A maior oferta para este item foi:</h3>
+            }
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th scope="col">Oferta</th>
+                        <th scope="col">Data/Hora</th>
+                        <th scope="col">Usuário</th>
+                    </tr>
+                </thead>
+                <tbody>
+
                     <tr>
                         <th>&nbsp;</th>
                         <td>@MoreOffer.Price.ToString("C2")</td>
                         <td>@MoreOffer.CreatedOn</td>
                         <td>@userNameMoreOffer.Name</td>
                     </tr>
-            </tbody>
-        </table>
-    }
-    var namesLoaded = userName.Count == Offer.Count();
-    if (namesLoaded)
-    {
-        <h4>Todas as Ofertas</h4>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th scope="col">Oferta</th>
-                    <th scope="col">Data/Hora</th>
-                    <th scope="col">Usuário</th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (var i = 0; i < Offer.Count(); i++)
-                {
-                    var offer = Offer.ToArray();
-                    var name = userName.ToArray();
-                    CountPlus();
+                </tbody>
+            </table>
+        }
+        var namesLoaded = userName.Count == Offer.Count();
+        if (namesLoaded)
+        {
+            <h4>Todas as Ofertas</h4>
+            <table class="table">
+                <thead>
                     <tr>
-                        <td scope="row">@count</td>
-                        <td>@offer[i].Price.ToString("C2")</td>
-                        <td>@offer[i].CreatedOn</td>
-                        <td>@name[i]</td>
+                        <th></th>
+                        <th scope="col">Oferta</th>
+                        <th scope="col">Data/Hora</th>
+                        <th scope="col">Usuário</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @for (var i = 0; i < Offer.Count(); i++)
+                    {
+                        var offer = Offer.ToArray();
+                        var name = userName.ToArray();
+                        CountPlus();
+                        <tr>
+                            <td scope="row">@count</td>
+                            <td>@offer[i].Price.ToString("C2")</td>
+                            <td>@offer[i].CreatedOn</td>
+                            <td>@name[i]</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Aguarde enquanto os nomes de usuário estão sendo carregados...</p>
+        }
     }
     else
+
     {
-        <p>Aguarde enquanto os nomes de usuário estão sendo carregados...</p>
+        <h3>Não foram encontradas ofertas para este item!</h3>
     }
 }
 else
 {
-    <h3>Não foram encontradas ofertas para este item!</h3>
+    <img src="images/loading-gif.gif" />
 }
-
 @code {
     [Parameter] public ItemModel Item { get; set; } = new();
     [Parameter] public DateTime dateEndAuction { get; set; }

@@ -8,7 +8,10 @@
         @if (!AddItems)
         {
             <AuthorizeView Roles="administrator, vip">
-                <button class="btnCreate" @onclick="(()=>AddItem())">Adicionat Item</button>
+                @if(Auction.UserId == idUser)
+                {
+                    <button class="btnCreate" @onclick="(()=>AddItem())">Adicionat Item</button>                
+                }
             </AuthorizeView>
 
             @if (Auction == null)

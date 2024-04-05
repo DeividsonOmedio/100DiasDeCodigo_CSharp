@@ -144,8 +144,8 @@ namespace Auction.Blazor.Services
         {
             try
             {
-                return await _httpClient
-                    .GetFromJsonAsync<string>($"Auction/GetAuctionById/{id}");
+                var result = await _httpClient.PutAsJsonAsync<string>($"Auction/DeleteAuction/{id}", "");
+                return result.Content.ReadFromJsonAsync<string>();
             }
             catch (Exception)
             {

@@ -6,6 +6,10 @@ h1:focus {
     outline: none;
 }
 
+h2 {
+    margin: 15px, 0;
+}
+
 a, .btn-link {
     color: #0071c1;
 }

@@ -204,3 +204,9 @@ Criação do componente para gerenciamento das ofertas, e ajustes nos componente
 Dia 41/100
 Construção de API Rest com C# - Continuação
 Hoje continuei no componente para gerenciamento das ofertas, além disso, revisei o código buscando formas de refatorar o mesmo, buscando uma melhor legibilidade e melhor performance para o sistema.
+
+Dia 42/100
+Construção de API Rest com C# - Continuação
+CRUD completo...
+Hoje fiz a parte de exclusão de leilões, assim finalizando os 4 elementos que compõe o CRUD que são Criação, Leitura, Edição e Exclusão. Agora só vou terminar a lógica de algumas operações dentro do site e finalizar o projeto.
+Lembrando que o objetivo não é um site com o melhor design, e sim integrar o back-end criado com o front e fazer funcionar da melhor forma, aprendendo cada conceito para que isso aconteça.

@@ -1,5 +1,14 @@
-﻿<h2>Editar Leilão</h2>
-
+﻿
+    <AuthorizeView Roles="administrator">
+        <button class="btn btn-danger m-3 small" @onclick="(()=>Delete())">Excluir Leilão</button>
+    </AuthorizeView>
+    <AuthorizeView Roles="vip">
+        @if(Auction.Starts > DateTime.Now)
+        {
+            <button class="btnCreate" @onclick="(()=>Delete())">Excluir Leilão</button>
+        }
+    </AuthorizeView>
+<h2>Editar Leilão</h2>
 <EditForm Model="@Auction" OnValidSubmit="EditAuction" class="bg-opacity-50" style="font-size: 1rem;">
     <DataAnnotationsValidator />
     <ValidationSummary />
@@ -21,16 +30,34 @@
                 <ValidationMessage For="@(() => Auction.Starts)" />
             </div>
         </div>
-    }
-    <div class="form-group row">
-        <div class="col-sm-4">
-            <label for="Auction.Ends">Fim</label>
-            <InputDate Type="InputDateType.DateTimeLocal"
-                       min="@DateTime.Today.ToString("yyyy-MM-dd")"
-                       @bind-Value="Auction.Ends" class="form-control" />
-            <ValidationMessage For="@(() => Auction.Ends)" />
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="Auction.Ends">Fim</label>
+                <InputDate Type="InputDateType.DateTimeLocal"
+                           min="@DateTime.Today.ToString("yyyy-MM-dd")"
+                           @bind-Value="Auction.Ends" class="form-control" />
+                <ValidationMessage For="@(() => Auction.Ends)" />
+            </div>
         </div>
-    </div>
+    }
+    else
+    {
+        <div class="col-sm-4 flex flex-column">
+        <label for="Auction.Name">Nome</label>
+        <label class=" border-1">@Auction.Name</label>
+        <label for="Auction.Starts">Inicio</label>
+        <label class=" border-1">@Auction.Starts</label>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="Auction.Ends">Fim</label>
+                <InputDate Type="InputDateType.DateTimeLocal"
+                           min="@DateTime.Today.ToString("yyyy-MM-dd")"
+                           @bind-Value="Auction.Ends" class="form-control" />
+                <ValidationMessage For="@(() => Auction.Ends)" />
+            </div>
+        </div>
+    }
     <button type="submit" class="btn btn-success mt-2">
         @ButtonTextSubmit
     </button>
@@ -49,10 +76,7 @@
     private bool showModal = false;
     private string titulo = string.Empty;
     private string conteudo = string.Empty;
-    protected override async Task OnInitializedAsync()
-    {
-        string teste = "";
-    }
+    
     public async Task EditAuction()
     {
         var result = await manageAuction.ChangeAuction(Auction.Id, Auction);
@@ -70,4 +94,19 @@
     }
     private void ShowModal() => showModal = true;
     private void NavigateToDashboard() => navigation.NavigateTo("/dashboard");
+    public async Task Delete()
+    {
+        var result = await manageAuction.DeleteAuction(Auction.Id);
+        if (result.ToLower() == "leilão excluido com sucesso!")
+        {
+            titulo = "Sucesso";
+            conteudo = "Leilão Excluido com Sucesso";
+        }
+        else
+        {
+            titulo = "Falha";
+            conteudo = "Falha ao Excluir Leilão";
+        }
+        ShowModal();
+    }
 }

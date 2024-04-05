@@ -1,0 +1,78 @@
+﻿@if (!ExibirItens)
+{
+    <AuthorizeView Roles="administrator, vip">
+        <a class="btnCreate" href="/createauction">Criar Leilão</a>
+    </AuthorizeView>
+
+    <h3>Lista de Leilões Ativos</h3>
+    @if (Auction == null)
+    {
+        <img src="images/loading-gif.gif" />
+    }
+    else
+    {
+        @if (Auction.Count() > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Inicio</th>
+                        <th>Fim</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                @foreach (var auction in Auction)
+                {
+                    <AuthorizeView Roles="administrator">
+                        <tbody>
+                            <tr>
+                                <td>@auction.Name</td>
+                                <td>@auction.Starts</td>
+                                <td>@auction.Ends</td>
+                                <td><button @onclick="(()=> PassarItem(auction))">Itens</button></td>
+                            </tr>
+                        </tbody>
+                    </AuthorizeView>
+                    <AuthorizeView Roles="vip">
+                        @if(auction.UserId == idUser)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@auction.Name</td>
+                                    <td>@auction.Starts</td>
+                                    <td>@auction.Ends</td>
+                                    <td><button @onclick="(()=> PassarItem(auction))">Itens</button></td>
+                                </tr>
+                            </tbody>
+                        }
+                </AuthorizeView>
+                }
+            </table>
+        }
+    }
+}
+else
+{
+    <CascadingValue Value="@auctionItem">
+        <Auction.Blazor.Components.ItemsComponents.ItemListComponent></Auction.Blazor.Components.ItemsComponents.ItemListComponent>
+    </CascadingValue>
+}
+
+
+@code {
+    [Inject] IManageAuctionService manageAuctionService { get; set; }
+    [Parameter] public int? idUser { get; set; }
+    public IEnumerable<AuctionModel>? Auction { get; set; }
+    public AuctionModel auctionItem { get; set; } = new();
+    public bool ExibirItens = false;
+
+    protected override async Task OnInitializedAsync() => Auction = await manageAuctionService.GetByClosed();
+
+    public void PassarItem(AuctionModel auctionIt)
+    {
+        auctionItem = auctionIt;
+        ExibirItens = true;
+    }
+
+}
