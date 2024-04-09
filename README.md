@@ -210,3 +210,8 @@ Construção de API Rest com C# - Continuação
 CRUD completo...
 Hoje fiz a parte de exclusão de leilões, assim finalizando os 4 elementos que compõe o CRUD que são Criação, Leitura, Edição e Exclusão. Agora só vou terminar a lógica de algumas operações dentro do site e finalizar o projeto.
 Lembrando que o objetivo não é um site com o melhor design, e sim integrar o back-end criado com o front e fazer funcionar da melhor forma, aprendendo cada conceito para que isso aconteça.
+
+Dia 43/100
+Construção de API Rest com C# - Continuação
+Hoje fiz a parte de exclusão de itens, além de testes e ajustes no sistema.
+Esta quase finalizado!

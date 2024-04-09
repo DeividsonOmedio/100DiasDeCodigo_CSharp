@@ -145,7 +145,7 @@ namespace Auction.Blazor.Services
             try
             {
                 var result = await _httpClient.PutAsJsonAsync<string>($"Auction/DeleteAuction/{id}", "");
-                return result.Content.ReadFromJsonAsync<string>();
+                return await result.Content.ReadFromJsonAsync<string>();
             }
             catch (Exception)
             {

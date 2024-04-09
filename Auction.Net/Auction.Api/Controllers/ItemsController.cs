@@ -56,7 +56,7 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
         [HttpDelete("DeleteItem/{idItem:int}")]
-        public IActionResult DeleteItem(int idItem)
+        public async Task<ActionResult<string>> DeleteItem(int idItem)
         {
             if (idItem == 0) return Ok("Id Invalido");
             var result = _updateItemsService.DeleteItem(idItem);
