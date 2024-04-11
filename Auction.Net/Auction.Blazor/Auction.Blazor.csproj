@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Components\AuctionComponents\AuctionProgrammed.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageReference Include="BlazorInputFile" Version="0.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.3" />
@@ -16,6 +20,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Components\AuctionComponents\AuctionProgrammed.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\AuctionComponents\AuctionProgrammed.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Components\AuctionComponents\AuctionProgrammed.razor" />
   </ItemGroup>
 
 </Project>

@@ -1,13 +1,15 @@
-﻿@if (!ExibirItens)
+﻿<h1>Teste</h1>
+
+@if (!ExibirItens)
 {
     <AuthorizeView Roles="administrator, vip">
         <a class="btnCreate" href="/createauction">Criar Leilão</a>
     </AuthorizeView>
 
-    <h3 class="text-center">Lista de Leilões Ativos</h3>
+    <h3 class="text-center">Lista de Leilões Programados</h3>
     @if (Auction == null)
     {
-        <img src="images/loading-gif.gif"/>
+        <img src="images/loading-gif.gif" />
     }
     else
     {
@@ -42,9 +44,9 @@
 }
 else
 {
-<CascadingValue Value="@auctionItem">
-    <Auction.Blazor.Components.ItemsComponents.ItemListComponent></Auction.Blazor.Components.ItemsComponents.ItemListComponent>
-</CascadingValue>
+    <CascadingValue Value="@auctionItem">
+        <Auction.Blazor.Components.ItemsComponents.ItemListComponent></Auction.Blazor.Components.ItemsComponents.ItemListComponent>
+    </CascadingValue>
 }
 
 
@@ -54,7 +56,11 @@ else
     public AuctionModel auctionItem { get; set; } = new();
     public bool ExibirItens = false;
 
-    protected override async Task OnInitializedAsync() => Auction = await manageAuctionService.GetCurrent();
+    protected override async Task OnInitializedAsync()
+    {
+        Auction = await manageAuctionService.GetByProgrammed();
+        ExibirItens = false;
+    }
 
     public void PassarItem(AuctionModel auctionIt)
     {

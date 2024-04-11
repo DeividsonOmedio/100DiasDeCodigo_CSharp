@@ -5,6 +5,7 @@
         <button class="btn btn-sm btn-outline-secondary me-4" type="button" @onclick="(()=>ManageView(1))">Seus Leilões</button>
         <button class="btn btn-sm btn-outline-secondary me-4" type="button" @onclick="(()=>ManageView(2))">Todos os Leilões</button>
         <button class="btn btn-sm btn-outline-secondary me-4" type="button" @onclick="(()=>ManageView(3))">Leilões Encerrados</button>
+        <button class="btn btn-sm btn-outline-secondary me-4" type="button" @onclick="(()=>ManageView(4))">Leilões Programados</button>
     </form>
 </nav>
 @if(view == 0)
@@ -22,6 +23,11 @@ else if (view == 2)
 else if (view == 3)
 {
     <AuctionClosed></AuctionClosed>
+}
+else if (view == 4)
+{
+    <AuctionProgramed></AuctionProgramed>
+    <AuctionProgrammed></AuctionProgrammed>
 }
 
 @code {

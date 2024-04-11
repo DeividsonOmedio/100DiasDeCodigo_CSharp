@@ -1,6 +1,6 @@
 ﻿@inject IManageOffersService manageOffer
 @inject IManageUsersService manageUser
-<h3>Gerenciar Ofertas</h3>
+<h2 class="text-center">Gerenciar Ofertas</h2>
 @if (Offer != null)
 {
     @if (Offer.Any())
@@ -72,7 +72,7 @@
     else
 
     {
-        <h3>Não foram encontradas ofertas para este item!</h3>
+        <h4>Não foram encontradas ofertas para este item!</h4>
     }
 }
 else
@@ -93,9 +93,13 @@ else
     protected override async Task OnInitializedAsync()
     {
         Offer = await manageOffer.GetAllOffersByItem(Item.Id);
-        await LoadUserNames();
-        MoreOffer = await manageOffer.GetMoreOfferByItem(Item.Id);
-        userNameMoreOffer = await manageUser.GetUserById(MoreOffer.UserId);
+        if(Offer.Count() > 0)
+        {
+            await LoadUserNames();
+            MoreOffer = await manageOffer.GetMoreOfferByItem(Item.Id);
+            userNameMoreOffer = await manageUser.GetUserById(MoreOffer.UserId);
+        }
+       
     }
 
     private async Task LoadUserNames()

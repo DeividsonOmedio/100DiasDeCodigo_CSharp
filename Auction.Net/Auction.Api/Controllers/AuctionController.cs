@@ -55,27 +55,27 @@ namespace Auction.Api.Controllers
             return Ok(result);
         }
         [HttpGet("GetByDate")]
-        public IActionResult GetByDate(DateTime data)
+        public async Task<ActionResult<List<AuctionModel>>> GetByDate(DateTime data)
         {
-            var result = _updateAuctionService.GetByDate(data);
+            var result = await _updateAuctionService.GetByDate(data);
             if (result == null)
                 return Ok("Não há Leilões nessa data");
             return Ok(result);
         }
 
         [HttpGet("GetByPeriod")]
-        public IActionResult GetByPeriod(DateTime dataInicial, DateTime dataFinal)
+        public async Task<ActionResult<List<AuctionModel>>> GetByPeriod(DateTime dataInicial, DateTime dataFinal)
         {
-            var result = _updateAuctionService.GetByPeriod(dataInicial, dataFinal);
+            var result = await _updateAuctionService.GetByPeriod(dataInicial, dataFinal);
             if (result == null)
                 return Ok("Não há Leilões neste período");
             return Ok(result);
         }
 
         [HttpGet("GetByProgrammed")]
-        public IActionResult GetByProgrammed()
+        public async Task<ActionResult<List<AuctionModel>>> GetByProgrammed()
         {
-            var result = _updateAuctionService.GetByProgrammed();
+            var result = await _updateAuctionService.GetByProgrammed();
             if (result == null)
                 return Ok("Não há Leilões Ativos No Momento");
             return Ok(result);

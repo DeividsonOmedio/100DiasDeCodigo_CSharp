@@ -215,3 +215,8 @@ Dia 43/100
 Construção de API Rest com C# - Continuação
 Hoje fiz a parte de exclusão de itens, além de testes e ajustes no sistema.
 Esta quase finalizado!
+
+Dia 44/100
+Construção de API Rest com C# - Continuação
+Finalizando os últimos componentes, mas quero hoje mostrar a estrutura de pastas que utilizei em todo o projeto. Busquei estudar um pouco sobre DDD e entender um pouco sobre a divisão dos arquivos. Sei que ainda não esta 100%, mas acredito que consegui fazer uma boa divisão das pastas e facilitar uma futura manutenção ou refatoração.
+

@@ -8,7 +8,7 @@
             <button class="btnCreate" @onclick="(()=>Delete())">Excluir Leilão</button>
         }
     </AuthorizeView>
-<h2>Editar Leilão</h2>
+<h2 class="text-center">Editar Leilão</h2>
 <EditForm Model="@Auction" OnValidSubmit="EditAuction" class="bg-opacity-50" style="font-size: 1rem;">
     <DataAnnotationsValidator />
     <ValidationSummary />

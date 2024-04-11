@@ -72,7 +72,7 @@ namespace Auction.Blazor.Services
             try
             {
                 return await _httpClient
-                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetByClosed");
             }
             catch (Exception)
             {
@@ -84,7 +84,7 @@ namespace Auction.Blazor.Services
             try
             {
                 return await _httpClient
-                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetByDate");
             }
             catch (Exception)
             {
@@ -97,7 +97,7 @@ namespace Auction.Blazor.Services
             try
             {
                 return await _httpClient
-                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetByPeriod");
             }
             catch (Exception)
             {
@@ -109,7 +109,7 @@ namespace Auction.Blazor.Services
             try
             {
                 return await _httpClient
-                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetAllAuction");
+                .GetFromJsonAsync<IEnumerable<AuctionModel>>("Auction/GetByProgrammed");
             }
             catch (Exception)
             {

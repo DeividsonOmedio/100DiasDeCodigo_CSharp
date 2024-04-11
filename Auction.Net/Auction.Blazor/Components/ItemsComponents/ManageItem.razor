@@ -6,7 +6,7 @@
     <button class="btn btn-danger m-3 small" @onclick="(()=>Delete())">Excluir Leilão</button>
 </AuthorizeView>
 
-<h2>Editar Item</h2>
+<h2 class="text-center">Editar Item</h2>
 
 <EditForm Model="@Item" OnValidSubmit="EditItem" class="bg-opacity-50" style="font-size: 1rem;">
     <DataAnnotationsValidator />
@@ -70,7 +70,7 @@
         else
         {
             titulo = "Falha";
-            conteudo = "Falha ao Alterar Leilão";
+            conteudo = "Falha ao Alterar Item";
         }
         ShowModal();
     }
@@ -83,7 +83,7 @@
         if (result.ToLower() == "sucesso")
         {
             titulo = "Sucesso";
-            conteudo = "Leilão Excluido com Sucesso";
+            conteudo = "Item Excluido com Sucesso";
         }
         else
         {

@@ -6,29 +6,27 @@
 
 @if (!cadastroPage)
 {
-<h1>Login</h1>
+    <h1 class="text-center">Login</h1>
 
-<div id="divLogin">
-    <div>
-        <label>Email</label>
-        <InputText @bind-Value="@Email"/>
+    <div id="divLogin">
+        <div>
+            <label>Email</label>
+            <InputText @bind-Value="@Email"/>
+        </div>
+        <div>
+            <label>Senha</label>
+            <InputText  @bind-Value="@Password"></InputText>
+        </div>
+        <div class="flex justify-content-between">
+            <button class="btn btn-primary" @onclick="(()=> Logar())">Login</button>
+             <button class="btn btn-secondary" @onclick="(()=> Register())">Cadastrar</button>
+        </div>
     </div>
-    <div>
-        <label>Senha</label>
-        <InputText  @bind-Value="@Password"></InputText>
-    </div>
-    <div class="flex justify-content-between">
-        <button class="btn btn-primary" @onclick="(()=> Logar())">Login</button>
-           <button class="btn btn-second" @onclick="(()=> Register())">Cadastrar</button>
-    </div>
-</div>
-<div>
-        <button class="btn btn-second" @onclick="(()=> Register())"></button>
-    </div>
+   
 }
 else
 {
-    <Sign Login="Registered"></Sign>
+    <Sign Login="Registered" class="d-flex justify-content-center"></Sign>
 }
 
 @code {
