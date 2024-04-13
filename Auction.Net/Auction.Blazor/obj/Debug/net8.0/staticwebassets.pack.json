@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
+      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\images\\leilao1.jpg",
+      "PackagePath": "staticwebassets\\images\\leilao1.jpg"
+    },
+    {
       "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\images\\loading-gif.gif",
       "PackagePath": "staticwebassets\\images\\loading-gif.gif"
     },

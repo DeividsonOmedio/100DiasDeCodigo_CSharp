@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Auction.Blazor",
   "resources": {
-    "hash": "sha256-hPig5sqAiGuU/k8srJlE4XgpZrPY0JXqFYI3zNGVvTg=",
+    "hash": "sha256-OWfC3whFCLGxUZc/wvK3sGaMc8vG1xW4/Y6HWoI1ieM=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.umjfwa91y0.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
     },
@@ -281,11 +281,11 @@
       "netstandard.wasm": "sha256-2kH24/YfHmU3B4eYRyRmiwebYROM4+B9eDWKvMnUdP8=",
       "System.Private.CoreLib.wasm": "sha256-CsySKiP7HYY1pS8LTDE60EkqiX5oHb3WoEZHDNd1yK0=",
       "Entities.wasm": "sha256-RC+0ps9/4utXngIqEnpCxZYPs2RcasgpIb0tJN5emZc=",
-      "Auction.Blazor.wasm": "sha256-fu3dSACpbu8sOCysNLZDL9wE8VVtrhke++Z9bU2ureM="
+      "Auction.Blazor.wasm": "sha256-3ECyaCGda8FsPlbmKJuS54iDwmuRCGSzjn00HowDtMA="
     },
     "pdb": {
       "Entities.pdb": "sha256-BudW0kFlPvDHB3nSrg/FaSoeDsfLnGl9o246FZjqyYE=",
-      "Auction.Blazor.pdb": "sha256-IzkAkFEUxgW82BXfhDGJBmBU1Tez5yR9sue2YYvrsXo="
+      "Auction.Blazor.pdb": "sha256-B9NrJhOzRYl2gak56etT/2eb1T5NWSa0LWPXNwWIgLw="
     }
   },
   "cacheBootResources": true,

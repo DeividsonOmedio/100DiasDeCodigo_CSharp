@@ -82,9 +82,9 @@ namespace Auction.Api.Controllers
         }
 
         [HttpGet("GetByClosed")]
-        public IActionResult GetByClosed()
+        public async Task<ActionResult<List<AuctionModel>>> GetByClosed()
         {
-            var result = _updateAuctionService.GetByClosed();
+            var result = await _updateAuctionService.GetByClosed();
             if (result == null)
                 return Ok("Não há Leilões Ativos No Momento");
             return Ok(result);

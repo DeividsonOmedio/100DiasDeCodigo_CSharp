@@ -9,3 +9,7 @@ body[b-mp5ot86o2c] {
     gap: 30px;
     text-align: center;
 }
+Sign[b-mp5ot86o2c] {
+    display: flex;
+    justify-content: center;
+}

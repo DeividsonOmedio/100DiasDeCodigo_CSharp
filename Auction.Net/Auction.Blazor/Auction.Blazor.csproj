@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Pages\Home.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageReference Include="BlazorInputFile" Version="0.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.3" />
@@ -28,6 +32,10 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Components\AuctionComponents\AuctionProgrammed.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Home.razor.css" />
   </ItemGroup>
 
   <ItemGroup>

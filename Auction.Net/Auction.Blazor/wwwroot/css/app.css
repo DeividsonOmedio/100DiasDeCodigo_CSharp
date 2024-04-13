@@ -6,6 +6,10 @@ h1:focus {
     outline: none;
 }
 
+h1, form, EditForm{
+    text-align: center;
+    margin: auto;
+}
 h2, h3 {
     margin: 15px, 0;
     text-align: center !important;
