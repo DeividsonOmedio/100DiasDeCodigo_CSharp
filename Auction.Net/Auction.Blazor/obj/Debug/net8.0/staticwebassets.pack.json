@@ -1,47 +1,51 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\compressed\\sklsqjg1x7.gz",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\compressed\\rbzo6mt9a6.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Auction.Blazor.styles.css",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Auction.Blazor.styles.css",
       "PackagePath": "staticwebassets\\Auction.Blazor.styles.css"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\css\\app.css",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\favicon.png",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\icon-192.png",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\images\\loading-gif.gif",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\images\\leilao.jpeg",
+      "PackagePath": "staticwebassets\\images\\leilao.jpeg"
+    },
+    {
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\images\\loading-gif.gif",
       "PackagePath": "staticwebassets\\images\\loading-gif.gif"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\index.html",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\deividson\\Documents\\Nova pasta\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\sample-data\\weather.json",
+      "Id": "F:\\PROJETOS\\100DiasDeCodigo_CSharp\\Auction.Net\\Auction.Blazor\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {

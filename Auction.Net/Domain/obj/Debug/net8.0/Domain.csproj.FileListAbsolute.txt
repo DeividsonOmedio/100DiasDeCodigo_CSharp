@@ -30,3 +30,35 @@ C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Domai
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\ref\Domain.dll
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Domain.deps.json
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Domain.dll
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Domain.pdb
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Entities.dll
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Entities.pdb
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.csproj.Up2Date
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.dll
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\refint\Domain.dll
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.pdb
+F:\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\ref\Domain.dll
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Domain.deps.json
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Domain.dll
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Domain.pdb
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Entities.dll
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\bin\Debug\net8.0\Entities.pdb
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.csproj.Up2Date
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.dll
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\refint\Domain.dll
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\Domain.pdb
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Domain\obj\Debug\net8.0\ref\Domain.dll

@@ -13,111 +13,111 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = Auction.Blazor
 build_property.RootNamespace = Auction.Blazor
-build_property.ProjectDir = C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\
+build_property.ProjectDir = F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor
+build_property.MSBuildProjectDirectory = F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Auction.Blazor
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/App.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionByUser.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionByUser.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdWN0aW9uQ29tcG9uZW50c1xBdWN0aW9uQnlVc2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionClosed.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionClosed.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdWN0aW9uQ29tcG9uZW50c1xBdWN0aW9uQ2xvc2VkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionCreate.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdWN0aW9uQ29tcG9uZW50c1xBdWN0aW9uQ3JlYXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionCurrent.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionCurrent.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdWN0aW9uQ29tcG9uZW50c1xBdWN0aW9uQ3VycmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/ManageAuction.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/ManageAuction.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdWN0aW9uQ29tcG9uZW50c1xNYW5hZ2VBdWN0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Dashboards/VipDashboard.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Dashboards/VipDashboard.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXNoYm9hcmRzXFZpcERhc2hib2FyZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/ItemsComponents/ItemCreate.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/ItemsComponents/ItemCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJdGVtc0NvbXBvbmVudHNcSXRlbUNyZWF0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/ItemsComponents/ManageItem.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/ItemsComponents/ManageItem.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJdGVtc0NvbXBvbmVudHNcTWFuYWdlSXRlbS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Offer/ManagerOffer.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Offer/ManagerOffer.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPZmZlclxNYW5hZ2VyT2ZmZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Offer/OfferCreate.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Offer/OfferCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xPZmZlclxPZmZlckNyZWF0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Shared/InputPassword.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Shared/InputPassword.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcSW5wdXRQYXNzd29yZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Shared/Modal.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Shared/Modal.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcTW9kYWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Shared/NotAuthorized.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Shared/NotAuthorized.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcTm90QXV0aG9yaXplZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/Dashboard.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/Dashboard.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/Home.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/Sign.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/Sign.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/_Imports.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionList.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/AuctionComponents/AuctionList.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdWN0aW9uQ29tcG9uZW50c1xBdWN0aW9uTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-629myw2m1d
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Dashboards/AdminDashboard.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/Dashboards/AdminDashboard.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEYXNoYm9hcmRzXEFkbWluRGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-vwzw00qoqp
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/ItemsComponents/ItemListComponent.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Components/ItemsComponents/ItemListComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJdGVtc0NvbXBvbmVudHNcSXRlbUxpc3RDb21wb25lbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-0ut2g3qacc
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Layout/MainLayout.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-4ql40ifed5
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Layout/NavMenu.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-iwrt46pnza
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/Login.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-mp5ot86o2c
 
-[C:/Users/deividson/Documents/Nova pasta/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/UserPage.razor]
+[F:/PROJETOS/100DiasDeCodigo_CSharp/Auction.Net/Auction.Blazor/Pages/UserPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-upyp42ijrb

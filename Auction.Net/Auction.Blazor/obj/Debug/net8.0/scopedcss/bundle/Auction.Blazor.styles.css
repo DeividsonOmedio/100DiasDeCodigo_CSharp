@@ -191,8 +191,6 @@ ul[b-4ql40ifed5]{
     }
 }
 /* /Pages/Login.razor.rz.scp.css */
-body[b-mp5ot86o2c] {
-}
 #divLogin[b-mp5ot86o2c]{
     width: 100%;
     display: flex;
@@ -201,6 +199,19 @@ body[b-mp5ot86o2c] {
     align-items: center;
     gap: 30px;
     text-align: center;
+}
+.col[b-mp5ot86o2c]{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    margin: 0 40%;
+}
+.form[b-mp5ot86o2c] {
+    white-space: pre-line;
+}
+button[b-mp5ot86o2c]{
+    font-size: .8rem;
+    margin-left: 2%;
 }
 /* /Pages/UserPage.razor.rz.scp.css */
 body[b-upyp42ijrb] {

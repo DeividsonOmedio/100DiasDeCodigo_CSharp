@@ -1,7 +1,7 @@
 ﻿@using Entities.Enums
 @inject IManageItemsService manageItems
 @inject NavigationManager navigation
-<h2>Cadastrar Item</h2>
+<h2 class="mb-3">Cadastrar Item</h2>
 
 <EditForm Model="@Item" OnValidSubmit="CreateItem" class="bg-opacity-50" style="font-size: 1rem;">
     <DataAnnotationsValidator />
