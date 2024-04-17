@@ -24,3 +24,29 @@ C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Entit
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\refint\Entities.dll
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.pdb
 C:\Users\deividson\Documents\Nova pasta\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\ref\Entities.dll
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\bin\Debug\net8.0\Entities.deps.json
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\bin\Debug\net8.0\Entities.dll
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\bin\Debug\net8.0\Entities.pdb
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.csproj.AssemblyReference.cache
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.AssemblyInfoInputs.cache
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.AssemblyInfo.cs
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.csproj.CoreCompileInputs.cache
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.sourcelink.json
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.dll
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\refint\Entities.dll
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.pdb
+F:\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\ref\Entities.dll
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\bin\Debug\net8.0\Entities.deps.json
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\bin\Debug\net8.0\Entities.dll
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\bin\Debug\net8.0\Entities.pdb
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.csproj.AssemblyReference.cache
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.AssemblyInfoInputs.cache
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.AssemblyInfo.cs
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.csproj.CoreCompileInputs.cache
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.sourcelink.json
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.dll
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\refint\Entities.dll
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\Entities.pdb
+F:\PROJETOS\100DiasDeCodigo_CSharp\Auction.Net\Entities\obj\Debug\net8.0\ref\Entities.dll

@@ -8,7 +8,11 @@
             <button class="btnCreate" @onclick="(()=>Delete())">Excluir Leilão</button>
         }
     </AuthorizeView>
+<<<<<<< HEAD
 <h2 class="text-center">Editar Leilão</h2>
+=======
+<h2 class="mb-3">Editar Leilão</h2>
+>>>>>>> fef9aaed6efca246766f600dea03b4c89de4500d
 <EditForm Model="@Auction" OnValidSubmit="EditAuction" class="bg-opacity-50" style="font-size: 1rem;">
     <DataAnnotationsValidator />
     <ValidationSummary />
@@ -43,7 +47,6 @@
     else
     {
         <div class="col-sm-4 flex flex-column">
-        <label for="Auction.Name">Nome</label>
         <label class=" border-1">@Auction.Name</label>
         <label for="Auction.Starts">Inicio</label>
         <label class=" border-1">@Auction.Starts</label>

@@ -225,3 +225,15 @@ Construção de API Rest com C# - Continuação
 Hoje foi dia de testes e pequenos ajustes para garantir que esta tudo funcionando como deveria estar.
 Foi uma jornada incrível, em alguns momentos mais difíceis outros mais fáceis, o mais importante foi o aprendizado nesse que foi um projeto único, um projeto que não segui um curso, nem um cronograma feito por outra pessoa, peguei meus conhecimentos e dicas da comunidade e busquei fazer algo que funcionasse e sempre aprendendo coisas novas e aprofundando em determinados assuntos, logo logo postarei um vídeo de toda a aplicação.
 
+Dia 46/100
+Construção de API Rest com C# - Final
+
+Finalizado o projeto
+
+API construida com .NET onde pude colocar em pratica conceitos de DDD, OOP, Interfaces, Injeção de Dependência, Entity framework, Token JWT e outros recursos.
+
+Front-end criado com Blazor webassembly, onde criei componentes, consumi a API, realizei o CRUD completo, utilizei também métodos de autenticação e autorização de acordo com o perfil do usuário.
+
+Testes Unitários com XUnity.
+Foi um dos projetos que mais me deu orgulho de fazer, pela complexidade, pelo fato de não estar seguindo um passo a passo feito por outra pessoa, pelo aprendizado que foi enorme e por der dado certo.
+O foco não era o design, então o front-end não ficou o mais belo, porém atingi meus objetivos e estou pronto para um próximo desafio.

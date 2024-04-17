@@ -23,7 +23,6 @@
     [Parameter] public bool showModal { get; set; }
     [Parameter] public string conteudo { get; set; } = string.Empty;
     [Parameter] public string titulo { get; set; } = string.Empty;
-
     private void CloseModal() => showModal = false;
     private void Redirecionar() => navigation.NavigateTo("/Dashboard");
 }

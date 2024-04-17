@@ -7,6 +7,7 @@
 @if (!cadastroPage)
 {
     <h1 class="text-center">Login</h1>
+<<<<<<< HEAD
 
     <div id="divLogin">
         <div>
@@ -21,6 +22,32 @@
             <button class="btn btn-primary" @onclick="(()=> Logar())">Login</button>
              <button class="btn btn-secondary" @onclick="(()=> Register())">Cadastrar</button>
         </div>
+=======
+    <div id="divLogin">
+        <EditForm Model="@User" OnValidSubmit="Logar" class="bg-opacity-50 w-100 form" style="font-size: 1rem;" >
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+    
+            <div class="form-group row mb-3 mt-5">
+                <div class="col">
+                    <label for="Auction.Name" class="mb-2 text-start">E-mail</label>
+                    <InputText @bind-Value="User.Email" />
+                    <ValidationMessage For="@(() => User.Email)" />
+                </div>
+            </div>
+            <div class="form-group row mb-5">
+                <div class="col">
+                    <Auction.Blazor.Components.Shared.InputPassword class="input" Title="Password" @bind-Value="@User.Password"></Auction.Blazor.Components.Shared.InputPassword>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">
+                @ButtonTextSubmit
+            </button>
+            <button type="button" class="btn btn-success" @onclick="Register">
+                @ButtonRegister
+            </button>
+        </EditForm>
+>>>>>>> fef9aaed6efca246766f600dea03b4c89de4500d
     </div>
    
 }
@@ -30,25 +57,26 @@ else
 }
 
 @code {
+    public UserModel User { get; set; } = new();
+    [Parameter] public string ButtonTextSubmit { get; set; } = "Logar";
+    [Parameter] public string ButtonRegister { get; set; } = "Cadastre-se";
     private int currentCount = 0;
-    public string Email = "";
-    public string Password = "";
     public string? token = "";
     public bool cadastroPage = false;
     private string lastVisitedPage = "";
     public async void Logar()
     {
-        token = await AuthService.GetToken(Email, Password);
+        token = await AuthService.GetToken(User.Email, User.Password);
         lastVisitedPage = navigation.Uri;
         await JSRuntime.InvokeVoidAsync("localStorage.setItem", "lastVisitedPage", lastVisitedPage);
         if (token != null) navigation.NavigateTo("/dashboard");
     }
     public void Registered(UserModel user)
     {
-        Email = user.Email;
-        Password = user.Password;
+        User.Email = user.Email;
+        User.Password = user.Password;
         Logar();
     }
     public void Register() => cadastroPage = true;
-
+    private void NavigateToDashboard() => navigation.NavigateTo("/");
 }
