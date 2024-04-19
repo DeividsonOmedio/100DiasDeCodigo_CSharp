@@ -237,3 +237,7 @@ Front-end criado com Blazor webassembly, onde criei componentes, consumi a API, 
 Testes Unitários com XUnity.
 Foi um dos projetos que mais me deu orgulho de fazer, pela complexidade, pelo fato de não estar seguindo um passo a passo feito por outra pessoa, pelo aprendizado que foi enorme e por der dado certo.
 O foco não era o design, então o front-end não ficou o mais belo, porém atingi meus objetivos e estou pronto para um próximo desafio.
+
+Dia 47/100
+Criação de CHAT com BLAZOR e .NET 8
+Hoje criei um projeto de um Chat com Blazor, onde aprendi mais sobre o SignalR, que é uma tecnologia que adiciona recursos de comunicação em tempo real aos aplicativos.
