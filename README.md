@@ -241,3 +241,15 @@ O foco não era o design, então o front-end não ficou o mais belo, porém atin
 Dia 47/100
 Criação de CHAT com BLAZOR e .NET 8
 Hoje criei um projeto de um Chat com Blazor, onde aprendi mais sobre o SignalR, que é uma tecnologia que adiciona recursos de comunicação em tempo real aos aplicativos.
+
+Dia 48/100
+Iniciando mais um projeto - Sistema para Bares.
+Hoje foi dia de estruturar o projeto. Pra começar criei um quadro no trello, onde conseguirei gerenciar melhor as tarefas. E então comecei a definir os requisitos para o projeto.
+Linguagem Back-end: C#;
+Injeção de dependência: Singleton;
+Segurança: Token JWT;
+Tecnologia para testes: XUnit;
+Banco de dados: Sql Server;
+Tecnologia Front-End: .Net MAUI Blazor
+E nesse processo aproveitei para me aprofundar um pouco mais sobre Injeção de dependência, inclusive deixarei um link com um conteúdo que achei muito útil sobre o assunto: https://lnkd.in/d-K7YjPe
+
