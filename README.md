@@ -253,3 +253,21 @@ Banco de dados: Sql Server;
 Tecnologia Front-End: .Net MAUI Blazor
 E nesse processo aproveitei para me aprofundar um pouco mais sobre Injeção de dependência, inclusive deixarei um link com um conteúdo que achei muito útil sobre o assunto: https://lnkd.in/d-K7YjPe
 
+Dia 49/100
+Sistema para Bares - Planejamento do projeto
+Planejar o projeto é essencial para definir objetivos claros, alocação eficiente de recursos e minimizar riscos, garantindo o sucesso do desenvolvimento e a entrega de um produto de qualidade.
+Hoje, dediquei tempo para definir que usarei a modelagem Domain-Driven Design (DDD) e para testes utilizarei Test-Driven Development (TDD), além de adotar o padrão estrutural da Arquitetura em Camadas.
+O Domain-Driven Design (DDD), é uma abordagem de design de software que se concentra na modelagem do domínio de um problema de negócio complexo. O objetivo principal do DDD é criar um modelo de domínio rico e expressivo que reflita com precisão as regras de negócio e os conceitos fundamentais envolvidos.
+O Test-Driven Development (TDD), ou Desenvolvimento Orientado a Testes, é uma prática de desenvolvimento de software que se concentra na criação de testes automatizados. A abordagem básica do TDD pode ser resumida em três passos principais: escrever um teste, fazer o teste passar e refatorar o código.
+Ao combinar DDD e TDD, você pode desenvolver software que não apenas reflete com precisão os requisitos de negócios, mas também é robusto, modular e fácil de manter. Essa abordagem promove uma compreensão profunda do domínio do problema e garante que o código de produção seja validado por testes automatizados, resultando em um sistema mais confiável e de alta qualidade.
+Por fim, a arquitetura em camadas divide o sistema em camadas lógicas distintas, como apresentação, lógica de negócios e acesso a dados. Isso promove a separação de preocupações e facilita a manutenção e a evolução do sistema.
+
+Dia 50/100
+Sistema para Bares - Planejamento do projeto
+Hoje continuei a tarefa de planejar a aplicação.
+Defini as Tabelas do banco de dados e seus relacionamentos e também esbocei a estrutura das camadas que compõe o back-end do projeto, juntamente com suas classes e métodos. Isso é importante para maximizar a produtividade, evitar retrabalho e com isso focar num melhor desenvolvimento.
+
+Dia 51/100
+Sistema para Bares - Planejamento do projeto
+Hoje desenhei um esboço no figma do que será o projeto no front-end. O objetivo não foi design e sim, visualizar como será as telas, oque terá nelas, qual a lógica das rotas de acordo com o tipo de funcionário logado no sistema.
+"Planejamento não é tempo perdido, e sim pensar grande, pensar no futuro, é otimizar o trabalho a frente"
