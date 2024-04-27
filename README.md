@@ -271,3 +271,7 @@ Dia 51/100
 Sistema para Bares - Planejamento do projeto
 Hoje desenhei um esboço no figma do que será o projeto no front-end. O objetivo não foi design e sim, visualizar como será as telas, oque terá nelas, qual a lógica das rotas de acordo com o tipo de funcionário logado no sistema.
 "Planejamento não é tempo perdido, e sim pensar grande, pensar no futuro, é otimizar o trabalho a frente"
+
+Dia 52/100
+Sistema para Bares - Planejamento do projeto
+Hoje criei o projeto .Net para o back-end, toda a estrutura de pastas e biblioteca de classes e também criei as entidades que serão mapeadas para o banco de dados.
