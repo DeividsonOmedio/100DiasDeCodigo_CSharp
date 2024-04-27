@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apresentation", "Apresentation", "{8CFC6F45-C3ED-4A89-9DB2-1AFDA5461223}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5D205ACE-5729-4CF2-A3F9-A2E55F1BDD28}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{757B823D-C2B4-41BA-AC63-514783E2C544}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{83AB6727-024A-4AAD-A465-6999CAF80210}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{7B306EEF-63F2-447D-8D51-27ADA04A1010}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{E55840F7-B4E4-4875-B901-1E0DA3D4C9E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A595F187-898D-45E3-AB08-C5D4FEE66FF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{F4F40B84-9B8D-4222-881A-3873B438AC0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{77F477B4-3894-48A4-B0E5-EF47B3F4C8B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{5A934444-0175-4810-9D1E-7C5F60CF846D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E55840F7-B4E4-4875-B901-1E0DA3D4C9E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E55840F7-B4E4-4875-B901-1E0DA3D4C9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E55840F7-B4E4-4875-B901-1E0DA3D4C9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E55840F7-B4E4-4875-B901-1E0DA3D4C9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A595F187-898D-45E3-AB08-C5D4FEE66FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A595F187-898D-45E3-AB08-C5D4FEE66FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A595F187-898D-45E3-AB08-C5D4FEE66FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A595F187-898D-45E3-AB08-C5D4FEE66FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4F40B84-9B8D-4222-881A-3873B438AC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F40B84-9B8D-4222-881A-3873B438AC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F40B84-9B8D-4222-881A-3873B438AC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F40B84-9B8D-4222-881A-3873B438AC0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77F477B4-3894-48A4-B0E5-EF47B3F4C8B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F477B4-3894-48A4-B0E5-EF47B3F4C8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F477B4-3894-48A4-B0E5-EF47B3F4C8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F477B4-3894-48A4-B0E5-EF47B3F4C8B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A934444-0175-4810-9D1E-7C5F60CF846D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A934444-0175-4810-9D1E-7C5F60CF846D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A934444-0175-4810-9D1E-7C5F60CF846D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A934444-0175-4810-9D1E-7C5F60CF846D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E55840F7-B4E4-4875-B901-1E0DA3D4C9E2} = {83AB6727-024A-4AAD-A465-6999CAF80210}
+		{A595F187-898D-45E3-AB08-C5D4FEE66FF5} = {5D205ACE-5729-4CF2-A3F9-A2E55F1BDD28}
+		{F4F40B84-9B8D-4222-881A-3873B438AC0C} = {7B306EEF-63F2-447D-8D51-27ADA04A1010}
+		{77F477B4-3894-48A4-B0E5-EF47B3F4C8B1} = {757B823D-C2B4-41BA-AC63-514783E2C544}
+		{5A934444-0175-4810-9D1E-7C5F60CF846D} = {8CFC6F45-C3ED-4A89-9DB2-1AFDA5461223}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B0CD236-9E2A-4EA8-B72F-ED6ACE930D86}
+	EndGlobalSection
+EndGlobal
