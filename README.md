@@ -275,3 +275,8 @@ Hoje desenhei um esboço no figma do que será o projeto no front-end. O objetiv
 Dia 52/100
 Sistema para Bares - Planejamento do projeto
 Hoje criei o projeto .Net para o back-end, toda a estrutura de pastas e biblioteca de classes e também criei as entidades que serão mapeadas para o banco de dados.
+
+Dia 53/100
+Sistema para Bares - Planejamento do projeto
+Hoje criei as interfaces
+Em resumo, criar interfaces no projeto promove uma arquitetura mais flexível, testável e modular, que é fundamental para o desenvolvimento de software de alta qualidade. Elas facilitam a manutenção, a extensão e a integração do código, além de promover boas práticas de design e princípios de engenharia de software.
