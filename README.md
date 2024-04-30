@@ -280,3 +280,8 @@ Dia 53/100
 Sistema para Bares - Planejamento do projeto
 Hoje criei as interfaces
 Em resumo, criar interfaces no projeto promove uma arquitetura mais flexível, testável e modular, que é fundamental para o desenvolvimento de software de alta qualidade. Elas facilitam a manutenção, a extensão e a integração do código, além de promover boas práticas de design e princípios de engenharia de software.
+
+Dia 54/100
+Sistema para Bares - Planejamento do projeto
+Hoje criei a conexão e conectei o projeto banco de dados SqlServer utilizando e entity framework. Houve alguns bugs no processo, que levou um pouco mais de tempo do que o previsto, mas tudo resolvido e novas experiências adquiridas.
+
