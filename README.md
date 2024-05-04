@@ -285,3 +285,7 @@ Dia 54/100
 Sistema para Bares - Planejamento do projeto
 Hoje criei a conexão e conectei o projeto banco de dados SqlServer utilizando e entity framework. Houve alguns bugs no processo, que levou um pouco mais de tempo do que o previsto, mas tudo resolvido e novas experiências adquiridas.
 
+Dia 55/100
+Sistema para Bares - Planejamento do projeto
+Hoje, desenvolvi um repositório genérico utilizando C# e o LINQ (Language Integrated Query). O LINQ é uma ferramenta poderosa que oferece expressividade e legibilidade ao escrever consultas de dados, garantindo segurança de tipo e integração perfeita com a linguagem. Além disso, o LINQ permite reutilizar código de forma eficiente, integrar-se a diversas fontes de dados e oferecer desempenho otimizado. Com esse repositório, agora tenho uma solução flexível e robusta para lidar com operações de CRUD em diferentes tipos de entidades de forma simples e eficaz.
+
