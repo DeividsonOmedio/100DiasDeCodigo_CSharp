@@ -309,3 +309,6 @@ Hoje finalizei as classes de serviços, essas classes ajudam a desacoplar a cama
 Dia 60/100
 Hoje iniciei a criação das controllers, peças-chave na arquitetura de nossa aplicação. Elas serão responsáveis por receber as requisições dos clientes, encaminhá-las para os serviços apropriados e retornar as respostas adequadas.
 
+Dia 61/100
+Finalizei as controllers, buscando sempre a otimização do código, uma boa entrega e uma codificação limpa e organizada, favorecendo possíveis manutenções futuras.
+
