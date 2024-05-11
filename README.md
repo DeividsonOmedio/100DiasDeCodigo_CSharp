@@ -289,3 +289,23 @@ Dia 55/100
 Sistema para Bares - Planejamento do projeto
 Hoje, desenvolvi um repositório genérico utilizando C# e o LINQ (Language Integrated Query). O LINQ é uma ferramenta poderosa que oferece expressividade e legibilidade ao escrever consultas de dados, garantindo segurança de tipo e integração perfeita com a linguagem. Além disso, o LINQ permite reutilizar código de forma eficiente, integrar-se a diversas fontes de dados e oferecer desempenho otimizado. Com esse repositório, agora tenho uma solução flexível e robusta para lidar com operações de CRUD em diferentes tipos de entidades de forma simples e eficaz.
 
+Dia 56/100
+Sistema para Bares - Continuação
+Hoje continuei a criação dos repositórios. Vou citar abaixo 3 razões pela qual é importante a criação de repositórios de forma separada da lógica de negócios:
+1 - Abstração do acesso a dados: Os repositórios fornecem uma camada de abstração entre a lógica de negócios e o banco de dados subjacente. Isso permite que a lógica de negócios trabalhe com objetos de domínio em vez de lidar diretamente com consultas SQL ou chamadas de banco de dados.
+2 - Separação de preocupações: Ao usar repositórios, você separa as preocupações relacionadas ao acesso a dados do restante da aplicação. Isso facilita a manutenção e o teste da lógica de negócios sem se preocupar com os detalhes de implementação do acesso ao banco de dados.
+3 - Reutilização de código: Os repositórios podem encapsular consultas e operações comuns do banco de dados, tornando-as facilmente reutilizáveis em toda a aplicação. Isso promove a consistência e evita a duplicação de código.
+
+Dia 57/100
+Sistema para Bares - Continuação
+Hoje finalizei os repositórios e iniciei a construção das classes de serviços.
+
+Dia 58/100
+Hoje, desenvolvi algumas classes de serviços essenciais para o sistema, além de métodos genéricos para validações. Esses serviços fornecem uma camada de abstração que facilita a interação com os dados do sistema, enquanto as validações garantem a integridade e consistência dos dados, contribuindo para a confiabilidade da aplicação.
+
+Dia 59/100
+Hoje finalizei as classes de serviços, essas classes ajudam a desacoplar a camada de apresentação da camada de acesso aos dados, isso significa que a camada de apresentação não precisa conhecer os detalhes de como os dados são armazenados ou recuperados, permitindo maior flexibilidade e escalabilidade.
+
+Dia 60/100
+Hoje iniciei a criação das controllers, peças-chave na arquitetura de nossa aplicação. Elas serão responsáveis por receber as requisições dos clientes, encaminhá-las para os serviços apropriados e retornar as respostas adequadas.
+
