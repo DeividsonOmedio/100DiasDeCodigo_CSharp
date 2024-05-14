@@ -312,3 +312,5 @@ Hoje iniciei a criação das controllers, peças-chave na arquitetura de nossa a
 Dia 61/100
 Finalizei as controllers, buscando sempre a otimização do código, uma boa entrega e uma codificação limpa e organizada, favorecendo possíveis manutenções futuras.
 
+Dia 62/100
+Realizei testes com o Postman para garantir a eficácia da nossa API. Através desses testes, pude verificar o correto funcionamento das requisições, garantindo uma experiência fluida para nossos usuários. E logicamente fiz os ajustes necessários para que funcione tudo da forma como planejado.
