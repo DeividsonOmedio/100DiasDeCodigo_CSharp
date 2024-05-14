@@ -314,3 +314,9 @@ Finalizei as controllers, buscando sempre a otimização do código, uma boa ent
 
 Dia 62/100
 Realizei testes com o Postman para garantir a eficácia da nossa API. Através desses testes, pude verificar o correto funcionamento das requisições, garantindo uma experiência fluida para nossos usuários. E logicamente fiz os ajustes necessários para que funcione tudo da forma como planejado.
+
+Dia 63/100
+Testes Unitários
+Implementei classes de testes usando Xunit, a criação de testes é fundamental para garantir a qualidade do software. Além de verificar se o código funciona conforme o esperado, os testes nos ajudam a simular diferentes cenários e validar as regras de negócio.
+Na imagem, veja que criei 2 testes para o mesmo método, um com o campo nome vazio e outro completo, é importante nos nossos testes, criarmos métodos que esperem receber erros para assim verificar se as validações da aplicação estão funcionando. 
+
