@@ -320,3 +320,5 @@ Testes Unitários
 Implementei classes de testes usando Xunit, a criação de testes é fundamental para garantir a qualidade do software. Além de verificar se o código funciona conforme o esperado, os testes nos ajudam a simular diferentes cenários e validar as regras de negócio.
 Na imagem, veja que criei 2 testes para o mesmo método, um com o campo nome vazio e outro completo, é importante nos nossos testes, criarmos métodos que esperem receber erros para assim verificar se as validações da aplicação estão funcionando. 
 
+Dia 64/100
+Hoje realizei mais testes com o XUnit, algumas correções e alterações, uma dessas alterações foi a criação de uma classe para padronizar e simplificar as respostas as solicitações, fazendo com que não tenha que ser escrito em cada método a mesma resposta
