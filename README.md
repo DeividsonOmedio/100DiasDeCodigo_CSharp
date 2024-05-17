@@ -322,3 +322,8 @@ Na imagem, veja que criei 2 testes para o mesmo método, um com o campo nome vaz
 
 Dia 64/100
 Hoje realizei mais testes com o XUnit, algumas correções e alterações, uma dessas alterações foi a criação de uma classe para padronizar e simplificar as respostas as solicitações, fazendo com que não tenha que ser escrito em cada método a mesma resposta
+
+Dia 65/100
+Refatoração... Testes... Melhorias...
+Experimentando na prática diferentes tipos de retornos e suas implementações. Esta é uma técnica muito importante de aprendizagem, onde você experimenta e vê na prática o que é melhor e as diferenças de um para o outro, onde você adquiri autoridade para falar mais sobre o assunto porque você não só ouviu falar, mas você experimentou de varias formas.
+
