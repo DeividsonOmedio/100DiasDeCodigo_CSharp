@@ -331,3 +331,14 @@ Dia 66/100
 🚀 Mais um dia produtivo investido em testes unitários! 🧪💻
 Hoje dediquei meu tempo a aprimorar os testes unitários em nosso projeto. Como desenvolvedor, sei da importância de garantir que nosso código funcione como esperado em todas as situações, e os testes unitários desempenham um papel crucial nesse processo.
 Testes unitários bem elaborados não apenas validam o comportamento do código, mas também fornecem uma rede de segurança vital durante o desenvolvimento e a manutenção do software. Eles nos permitem detectar e corrigir problemas precocemente, evitando que se tornem bugs em produção e garantindo uma base sólida para futuras iterações do código.
+
+Dia 67/100
+O que aconteceria se você submetesse seu código a testes exaustivos?
+Testes unitários bem elaborados não apenas validam o comportamento do código, mas também fornecem uma rede de segurança vital durante o desenvolvimento e a manutenção do software. Eles nos permitem detectar e corrigir problemas precocemente, evitando que se tornem bugs em produção e garantindo uma base sólida para futuras iterações do código.
+É essencial que os testes unitários sejam feitos de forma exaustiva, cobrindo todos os cenários possíveis e testando todas as partes do código. Isso nos dá confiança para fazer alterações no código com segurança, sabendo que nossos testes nos alertarão se algo estiver quebrado.
+Se você ainda não está dando a devida atenção aos testes unitários em seu trabalho de desenvolvimento, eu encorajo você a começar a fazê-lo. Eles podem parecer triviais no início, mas seu impacto a longo prazo na qualidade e na estabilidade do software é inestimável.
+
+Dia 68/100
+Hoje implementei o token JWT (JSON Web Token) no sistema! 
+A adoção do JWT é crucial para garantir a segurança e a integridade na autenticação de usuários. Ele permite a criação de sessões seguras e sem estado, facilitando a escalabilidade e a distribuição de serviços. Com o JWT, podemos autenticar e autorizar usuários de maneira eficiente, garantindo que apenas usuários legítimos tenham acesso aos recursos protegidos. 🚀
+
